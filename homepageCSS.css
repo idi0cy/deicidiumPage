@@ -1,36 +1,125 @@
 /* https://animista.net/ */
 
+* {
+    font-family: cmuTypewriter;
+}
+
 @font-face {
     font-family: cmuTypewriter;
     src: url(../deicidiumPage/fonts/cmuntt.ttf);
 }
 
-.cmu {
-    font-family: cmuTypewriter;
-}
-
 body {
     padding: 0px;
     margin: 0px;
+    border-width:0px;
+    background-color: #002424;
+}
+
+.link1 {
+    color:white;
+    text-decoration:none;
+    position:relative;
+    display:inline-block;
+    z-index: 1;
+}
+
+.link1::after {
+    background:#43F7E9;
+    content: "";
+    position:absolute;
+    width: 100%;
+    transform:scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:#43F7E9;
+    transition: transform 0.25s ease;
+    transform-origin: bottom right;
+    z-index: -1;
+}
+
+.link1:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 .logo {
-    height:32px;
-    width:32px;
+    height:72px;
+    width:72px;
+    -webkit-animation: logo 15s linear infinite both,
+        logoSpawn 2s cubic-bezier(.28,.87,.58,1.57) both;
+        animation: logo 15s linear infinite both,
+            logoSpawn 2s cubic-bezier(.28,.87,.58,1.57) both;
+    animation-play-state:running;
+}
+
+@keyframes logoSpawn {
+    0% {
+        opacity: 0;
+        scale: 0.35;
+    }
+    100% {
+        opacity:1;
+        scale:1;
+    }
+}
+
+@-webkit-keyframes logoSpawn {
+    0% {
+        opacity: 0;
+        scale: 0.35;
+    }
+    100% {
+        opacity:1;
+        scale:1;
+    }
+}
+
+@keyframes logo {
+    0% {
+        -webkit-transform: rotate(0);
+            transform:rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes logo {
+    0% {
+        -webkit-transform: rotate(0);
+            transform:rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    }
 }
 
 .LogoAndTitleFlex {
+    height:100%;
     display:flex;
     align-items: center;
     justify-content:space-between;
-    gap: 12px;
+    gap: 8px;
+}
+
+.flexBoxTop:hover {
+    border-color: #43F7E9;
+    z-index:-5;
 }
 
 .flexBoxTop {
     display: flex;
     max-width: 100vw;
     width:100vw - 32px;
-    height: 48px;
+    height: 72px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 32px;
@@ -38,16 +127,28 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #002424;
+    border-bottom: 2px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style:solid;
+    border-color:#43f7e850;
+    transition: border-color 0.3s ease-out;
+    z-index: 300;
+    top:0;
+    position:sticky;
 }
 
 .topBarButtonContainer {
-    height: 100%;
-    width: 35%;
-    background-color: coral;
+    display:flex;
+    height: min-content;
+    width: 25%;
     padding-top: -8px;
     padding-bottom:-8px;
-    border: 4px solid brown;
-    text-align: center;
+    justify-content:flex-end;
+    align-content:center;
+    gap:32px;
+    color:white;
 }
 
 .topTitle {
@@ -55,9 +156,61 @@ body {
     padding-left: 16px;
     padding-right: 16px;
     height: 100%;
-    background-color: coral;
-    border: 4px solid brown;
+    color: rgb(230, 230, 230);
     text-align: left;
     font-size:36px;
     align-items:center;
+}
+
+.mainBodyAndSideBar {
+    display:flex;
+    height:100vh;
+}
+
+.sideBar {
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    width:25%;
+    height:100%;
+    border-right-width:2px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-top-width: 2px;
+    border-style: solid;
+    border-color:#43f7e850;
+    border-top-color:#43f7e800;
+    padding: 16px;
+    padding-left:24px;
+    margin-top: -2px;
+    transition: border-color 0.3s ease-out;
+    left:0;
+    position:sticky;
+}
+
+.sideBar:hover {
+    border-color:#43F7E9;
+}
+
+.sideBarSection {
+    color: white;
+    font-size: 20px;
+}
+
+.mainBody {
+    width:100%;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-style: solid;
+    border-color:#43f7e800;
+    padding: 16px;
+    margin-top: -2px;
+    margin-left: -2px;
+    transition: border-color 0.3s ease-out;
+}
+
+.mainBody:hover {
+    border-color:#43F7E9;
 }
