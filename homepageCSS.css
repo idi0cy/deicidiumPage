@@ -58,9 +58,9 @@ a:hover {
     height:72px;
     width:72px;
     -webkit-animation: logo 30s linear infinite both,
-        logoSpawn 2s cubic-bezier(.28,.87,.59,1.47) both;
+        logoSpawn 3s cubic-bezier(.28,.87,.59,1.47) both;
         animation: logo 30s linear infinite both,
-            logoSpawn 2s cubic-bezier(.28,.87,.59,1.47) both;
+            logoSpawn 3s cubic-bezier(.28,.87,.59,1.47) both;
     animation-play-state:running;
 }
 
