@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect x="0.502" y="0.5" width="511.52" height="512.626" style="stroke: rgb(0, 36, 36); fill: rgb(0, 36, 36); stroke-width: 1px;"/>
+  <path style="fill: none; stroke-width: 4px; stroke: rgba(67, 247, 232, 0.25);" d="M -0.02 2.018 L 512.527 2.018"/>
+  <path style="fill: none; stroke-width: 4px; transform-origin: 1.983px 258.807px 0px; stroke: rgba(67, 247, 232, 0.25);" d="M 1.983 3.972 L 1.983 513.643"/>
+  <path style="fill: none; stroke-width: 4px; transform-origin: 510.512px 258.793px 0px; stroke: rgba(67, 247, 232, 0.25);" d="M 510.514 4.022 L 510.514 513.563"/>
+  <path style="fill: none; stroke-width: 5px; transform-origin: 256.253px 511.176px 0px; stroke: rgba(67, 247, 232, 0.25);" d="M 3.964 511.173 L 508.546 511.236"/>
+</svg>

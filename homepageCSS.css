@@ -2,6 +2,8 @@
 
 * {
     font-family: cmuTypewriter;
+    color:#FFFDFA;
+    scrollbar-width: none;
 }
 
 @font-face {
@@ -17,7 +19,7 @@ body {
 }
 
 .link1 {
-    color:white;
+    color:#FFFDFA;
     text-decoration:none;
     position:relative;
     display:inline-block;
@@ -51,10 +53,10 @@ a:hover {
 .logo {
     height:72px;
     width:72px;
-    -webkit-animation: logo 15s linear infinite both,
-        logoSpawn 2s cubic-bezier(.28,.87,.58,1.57) both;
-        animation: logo 15s linear infinite both,
-            logoSpawn 2s cubic-bezier(.28,.87,.58,1.57) both;
+    -webkit-animation: logo 30s linear infinite both,
+        logoSpawn 2s cubic-bezier(.28,.87,.59,1.47) both;
+        animation: logo 30s linear infinite both,
+            logoSpawn 2s cubic-bezier(.28,.87,.59,1.47) both;
     animation-play-state:running;
 }
 
@@ -65,7 +67,7 @@ a:hover {
     }
     100% {
         opacity:1;
-        scale:1;
+        scale:0.85;
     }
 }
 
@@ -76,7 +78,7 @@ a:hover {
     }
     100% {
         opacity:1;
-        scale:1;
+        scale:0.85;
     }
 }
 
@@ -106,20 +108,19 @@ a:hover {
     height:100%;
     display:flex;
     align-items: center;
-    justify-content:space-between;
-    gap: 8px;
+    justify-content:left;
 }
 
 .flexBoxTop:hover {
     border-color: #43F7E9;
-    z-index:-5;
+    background-color:#003333;
 }
 
 .flexBoxTop {
     display: flex;
     max-width: 100vw;
     width:100vw - 32px;
-    height: 72px;
+    height: 56px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 32px;
@@ -133,8 +134,9 @@ a:hover {
     border-right: 0px;
     border-style:solid;
     border-color:#43f7e850;
-    transition: border-color 0.3s ease-out;
-    z-index: 300;
+    transition: border-color 0.3s ease-out,
+        background-color 0.3s ease-out;
+    z-index: 30;
     top:0;
     position:sticky;
 }
@@ -148,7 +150,7 @@ a:hover {
     justify-content:flex-end;
     align-content:center;
     gap:32px;
-    color:white;
+    color:#FFFDFA;
 }
 
 .topTitle {
@@ -156,9 +158,9 @@ a:hover {
     padding-left: 16px;
     padding-right: 16px;
     height: 100%;
-    color: rgb(230, 230, 230);
+    color: #FFFDFA;
     text-align: left;
-    font-size:36px;
+    font-size:32px;
     align-items:center;
 }
 
@@ -168,6 +170,7 @@ a:hover {
 }
 
 .sideBar {
+    box-sizing:border-box;
     display:flex;
     flex-direction:column;
     gap:24px;
@@ -180,37 +183,98 @@ a:hover {
     border-style: solid;
     border-color:#43f7e850;
     border-top-color:#43f7e800;
+    background-color:#002424;
     padding: 16px;
     padding-left:24px;
     margin-top: -2px;
-    transition: border-color 0.3s ease-out;
+    transition: border-color 0.3s ease-out,
+        background-color 0.3s ease-out;
     left:0;
-    position:sticky;
+    position:fixed;
 }
 
 .sideBar:hover {
     border-color:#43F7E9;
+    background-color:#003333;
+    z-index: 31;
 }
 
 .sideBarSection {
-    color: white;
+    color: #FFFDFA;
     font-size: 20px;
 }
 
 .mainBody {
-    width:100%;
-    border-top-width: 2px;
-    border-left-width: 2px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    border-style: solid;
-    border-color:#43f7e800;
-    padding: 16px;
-    margin-top: -2px;
-    margin-left: -2px;
-    transition: border-color 0.3s ease-out;
+    box-sizing:border-box;
+    width:80%;
+    height:100%;
+    margin-left:25%;
+    position:relative;
+    right:0;
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 
-.mainBody:hover {
-    border-color:#43F7E9;
+.mainBody::before {
+    content: "";
+    position:absolute;
+    z-index: -1;
+    width:calc(100% + 128px);
+    height: calc(100% + 64px);
+    top:-64px;
+    left:-128px;
+    background-size: 64px 64px;
+    background-image:url(images/grid.svg);
+    background-repeat:repeat;
+    animation: moveGrid 2s linear infinite both,
+        appearGrid 3s linear both;
+        -webkit-animation: moveGrid 2s linear infinite both,
+            appearGrid 3s linear both;
+}
+
+@keyframes appearGrid {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes appearGrid {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes moveGrid {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(128px, 64px);
+    }
+}
+
+@-webkit-keyframes moveGrid {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(128px,64px);
+    }
+}
+
+.sectionOne {
+    box-sizing:border-box;
+    margin:0px;
+    padding:48px;
+    height:50vh;
+}
+
+.secOneHeader {
+    margin:0px;
 }
