@@ -11,6 +11,11 @@
     src: url(../deicidiumPage/fonts/cmuntt.ttf);
 }
 
+@font-face {
+    font-family: zenDots;
+    src: url(fonts/ZenDots-Regular.ttf);
+}
+
 body {
     padding: 0px;
     margin: 0px;
@@ -35,7 +40,6 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color:#43F7E9;
     transition: transform 0.25s ease;
     transform-origin: bottom right;
     z-index: -1;
@@ -196,7 +200,7 @@ a:hover {
 .sideBar:hover {
     border-color:#43F7E9;
     background-color:#003333;
-    z-index: 31;
+    z-index: 30;
 }
 
 .sideBarSection {
@@ -212,7 +216,6 @@ a:hover {
     position:relative;
     right:0;
     overflow-x:hidden;
-    overflow-y:hidden;
 }
 
 .mainBody::before {
@@ -276,5 +279,68 @@ a:hover {
 }
 
 .secOneHeader {
+    width: 100%;
     margin:0px;
+    font-family:zenDots;
+    font-size: 6vw;
+    color:transparent;
+    background-image: linear-gradient(90deg, #43f7e8aa 50%, white 50%);
+    background-position:100%;
+    background-size:200% 100%;
+    background-clip:text;
+    -webkit-background-clip: text;
+    transition: background-position .5s ease;
+    position:relative;
+}
+
+.secOneHeader::after {
+    background:#FFFDFA;
+    position:absolute;
+    width:100%;
+    content:"";
+    transform:scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform-origin: bottom right;
+    z-index: -1;
+}
+
+.secOneHeader:hover {
+    background-position:0;
+}
+
+.secOneHeader:hover::after {
+    transform:scaleX(1);
+    transform-origin:bottom right;
+}
+
+.secOneText {
+    width: 33vw;
+    font-size: 24px;
+}
+
+.highlightableText {
+    width:100%;
+    position:relative;
+}
+
+.highlightableText::after {
+    background:#43F7E9;
+    position:absolute;
+    width:100%;
+    content:"";
+    transform:scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.25s ease;
+    transform-origin: bottom right;
+    z-index: -1;
+}
+
+.highlightableText:hover::after {
+    transform:scaleX(1);
+    transform-origin:bottom left;
 }
