@@ -211,11 +211,12 @@ a:hover {
 .mainBody {
     box-sizing:border-box;
     width:80%;
-    height:100%;
+    height: 100%;
     margin-left:25%;
     position:relative;
     right:0;
     overflow-x:hidden;
+    display:inline-block;
 }
 
 .mainBody::before {
@@ -223,16 +224,16 @@ a:hover {
     position:absolute;
     z-index: -1;
     width:calc(100% + 128px);
-    height: calc(100% + 64px);
+    height: 150%;
     top:-64px;
     left:-128px;
     background-size: 64px 64px;
     background-image:url(images/grid.svg);
     background-repeat:repeat;
     animation: moveGrid 2s linear infinite both,
-        appearGrid 3s linear both;
+        appearGrid 1.5s linear both;
         -webkit-animation: moveGrid 2s linear infinite both,
-            appearGrid 3s linear both;
+            appearGrid 1.5s linear both;
 }
 
 @keyframes appearGrid {
@@ -275,7 +276,7 @@ a:hover {
     box-sizing:border-box;
     margin:0px;
     padding:48px;
-    height:50vh;
+    height:fit-content;
 }
 
 .secOneHeader {
@@ -343,4 +344,67 @@ a:hover {
 .highlightableText:hover::after {
     transform:scaleX(1);
     transform-origin:bottom left;
+}
+
+.secOneHeader2 {
+    text-align:right;
+    width: 100%;
+    margin:0px;
+    font-family:zenDots;
+    font-size: 6vw;
+    color:transparent;
+    background-image: linear-gradient(90deg, #43f7e8aa 50%, white 50%);
+    background-position:0%;
+    background-size:200% 100%;
+    background-clip:text;
+    -webkit-background-clip: text;
+    transition: background-position .5s ease;
+    position:relative;
+}
+
+.secOneHeader2::after {
+    background:#43f7e8aa;
+    position:absolute;
+    width:100%;
+    content:"";
+    transform:scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform-origin: bottom left;
+    z-index: -1;
+}
+
+.secOneHeader2:hover {
+    background-position:100%;
+}
+
+.secOneHeader2:hover::after {
+    transform:scaleX(1);
+    transform-origin:bottom left;
+}
+
+.secOneText2 {
+    width: 33vw;
+    font-size: 24px;
+}
+
+.flexAlign {
+    display:flex;
+    justify-content:flex-end;
+    width:100%;
+    text-align: right;
+}
+
+.sectionTwo {
+    height: 100%;
+    background: #1c645e;
+    padding:48px;
+}
+
+.secTwoHeader {
+    font-family:zenDots;
+    font-size: 6vw;
+    margin:0;
 }
