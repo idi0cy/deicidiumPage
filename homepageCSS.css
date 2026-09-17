@@ -21,6 +21,12 @@ body {
     margin: 0px;
     border-width:0px;
     background-color: #002424;
+    position:relative;
+    z-index:-15;
+}
+
+strong {
+    font-weight: 900;
 }
 
 .link1 {
@@ -171,6 +177,8 @@ a:hover {
 .mainBodyAndSideBar {
     display:flex;
     height:100vh;
+    position:relative;
+    z-index:-15;
 }
 
 .sideBar {
@@ -195,6 +203,7 @@ a:hover {
         background-color 0.3s ease-out;
     left:0;
     position:fixed;
+    z-index:10;
 }
 
 .sideBar:hover {
@@ -217,12 +226,13 @@ a:hover {
     right:0;
     overflow-x:hidden;
     display:inline-block;
+    z-index:-15;
 }
 
 .mainBody::before {
     content: "";
     position:absolute;
-    z-index: -1;
+    z-index: -5;
     width:calc(100% + 128px);
     height: 150%;
     top:-64px;
@@ -318,34 +328,35 @@ a:hover {
 }
 
 .secOneText {
-    width: 33vw;
+    width: 66%;
     font-size: 24px;
 }
 
 .highlightableText {
-    width:100%;
-    position:relative;
+    text-decoration: none;
+    background-image: linear-gradient(#43F7E9, #43F7E9);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    transition: background-size .3s;
 }
-
-.highlightableText::after {
-    background:#43F7E9;
-    position:absolute;
-    width:100%;
-    content:"";
-    transform:scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    transition: transform 0.25s ease;
-    transform-origin: bottom right;
-    z-index: -1;
+.highlightableText:hover {
+    background-size:100% 3px;
 }
-
-.highlightableText:hover::after {
-    transform:scaleX(1);
-    transform-origin:bottom left;
+.highlightableRed {
+    text-decoration: none;
+    background-image: linear-gradient(#e54b4b, #e54b4b);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    transition: background-size .3s;
 }
-
+.highlightableRed:hover {
+    background-size: 100% 3px;
+}
+.red {
+    color:#e54b4b;
+}
 .secOneHeader2 {
     text-align:right;
     width: 100%;
@@ -386,7 +397,7 @@ a:hover {
 }
 
 .secOneText2 {
-    width: 33vw;
+    width: 66%;
     font-size: 24px;
 }
 
@@ -398,13 +409,48 @@ a:hover {
 }
 
 .sectionTwo {
-    height: 100%;
-    background: #1c645e;
+    height: fit-content;
+    box-sizing:border-box;
+    background: #30aaa0;
     padding:48px;
+    z-index:-2;
+    position:relative;
 }
 
 .secTwoHeader {
+    width: 100%;
+    margin:0px;
     font-family:zenDots;
     font-size: 6vw;
-    margin:0;
+    color:transparent;
+    background-image: linear-gradient(90deg, #e54b4b 50%, white 50%);
+    background-position:100%;
+    background-size:200% 100%;
+    background-clip:text;
+    -webkit-background-clip: text;
+    transition: background-position .5s ease;
+    position:relative;
+}
+
+.secTwoHeader::after {
+    background:#FFFDFA;
+    position:absolute;
+    width:100%;
+    content:"";
+    transform:scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform-origin: bottom right;
+    z-index: -1;
+}
+
+.secTwoHeader:hover {
+    background-position:0;
+}
+
+.secTwoHeader:hover::after {
+    transform:scaleX(1);
+    transform-origin:bottom right;
 }
