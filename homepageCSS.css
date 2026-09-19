@@ -295,7 +295,7 @@ a:hover {
     font-family:zenDots;
     font-size: 6vw;
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, white 50%);
+    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -330,6 +330,7 @@ a:hover {
 .secOneText {
     width: 66%;
     font-size: 24px;
+    text-shadow:2px 2px 0px black;
 }
 
 .highlightableText {
@@ -345,7 +346,7 @@ a:hover {
 }
 .highlightableRed {
     text-decoration: none;
-    background-image: linear-gradient(#e54b4b, #e54b4b);
+    background-image: linear-gradient(#dbc754, #dbc754);
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0% 3px;
@@ -364,7 +365,7 @@ a:hover {
     font-family:zenDots;
     font-size: 6vw;
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, white 50%);
+    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
     background-position:0%;
     background-size:200% 100%;
     background-clip:text;
@@ -408,10 +409,48 @@ a:hover {
     text-align: right;
 }
 
+.flexAlignCenter {
+    display:flex;
+    justify-content:center;
+    width:100%;
+    text-align:center;
+}
+
+.sectionDivider {
+    width:100%;
+    height:24px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-left-width:0px;
+    border-right-width: 0px;
+    border-style:solid;
+    border-color:#258d84;
+    background-color:#002424;
+}
+
+.sectionDivider::after {
+    position:absolute;
+    content:"";
+    width:100%;
+    height:24px;
+    background-image: linear-gradient(90deg, #003b3b, transparent, #003b3b);
+    background-repeat:repeat;
+    animation: moveSectionDiv 4s ease infinite both;
+}
+
+@keyframes moveSectionDiv{
+    0%{
+        background-position:0px;
+    }
+    100% {
+        background-position: calc(75vw - 32px);
+    }
+}
+
 .sectionTwo {
     height: fit-content;
     box-sizing:border-box;
-    background: #30aaa0;
+    background: #1a5c56;
     padding:48px;
     z-index:-2;
     position:relative;
@@ -423,7 +462,7 @@ a:hover {
     font-family:zenDots;
     font-size: 6vw;
     color:transparent;
-    background-image: linear-gradient(90deg, #e54b4b 50%, white 50%);
+    background-image: linear-gradient(90deg, #dbc754 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -453,4 +492,107 @@ a:hover {
 .secTwoHeader:hover::after {
     transform:scaleX(1);
     transform-origin:bottom right;
+}
+
+.secTwoHeader2 {
+    text-align:right;
+    width: 100%;
+    margin:0px;
+    font-family:zenDots;
+    font-size: 6vw;
+    color:transparent;
+    background-image: linear-gradient(90deg, #dbc754 50%, #FFFDFA 50%);
+    background-position:0%;
+    background-size:200% 100%;
+    background-clip:text;
+    -webkit-background-clip: text;
+    transition: background-position .5s ease;
+    position:relative;
+}
+
+.secTwoHeader2::after {
+    background:#dbc754;
+    position:absolute;
+    width:100%;
+    content:"";
+    transform:scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform-origin: bottom left;
+    z-index: -1;
+}
+
+.secTwoHeader2:hover {
+    background-position:100%;
+}
+
+.secTwoHeader2:hover::after {
+    transform:scaleX(1);
+    transform-origin:bottom left;
+}
+
+.sectionThree {
+    box-sizing:border-box;
+    margin:0px;
+    padding:48px;
+    height:fit-content;
+    position:relative;
+}
+
+.sectionThree::before {
+    content: "";
+    position:absolute;
+    z-index: -5;
+    width:calc(100% + 128px);
+    height: 120%;
+    top:-64px;
+    left:-128px;
+    background-size: 64px 64px;
+    background-image:url(images/grid.svg);
+    background-repeat:repeat;
+    animation: moveGrid 2s linear infinite both,
+        appearGrid 1.5s linear both;
+        -webkit-animation: moveGrid 2s linear infinite both,
+            appearGrid 1.5s linear both;
+}
+
+.creditsHeader {
+    width: 100%;
+    text-align:center;
+    margin:0px;
+    font-family:zenDots;
+    font-size: 6vw;
+    color:transparent;
+    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-position:100%;
+    background-size:200% 100%;
+    background-clip:text;
+    -webkit-background-clip: text;
+    transition: background-position .5s ease;
+    position:relative;
+}
+
+.creditsHeader::after {
+    background:#FFFDFA;
+    position:absolute;
+    width:100%;
+    content:"";
+    transform:scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform-origin: bottom center;
+    z-index: -1;
+}
+
+.creditsHeader:hover {
+    background-position:0;
+}
+
+.creditsHeader:hover::after {
+    transform:scaleX(1);
+    transform-origin:bottom center;
 }
