@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepageCSS.css">
+    <script src="scripts/homePageScript.js"></script>
     <title>Deicidium</title>
 </head>
 <body class="noPadding">
@@ -16,10 +17,13 @@
         </div>
         
         <div class="cmu topBarButtonContainer">
-            <a class="topLinks link1">Story</a>
-            <a class="topLinks link1">Worldbuilding</a>
-            <a class="topLinks link1">Search</a>
-            <a class="topLinks link1">Settings</a>
+            <div class="menuDropdown">
+                <div class="menuIcon" onclick="menuAnimation(this)">
+                    <div class="menuBar1"></div>
+                    <div class="menuBar2"></div>
+                    <div class="menuBar3"></div>
+                </div>
+            </div>
         </div>
     </header>
     <div class="mainBodyAndSideBar">
