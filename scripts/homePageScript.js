@@ -1,6 +1,7 @@
 
 //Variable setup
 var dropDownContainerTop = document.getElementsByClassName('dropDownContainerTop')
+var dropDownContainerDown = document.getElementsByClassName('dropDownContainerDown')
 
 function menuAnimation(x) {
   var menuToAnimate = x.children
@@ -16,11 +17,16 @@ function menuAnimation(x) {
 }
 
 function openDropdown() {
-  console.log('opening');
-  dropDownContainerTop[0].classList.toggle('opened');
+  console.log(window.innerWidth)
+  if (window.innerWidth > 700) {
+    dropDownContainerTop[0].classList.toggle('opened');
+  } else {
+    dropDownContainerDown[0].classList.toggle('opened');
+    console.log('this thing')
+  }
 }
 
 function closeDropdown() {
-  console.log('closing');
-  dropDownContainerTop[0].classList.toggle('opened');
+  dropDownContainerTop[0].classList.remove('opened');
+  dropDownContainerDown[0].classList.remove('opened');
 }

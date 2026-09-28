@@ -212,12 +212,50 @@ a:hover {
     transform:scaleX(0);
     opacity:0;
     transform-origin:right;
-    transition:0.25s;
+    transition:0.3s;
 }
 
 .dropDownContainerTop.opened {
     transform:scaleX(1);
     opacity:1;
+}
+
+.dropDownContainerDown {
+    font-size:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:end;
+    width:208px;
+    gap:16px;
+    padding-top:36px;
+    padding-bottom:36px;
+    padding-right:24px;
+    position:absolute;
+    top:90px;
+    right:0px;
+    background-color:#002424;
+    border-left-width: 2px;
+    border-bottom-width:2px;
+    border-top-width:0px;
+    border-right-width:0px;
+    border-style:solid;
+    border-color:#43f7e850;
+    transition:0.3s;
+    transform-origin:top;
+    transform:scaleY(0);
+    opacity:0;
+}
+
+.dropDownContainerDown.opened {
+    transform:scaleY(1);
+    transform-origin:top;
+    opacity:1;
+}
+
+.dropDownContainerDown:hover {
+    background-color: #003333;
+    border-color:#43F7E9;
 }
 
 .topTitle {
