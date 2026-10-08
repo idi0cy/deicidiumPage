@@ -1,6 +1,5 @@
 
 //Variable setup
-var dropDownContainerTop = document.getElementsByClassName('dropDownContainerTop')
 var dropDownContainerDown = document.getElementsByClassName('dropDownContainerDown')
 
 var openBarButtonLine1 = document.getElementsByClassName('openBarButtonLine1')
@@ -25,16 +24,10 @@ function menuAnimation(x) {
 }
 
 function openDropdown() {
-  console.log(window.innerWidth)
-  if (window.innerWidth > 700) {
-    dropDownContainerTop[0].classList.toggle('opened');
-  } else {
-    dropDownContainerDown[0].classList.toggle('opened');
-  }
+  dropDownContainerDown[0].classList.toggle('opened');
 }
 
 function closeDropdown() {
-  dropDownContainerTop[0].classList.remove('opened');
   dropDownContainerDown[0].classList.remove('opened');
 }
 
@@ -60,4 +53,14 @@ function openSideBar() {
     mainBody[0].classList.remove('shrunk')
   }
   
+}
+
+function openSideBarSection(x) {
+  if (x.children[0].children[0].classList.contains('opened')) {
+    x.children[0].children[0].classList.remove('opened')
+    x.children[0].children[1].classList.remove('opened')
+  } else {
+    x.children[0].children[0].classList.add('opened')
+    x.children[0].children[1].classList.add('opened')
+  }
 }

@@ -17,15 +17,10 @@
         </div>
         <div class="cmu topBarButtonContainer">
             <div class="menuDropdown">
-                <div class="dropDownContainerTop">
-                    <a class="link1">About</a>
-                    <a class="link1">Credits</a>
-                    <a class="link1">Settings</a>
-                </div>
                 <div class="dropDownContainerDown">
-                    <a class="link1">About</a>
-                    <a class="link1">Credits</a>
-                    <a class="link1">Settings</a>
+                    <a class="navLink1">About</a>
+                    <a class="navLink1">Credits</a>
+                    <a class="navLink1">Settings</a>
                 </div>
                 <div class="menuIcon" onclick="menuAnimation(this)">
                     <div class="menuBar1"></div>
@@ -38,8 +33,21 @@
     <div class="mainBodyAndSideBar">
         <div class="sideBarStuff">
             <div class="sideBar">
-                <div class="sideBarSection">Story</div>
-                <div class="sideBarSection">Unbuilt</div>
+                <div class="sideNavSec" onclick="openSideBarSection(this)">
+                    <div class="sideBarArrow">
+                        <div class="sideBarArrowLine1"></div>
+                        <div class="sideBarArrowLine2"></div>
+                    </div>
+                    <div>Story</div>
+                </div>
+                <div class="sideNavSec" onclick="openSideBarSection(this)">
+                    <div class="sideBarArrow">
+                        <div class="sideBarArrowLine1"></div>
+                        <div class="sideBarArrowLine2"></div>
+                    </div>
+                    <div>Worldbuilding</div>
+                </div>
+                <a class="sideNavLink">Credits</a>
             </div>
             <div class="sideBarManipulations">
                 <button class="openBarButton" onclick="openSideBar()">
