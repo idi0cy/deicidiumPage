@@ -10,6 +10,8 @@ var mainBody = document.getElementsByClassName('mainBody')
 
 var isSideBarOpen = false
 
+
+
 function menuAnimation(x) {
   var menuToAnimate = x.children
   for (let i = 0; i < (menuToAnimate.length); i++) {
@@ -57,9 +59,15 @@ function openSideBar() {
 
 function openSideBarSection(x) {
   if (x.children[0].children[0].classList.contains('opened')) {
+    for (let i = 0; i < (x.parentNode.children.length); i++) {
+      x.parentNode.children[i].classList.remove('opened')
+    }
     x.children[0].children[0].classList.remove('opened')
     x.children[0].children[1].classList.remove('opened')
   } else {
+    for (let i = 0; i < (x.parentNode.children.length); i++) {
+      x.parentNode.children[i].classList.add('opened')
+    }
     x.children[0].children[0].classList.add('opened')
     x.children[0].children[1].classList.add('opened')
   }

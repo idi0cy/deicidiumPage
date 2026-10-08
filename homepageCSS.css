@@ -1,5 +1,9 @@
 /* https://animista.net/ */
 
+:root {
+    interpolate-size: allow-keywords;
+}
+
 * {
     font-family: cmuTypewriter;
     color:#FFFDFA;
@@ -276,10 +280,10 @@ a:hover {
     transform:rotate(-45deg) translateX(-1px) translateY(-2px);
 }
 
-.sideNavSec {
+.sideNavHeader {
     box-sizing:border-box;
-    padding-left:12px;
-    font-size:24px;
+    padding-left:4px;
+    font-size:18px;
     width:100%;
     text-align:left;
     line-height:64px;
@@ -290,18 +294,26 @@ a:hover {
     background-size:200% 100%;
     transition:background-position 0.3s;
     display:flex;
-    gap:8px;
+    gap:4px;
     cursor:pointer;
 }
 
-.sideNavSec:hover {
+.sideNavHeader.indentOne {
+    padding-left:24px;
+}
+
+.sideNavHeader.indentTwo {
+    padding-left:44px;
+}
+
+.sideNavHeader:hover {
     background-position:100%;
 }
 
 .sideNavLink {
     box-sizing:border-box;
     padding-left:12px;
-    font-size:24px;
+    font-size:18px;
     width:100%;
     text-align:left;
     line-height:64px;
@@ -318,6 +330,32 @@ a:hover {
 
 .sideNavLink:hover {
     background-position:100%;
+}
+
+.minSideNavSec {
+    position:relative;
+    height:0px;
+    opacity:0;
+    transform:scaleY(0);
+    transform-origin:top;
+    transition:.4s;
+    z-index:-10;
+    pointer-events:none;
+}
+
+.minSideNavSec.opened {
+    transform:scaleY(1);
+    opacity:1;
+    z-index:1;
+    pointer-events:all;
+}
+
+.minSideNavSec.opened.one {
+    height:auto;
+}
+
+.minSideNavSec.opened.two {
+    height:auto;
 }
 
 .dropDownContainerDown.opened {
@@ -465,7 +503,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 
 .mainBody.shrunk {
     width:calc(100% - 300px);
-    margin-left:300px;
+    margin-left:290px;
 }
 
 .mainBody::before {
