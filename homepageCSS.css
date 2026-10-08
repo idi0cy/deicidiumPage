@@ -338,7 +338,7 @@ a:hover {
     opacity:0;
     transform:scaleY(0);
     transform-origin:top;
-    transition:.4s;
+    transition:.25s;
     z-index:-10;
     pointer-events:none;
 }
