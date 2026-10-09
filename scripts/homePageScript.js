@@ -11,7 +11,6 @@ var mainBody = document.getElementsByClassName('mainBody')
 var isSideBarOpen = false
 
 
-
 function menuAnimation(x) {
   var menuToAnimate = x.children
   for (let i = 0; i < (menuToAnimate.length); i++) {
@@ -32,7 +31,6 @@ function openDropdown() {
 function closeDropdown() {
   dropDownContainerDown[0].classList.remove('opened');
 }
-
 
 function openSideBar() {
   if (isSideBarOpen === false) {
