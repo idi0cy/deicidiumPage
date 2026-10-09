@@ -614,7 +614,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 }
 
 .mainBody.shrunk {
-    width:calc(100% - 300px);
+    width:calc(100% - 290px);
     margin-left:290px;
 }
 
