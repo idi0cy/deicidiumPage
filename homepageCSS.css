@@ -216,12 +216,12 @@ a:hover {
     width:196px;
     position:absolute;
     top:90px;
-    right:0px;
+    right:16px;
     background-color:#002424;
     border-left-width: 2px;
     border-bottom-width:2px;
     border-top-width:0px;
-    border-right-width:0px;
+    border-right-width:2px;
     border-style:solid;
     border-color:#43f7e850;
     transition:0.3s;
@@ -232,7 +232,7 @@ a:hover {
 
 .navLink1 {
     box-sizing:border-box;
-    padding-right:8px;
+    padding-right:16px;
     font-size:24px;
     width:100%;
     text-align:right;
@@ -403,7 +403,7 @@ a:hover {
     z-index:-15;
 }
 
-.sideBar {
+.sideBarStory {
     box-sizing:border-box;
     display:flex;
     flex-direction:column;
@@ -429,12 +429,12 @@ a:hover {
     transform-origin:left;
 }
 
-.sideBar.sideBarOpened {
+.sideBarStory.sideBarOpened {
     transform:translateX(0);
     transform-origin:left;
 }
 
-.sideBar:hover {
+.sideBarStory:hover {
     border-color:#43F7E9;
     background-color:#003333;
 }
@@ -449,6 +449,7 @@ a:hover {
     flex-direction:column;
     transition:0.3s ease;
     z-index:29;
+    gap:4px;
 }
 
 .sideBarManipulations.sideBarOpened {
@@ -468,6 +469,96 @@ a:hover {
     border-bottom-left-radius: 0px;
     transition:.3s ease;
     transform:translateX(-2px);
+}
+
+.openStoryBarButton {
+    width:32px;
+    height:96px;
+    border-width:2px;
+    border-style:solid;
+    border-color:#43f7e850;
+    background-color:#002424;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transition:.3s ease;
+    transform:translateX(-2px);
+    writing-mode:vertical-rl;
+    text-orientation:upright;
+    font-size:16px;
+}
+
+.openStoryBarButton:hover {
+    cursor:pointer;
+    border-color:#43F7E9;
+    background-color:#003333;
+}
+
+.openStoryBarButton.opened {
+    border-color:#43F7E9;
+    background-color:#003333;
+    height:128px;
+}
+
+.openWorldbuildingBarButton {
+    width:32px;
+    height:96px;
+    border-width:2px;
+    border-style:solid;
+    border-color:#43f7e850;
+    background-color:#002424;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transition:.3s ease;
+    transform:translateX(-2px);
+    writing-mode:vertical-rl;
+    text-orientation:upright;
+    font-size:16px;
+}
+
+.openWorldbuildingBarButton:hover {
+    cursor:pointer;
+    border-color:#43F7E9;
+    background-color:#003333;
+}
+
+.openWorldbuildingBarButton.opened {
+    border-color:#43F7E9;
+    background-color:#003333;
+    height:128px;
+}
+
+.openMiscBarButton {
+    width:32px;
+    height:96px;
+    border-width:2px;
+    border-style:solid;
+    border-color:#43f7e850;
+    background-color:#002424;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transition:.3s ease;
+    transform:translateX(-2px);
+    writing-mode:vertical-rl;
+    text-orientation:upright;
+    font-size:16px;
+}
+
+.openMiscBarButton:hover {
+    cursor:pointer;
+    border-color:#43F7E9;
+    background-color:#003333;
+}
+
+.openMiscBarButton.opened {
+    border-color:#43F7E9;
+    background-color:#003333;
+    height:128px;
 }
 
 .openBarButton:hover {
@@ -731,27 +822,17 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     height:24px;
     background-image: linear-gradient(90deg, #003b3b, transparent, #003b3b);
     background-repeat:repeat;
-    animation: moveSectionDiv 4s ease infinite both;
-}
-
-@keyframes moveSectionDiv{
-    0%{
-        background-position:0px;
-    }
-    100% {
-        background-position: calc(75vw - 32px);
-    }
 }
 
 .sectionTwo {
     height: fit-content;
     box-sizing:border-box;
-    background: #1a5c56;
+    background: #144642;
     padding:clamp(32px, 8vw, 64px);
     z-index:-2;
     position:relative;
 }
-
+/*#1a5c56*/
 .secTwoHeader {
     width: 100%;
     margin:0px;
@@ -894,7 +975,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 .sectionFour {
     height: fit-content;
     box-sizing:border-box;
-    background: #1a5c56;
+    background: #144642;
     padding:clamp(32px, 8vw, 64px);
     z-index:-2;
     position:relative;

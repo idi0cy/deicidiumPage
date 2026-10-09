@@ -4,7 +4,7 @@ var dropDownContainerDown = document.getElementsByClassName('dropDownContainerDo
 
 var openBarButtonLine1 = document.getElementsByClassName('openBarButtonLine1')
 var openBarButtonLine2 = document.getElementsByClassName('openBarButtonLine2')
-var sideBar = document.getElementsByClassName('sideBar')
+var sideBar = document.getElementsByClassName('sideBarStory')
 var sideBarManipulations = document.getElementsByClassName('sideBarManipulations')
 var mainBody = document.getElementsByClassName('mainBody')
 
@@ -70,5 +70,32 @@ function openSideBarSection(x) {
     }
     x.children[0].children[0].classList.add('opened')
     x.children[0].children[1].classList.add('opened')
+  }
+}
+
+function openStorySideBar(x) {
+  x.classList.add('opened')
+  for (let i = 0; i < (x.parentNode.children.length); i++) {
+    if (x.parentNode.children[i] != x) {
+      x.parentNode.children[i].classList.remove('opened')
+    }
+  }
+}
+
+function openWorldbuildingSideBar(x) {
+  x.classList.add('opened')
+  for (let i = 0; i < (x.parentNode.children.length); i++) {
+    if (x.parentNode.children[i] != x) {
+      x.parentNode.children[i].classList.remove('opened')
+    }
+  }
+}
+
+function openMiscSideBar(x) {
+  x.classList.add('opened')
+  for (let i = 0; i < (x.parentNode.children.length); i++) {
+    if (x.parentNode.children[i] != x) {
+      x.parentNode.children[i].classList.remove('opened')
+    }
   }
 }

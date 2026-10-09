@@ -32,7 +32,7 @@
     </header>
     <div class="mainBodyAndSideBar">
         <div class="sideBarStuff">
-            <div class="sideBar">
+            <div class="sideBarStory">
                 <div class="sideNavSec">
                     <div class="sideNavHeader" onclick="openSideBarSection(this)">
                         <div class="sideBarArrow">
@@ -85,10 +85,20 @@
                 </div>
                 <a class="sideNavLink">Credits</a>
             </div>
+            
             <div class="sideBarManipulations">
                 <button class="openBarButton" onclick="openSideBar()">
                     <div class="openBarButtonLine1"></div>
                     <div class="openBarButtonLine2"></div>
+                </button>
+                <button class="openStoryBarButton opened" onclick="openStorySideBar(this)">
+                    PLOT
+                </button>
+                <button class="openWorldbuildingBarButton" onclick="openWorldbuildingSideBar(this)">
+                    LORE
+                </button>
+                <button class="openMiscBarButton" onclick="openMiscSideBar(this)">
+                    MISC
                 </button>
             </div>
         </div>
