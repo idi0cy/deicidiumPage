@@ -4,7 +4,9 @@ var dropDownContainerDown = document.getElementsByClassName('dropDownContainerDo
 
 var openBarButtonLine1 = document.getElementsByClassName('openBarButtonLine1')
 var openBarButtonLine2 = document.getElementsByClassName('openBarButtonLine2')
-var sideBar = document.getElementsByClassName('sideBarStory')
+var sideBarStory = document.getElementsByClassName('sideBarStory')
+var sideBarLore = document.getElementsByClassName('sideBarLore')
+var sideBarMisc = document.getElementsByClassName('sideBarMisc')
 var sideBarManipulations = document.getElementsByClassName('sideBarManipulations')
 var mainBody = document.getElementsByClassName('mainBody')
 
@@ -37,7 +39,11 @@ function openSideBar() {
     isSideBarOpen = true
     openBarButtonLine1[0].classList.add('sideBarOpened')
     openBarButtonLine2[0].classList.add('sideBarOpened')
-    sideBar[0].classList.add('sideBarOpened')
+
+    sideBarStory[0].classList.add('sideBarOpened')
+    sideBarLore[0].classList.add('sideBarOpened')
+    sideBarMisc[0].classList.add('sideBarOpened')
+
     sideBarManipulations[0].classList.add('sideBarOpened')
 
     if (window.innerWidth > 800) {
@@ -48,7 +54,11 @@ function openSideBar() {
     isSideBarOpen = false
     openBarButtonLine1[0].classList.remove('sideBarOpened')
     openBarButtonLine2[0].classList.remove('sideBarOpened')
-    sideBar[0].classList.remove('sideBarOpened')
+
+    sideBarStory[0].classList.remove('sideBarOpened')
+    sideBarLore[0].classList.remove('sideBarOpened')
+    sideBarMisc[0].classList.remove('sideBarOpened')
+    
     sideBarManipulations[0].classList.remove('sideBarOpened')
     mainBody[0].classList.remove('shrunk')
   }
@@ -78,6 +88,9 @@ function openStorySideBar(x) {
       x.parentNode.children[i].classList.remove('opened')
     }
   }
+  sideBarStory[0].classList.add('focused')
+  sideBarLore[0].classList.remove('focused')
+  sideBarMisc[0].classList.remove('focused')
 }
 
 function openWorldbuildingSideBar(x) {
@@ -87,6 +100,9 @@ function openWorldbuildingSideBar(x) {
       x.parentNode.children[i].classList.remove('opened')
     }
   }
+  sideBarLore[0].classList.add('focused')
+  sideBarStory[0].classList.remove('focused')
+  sideBarMisc[0].classList.remove('focused')
 }
 
 function openMiscSideBar(x) {
@@ -96,4 +112,7 @@ function openMiscSideBar(x) {
       x.parentNode.children[i].classList.remove('opened')
     }
   }
+  sideBarMisc[0].classList.add('focused')
+  sideBarLore[0].classList.remove('focused')
+  sideBarStory[0].classList.remove('focused')
 }

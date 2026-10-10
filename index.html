@@ -32,7 +32,7 @@
     </header>
     <div class="mainBodyAndSideBar">
         <div class="sideBarStuff">
-            <div class="sideBarStory">
+            <div class="sideBarStory focused">
                 <div class="sideNavSec">
                     <div class="sideNavHeader" onclick="openSideBarSection(this)">
                         <div class="sideBarArrow">
@@ -81,11 +81,45 @@
                         <div class="sideBarArrowLine1"></div>
                         <div class="sideBarArrowLine2"></div>
                     </div>
-                    <div class="filler">Worldbuilding</div>
+                    <div>Worldbuilding</div>
                 </div>
                 <a class="sideNavLink">Credits</a>
             </div>
             
+            <div class="sideBarLore">
+
+                
+                <div class="sideNavHeader" onclick="openSideBarSection(this)">
+                    <div class="sideBarArrow">
+                        <div class="sideBarArrowLine1"></div>
+                        <div class="sideBarArrowLine2"></div>
+                    </div>
+                    <div>Placeholder</div>
+                </div>
+
+                <div class="minSideNavSec indentNone">
+                    <div class="sideNavSec">
+                        
+                        <div class="sideNavHeader indentOne" onclick="openSideBarSection(this)">
+                            <div class="sideBarArrow">
+                                <div class="sideBarArrowLine1"></div>
+                                <div class="sideBarArrowLine2"></div>
+                            </div>
+                            <div>Nested node</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+
+                <a class="sideNavLink">Plain Link</a>
+
+            </div>
+
+            <div class="sideBarMisc">
+                <a class="sideNavLink">Too Lazy To Put Things Here</a>
+            </div>
+
             <div class="sideBarManipulations">
                 <button class="openBarButton" onclick="openSideBar()">
                     <div class="openBarButtonLine1"></div>
