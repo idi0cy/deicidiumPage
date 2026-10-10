@@ -20,7 +20,7 @@
                 <div class="dropDownContainerDown">
                     <a class="navLink1">About</a>
                     <a class="navLink1">Credits</a>
-                    <a class="navLink1">Settings</a>
+                    <a class="navLink1" onclick="openSettings()">Settings</a>
                 </div>
                 <div class="menuIcon" onclick="menuAnimation(this)">
                     <div class="menuBar1"></div>
@@ -111,7 +111,6 @@
                     </div>
                 </div>
                 
-
                 <a class="sideNavLink">Plain Link</a>
 
             </div>
@@ -200,6 +199,22 @@
                 <img src="./images/deicidiumLogo.svg" class="footerLogo" alt="l0g0">
                 <div class="footerText">Deicidium</div>
             </section>
+        </div>
+    </div>
+    
+    <div class="settingsPopup">
+        <div class="settingsTop">
+            <div class="windowTitle">Settings</div>
+            <div class="settingsExitButton" onclick="closeSettings()">
+                <div class="settingsExitBar1"></div>
+                <div class="settingsExitBar2"></div>
+            </div>
+
+            
+        </div>
+
+        <div class="settingsBody">
+            <div class="settingsHeader">Appearance</div>
         </div>
     </div>
 </body>

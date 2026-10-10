@@ -1015,11 +1015,6 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     align-items:center;
 }
 
-.footer:hover{
-    border-color:#43F7E9;
-    background-color:#003333;
-}
-
 .footerLogo {
     width:32px;
     height:32px;
@@ -1030,4 +1025,88 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     transform:translateY(4px);
     color:#FFFDFA;
     text-align:center;
+}
+
+.settingsPopup {
+    opacity:0;
+    transform: scale(0);
+    transition: .5s;
+    width:80%;
+    height:80%;
+    background-color:#002424;
+    border-width:2px;
+    border-style:solid;
+    border-color:#43f7e850;
+    z-index:35;
+    position:fixed;
+    top:10%;
+    left:10%;
+    box-sizing:border-box;
+}
+
+.settingsPopup.opened {
+    opacity:1;
+    transform: scale(1);
+}
+
+.settingsTop {
+    box-sizing:border-box;
+    height:48px;
+    border-bottom-width:2px;
+    border-top-width:0;
+    border-right-width:0;
+    border-left-width:0;
+    background-color:#003333;
+    border-style:solid;
+    border-color:#43f7e850;
+    display:flex;
+    justify-content:space-between;
+}
+
+.settingsExitButton {
+    padding:8px;
+    width:32px;
+    height:32px;
+    cursor:pointer;
+}
+
+.settingsExitBar1, .settingsExitBar2 {
+    width:32px;
+    height:2px;
+    background-color:#43F7E9;
+    position:absolute;
+}
+
+.windowTitle {
+    padding:8px;
+    align-items:center;
+    font-size:24px;
+}
+
+.settingsExitBar1 {
+    transform:rotate(45deg) translateX(9px) translateY(9px);
+}
+
+.settingsExitBar2 {
+    transform:rotate(-45deg) translateX(-9px) translateY(9px);
+}
+
+.settingsBody {
+    padding: clamp(16px, 4vw, 32px)
+}
+
+.settingsHeader {
+    font-size: 32px;
+    color:#43f7e8aa;
+    position:relative;
+}
+
+.settingsHeader::after {
+    position:absolute;
+    content:'';
+    height:2px;
+    width:100%;
+    bottom:0;
+    left:0;
+    background:#43f7e8aa;
 }

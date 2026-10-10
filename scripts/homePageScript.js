@@ -10,8 +10,11 @@ var sideBarMisc = document.getElementsByClassName('sideBarMisc')
 var sideBarManipulations = document.getElementsByClassName('sideBarManipulations')
 var mainBody = document.getElementsByClassName('mainBody')
 
-var isSideBarOpen = false
+var baseColor = "#43F7E9"
 
+var settings = document.getElementsByClassName('settingsPopup')
+
+var isSideBarOpen = false
 
 function menuAnimation(x) {
   var menuToAnimate = x.children
@@ -115,4 +118,12 @@ function openMiscSideBar(x) {
   sideBarMisc[0].classList.add('focused')
   sideBarLore[0].classList.remove('focused')
   sideBarStory[0].classList.remove('focused')
+}
+
+function openSettings() {
+  settings[0].classList.add('opened')
+}
+
+function closeSettings() {
+  settings[0].classList.remove('opened')
 }
