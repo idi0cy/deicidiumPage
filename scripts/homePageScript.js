@@ -134,12 +134,14 @@ const rSlider = document.getElementById('redSelect');
 const gSlider = document.getElementById('greenSelect');
 const bSlider = document.getElementById('blueSelect');
 
-const colourOutput = document.getElementsByClassName('colourOutput');
+const copyColourButton = document.getElementById('copyColour')
+const colourOutput = document.querySelector('.colourOutput');
+const colourDisplay = document.querySelector('.colourDisplay')
 
-console.log(colourSliders);
-console.log(colourOutput);
+console.log(colourOutput)
 
-var themeColour = ``;
+var themeColour = `rgb(${rSlider.value}, ${gSlider.value}, ${bSlider.value})`;
+colourDisplay.style.backgroundColor = themeColour
 
 let generateColour = () => {
 
@@ -149,10 +151,23 @@ let generateColour = () => {
 
   let outputColour = `rgb(${rColourVal}, ${gColourVal}, ${bColourVal})`;
 
-  colourOutput[0].value = outputColour;
+  colourOutput.value = outputColour;
+  colourDisplay.style.backgroundColor = outputColour
 }
 
 colourSliders.forEach((inp) => {
   inp.addEventListener("input",generateColour);
 })
 
+let copyColourVal = () => {
+  colourOutput.select();
+  document.execCommand("copy");
+  copyColourButton.innerText = "Copied.";
+  setTimeout(()=>{
+    copyColourButton.innerText = "Copy"
+  }, 1000)
+}
+
+
+
+copyColourButton.addEventListener("click", copyColourVal)

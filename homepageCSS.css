@@ -1247,6 +1247,7 @@ input[type=text]::selection {
     width:256px;
     gap:16px;
     height:32px;
+    align-items:center;
 }
 
 .colourOutput {
@@ -1265,7 +1266,7 @@ input[type=text]::selection {
     height:32px;
     padding:0;
     box-sizing:border-box;
-    width: 64px;
+    width: 48px;
     background-color:#003b3b;
     border-color:#258d84;
     border-color:2px;
@@ -1274,7 +1275,7 @@ input[type=text]::selection {
 }
 
 .colourDisplay {
-    height:32px;
-    width:32px;
+    height:24px;
+    width:24px;
     background-color:#43F7E9;
 }
