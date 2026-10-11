@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepageCSS.css">
-    <script src="scripts/homePageScript.js"></script>
     <title>Deicidium</title>
 </head>
 <body class="noPadding">
@@ -215,7 +214,30 @@
 
         <div class="settingsBody">
             <div class="settingsHeader">Appearance</div>
+            <div class="accentColorSection">
+                <div class="settingLabel">Primary Color</div>
+                
+                <div class="colorSelectBar">
+                    <label class="colorSelectLabel" for="redSelect">R</label>
+                    <input type="range" min="0" max="255" value="0" id="redSelect" class="ColourSelectSlider">
+                </div>
+                <div class="colorSelectBar">
+                    <label class="colorSelectLabel" for="greenSelect">G</label>
+                    <input type="range" min="0" max="255" value="255" id="greenSelect" class="ColourSelectSlider">
+                </div>
+                <div class="colorSelectBar">
+                    <label class="colorSelectLabel" for="blueSelect">B</label>
+                    <input type="range" min="0" max="255" value="255" id="blueSelect" class="ColourSelectSlider">
+                </div>
+                <div class="colourResult">
+                    <input class="colourOutput" type="text" readonly>
+                    <div class="colourDisplay"></div>
+                    <button id="copyColour">Copy</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="scripts/homePageScript.js"></script>
 </body>
 </html>

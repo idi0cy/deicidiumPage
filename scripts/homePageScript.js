@@ -27,15 +27,15 @@ function menuAnimation(x) {
   } else {
     closeDropdown();
   }
-}
+};
 
 function openDropdown() {
   dropDownContainerDown[0].classList.toggle('opened');
-}
+};
 
 function closeDropdown() {
   dropDownContainerDown[0].classList.remove('opened');
-}
+};
 
 function openSideBar() {
   if (isSideBarOpen === false) {
@@ -66,7 +66,7 @@ function openSideBar() {
     mainBody[0].classList.remove('shrunk')
   }
   
-}
+};
 
 function openSideBarSection(x) {
   if (x.children[0].children[0].classList.contains('opened')) {
@@ -82,7 +82,7 @@ function openSideBarSection(x) {
     x.children[0].children[0].classList.add('opened')
     x.children[0].children[1].classList.add('opened')
   }
-}
+};
 
 function openStorySideBar(x) {
   x.classList.add('opened')
@@ -94,7 +94,7 @@ function openStorySideBar(x) {
   sideBarStory[0].classList.add('focused')
   sideBarLore[0].classList.remove('focused')
   sideBarMisc[0].classList.remove('focused')
-}
+};
 
 function openWorldbuildingSideBar(x) {
   x.classList.add('opened')
@@ -106,7 +106,7 @@ function openWorldbuildingSideBar(x) {
   sideBarLore[0].classList.add('focused')
   sideBarStory[0].classList.remove('focused')
   sideBarMisc[0].classList.remove('focused')
-}
+};
 
 function openMiscSideBar(x) {
   x.classList.add('opened')
@@ -118,12 +118,41 @@ function openMiscSideBar(x) {
   sideBarMisc[0].classList.add('focused')
   sideBarLore[0].classList.remove('focused')
   sideBarStory[0].classList.remove('focused')
-}
+};
 
 function openSettings() {
   settings[0].classList.add('opened')
-}
+};
 
 function closeSettings() {
   settings[0].classList.remove('opened')
+};
+
+const colourSliders = document.querySelectorAll(".ColourSelectSlider");
+
+const rSlider = document.getElementById('redSelect');
+const gSlider = document.getElementById('greenSelect');
+const bSlider = document.getElementById('blueSelect');
+
+const colourOutput = document.getElementsByClassName('colourOutput');
+
+console.log(colourSliders);
+console.log(colourOutput);
+
+var themeColour = ``;
+
+let generateColour = () => {
+
+  let rColourVal = rSlider.value;
+  let gColourVal = gSlider.value;
+  let bColourVal = bSlider.value;
+
+  let outputColour = `rgb(${rColourVal}, ${gColourVal}, ${bColourVal})`;
+
+  colourOutput[0].value = outputColour;
 }
+
+colourSliders.forEach((inp) => {
+  inp.addEventListener("input",generateColour);
+})
+
