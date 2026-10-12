@@ -136,7 +136,7 @@ const copyColourButton = document.getElementById('copyColour')
 const colourOutput = document.querySelector('.colourOutput');
 const colourDisplay = document.querySelector('.colourDisplay')
 
-const root = document.querySelector(':root')
+const root = document.querySelector(':root');
 
 var baseColour = `rgb(${67}, ${247}, ${233})`
 
@@ -221,6 +221,7 @@ function applyColourScheme() {
   colourPH = `rgba(${baseRValue}, ${baseGValue}, ${baseBValue}, 0.15)`
   root.style.setProperty('--sideNavColourTrans', colourPH)
 }
+
 /*
 
 primary: rgb(67, 247, 233)
