@@ -2,7 +2,33 @@
 
 :root {
     interpolate-size: allow-keywords;
+    --baseColour:#43f7e9;
+    --dullColour:#002424;
+
+    --secondaryColour:#34c2b6;
+    --tertiaryColour:#258d84;
+    --quaternaryColour:#144642;
+    --quinaryColour:#003333;
+
+    --sideNavColourTrans:#43f7e823;
 }
+
+/*
+different colours:
+
+bases:
+
+#43f7e9
+#002424
+#003333 <-
+#144642 <-
+#258d84 <-
+#34c2b6 <-
+
+transparents:
+
+#43f7e823 <-
+*/
 
 * {
     font-family: cmuTypewriter;
@@ -24,7 +50,7 @@ body {
     padding: 0px;
     margin: 0px;
     border-width:0px;
-    background-color: #002424;
+    background-color: var(--dullColour);
     position:relative;
     z-index:-15;
 }
@@ -42,7 +68,7 @@ strong {
 }
 
 .link1::after {
-    background:#43F7E9;
+    background:var(--baseColour);
     content: "";
     position:absolute;
     width: 100%;
@@ -126,8 +152,8 @@ a:hover {
 }
 
 .flexBoxTop:hover {
-    border-color: #43F7E9;
-    background-color:#003333;
+    border-color: var(--baseColour);
+    background-color:var(--quinaryColour);
 }
 
 .flexBoxTop {
@@ -141,13 +167,13 @@ a:hover {
     padding-right: 32px;
     justify-content: space-between;
     align-items: center;
-    background-color: #002424;
+    background-color: var(--dullColour);
     border-bottom: 2px;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     border-style:solid;
-    border-color:#43f7e850;
+    border-color:var(--tertiaryColour);
     transition: border-color 0.3s ease,
         background-color 0.3s ease;
     z-index: 30;
@@ -187,7 +213,7 @@ a:hover {
 .menuBar1, .menuBar2, .menuBar3 {
     width:32px;
     height:2px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
     margin-top: 8px;
     margin-bottom: 8px;
     margin-left:0;
@@ -217,13 +243,13 @@ a:hover {
     position:absolute;
     top:90px;
     right:16px;
-    background-color:#002424;
+    background-color:var(--dullColour);
     border-left-width: 2px;
     border-bottom-width:2px;
     border-top-width:0px;
     border-right-width:2px;
     border-style:solid;
-    border-color:#43f7e850;
+    border-color:var(--tertiaryColour);
     transition:0.3s;
     transform-origin:top;
     transform:scaleY(0);
@@ -239,7 +265,7 @@ a:hover {
     line-height:48px;
     text-justify: center;
     height:48px;
-    background-image: linear-gradient(90deg, #002424 50%, #43f7e823 50%);
+    background-image: linear-gradient(90deg, var(--dullColour) 50%, var(--sideNavColourTrans) 50%);
     background-position:0%;
     background-size:200% 100%;
     transition:background-position 0.3s;
@@ -259,7 +285,7 @@ a:hover {
 .sideBarArrowLine1 {
     width:16px;
     height:2px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
     transform:rotate(-45deg) translateY(-1px) translateX(4px);
     transition:.25s;
 }
@@ -267,7 +293,7 @@ a:hover {
 .sideBarArrowLine2 {
     width:16px;
     height:2px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
     transform:rotate(45deg) translateY(-1px) translateX(-4px);
     transition:.25s;
 }
@@ -289,7 +315,7 @@ a:hover {
     line-height:48px;
     text-justify:center;
     height:48px;
-    background-image: linear-gradient(90deg, transparent 50%, #43f7e823 50%);
+    background-image: linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
     background-position:200%;
     background-size:200% 100%;
     transition:background-position 0.3s;
@@ -319,7 +345,7 @@ a:hover {
     line-height:48px;
     text-justify:center;
     height:48px;
-    background-image: linear-gradient(90deg, transparent 50%, #43f7e823 50%);
+    background-image: linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
     background-position:200%;
     background-size:200% 100%;
     transition:background-position 0.3s;
@@ -358,7 +384,7 @@ a:hover {
     width:2px;
     left:15px;
     top:0px;
-    background-color:#258d84
+    background-color:var(--tertiaryColour)
 }
 
 .minSideNavSec.indentTwo::after {
@@ -368,7 +394,7 @@ a:hover {
     width:2px;
     left:35px;
     top:0;
-    background-color:#258d84
+    background-color:var(--tertiaryColour)
 }
 
 .minSideNavSec.opened {
@@ -414,9 +440,9 @@ a:hover {
     border-bottom-width: 0px;
     border-top-width: 2px;
     border-style: solid;
-    border-color:#43f7e850;
-    border-top-color:#43f7e800;
-    background-color:#002424;
+    border-color:var(--tertiaryColour);
+    border-top-color:transparent;
+    background-color:var(--dullColour);
     margin-top: -2px;
     transition: border-color 0.3s ease,
         border-top-color 0.3s ease,
@@ -449,8 +475,8 @@ a:hover {
 }
 
 .sideBarStory:hover, .sideBarLore:hover, .sideBarMisc:hover {
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
 }
 
 .sideBarManipulations {
@@ -475,8 +501,8 @@ a:hover {
     height:96px;
     border-width:2px;
     border-style:solid;
-    border-color:#43f7e850;
-    background-color:#002424;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     border-top-left-radius: 0px;
@@ -490,8 +516,8 @@ a:hover {
     height:96px;
     border-width:2px;
     border-style:solid;
-    border-color:#43f7e850;
-    background-color:#002424;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     border-top-left-radius: 0px;
@@ -505,13 +531,13 @@ a:hover {
 
 .openStoryBarButton:hover {
     cursor:pointer;
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
 }
 
 .openStoryBarButton.opened {
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
     height:128px;
 }
 
@@ -520,8 +546,8 @@ a:hover {
     height:96px;
     border-width:2px;
     border-style:solid;
-    border-color:#43f7e850;
-    background-color:#002424;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     border-top-left-radius: 0px;
@@ -535,13 +561,13 @@ a:hover {
 
 .openWorldbuildingBarButton:hover {
     cursor:pointer;
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
 }
 
 .openWorldbuildingBarButton.opened {
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
     height:128px;
 }
 
@@ -550,8 +576,8 @@ a:hover {
     height:96px;
     border-width:2px;
     border-style:solid;
-    border-color:#43f7e850;
-    background-color:#002424;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     border-top-left-radius: 0px;
@@ -565,20 +591,20 @@ a:hover {
 
 .openMiscBarButton:hover {
     cursor:pointer;
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
 }
 
 .openMiscBarButton.opened {
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
     height:128px;
 }
 
 .openBarButton:hover {
     cursor:pointer;
-    border-color:#43F7E9;
-    background-color:#003333;
+    border-color:var(--baseColour);
+    background-color:var(--quinaryColour);
 }
 
 .openBarButtonLine1 {
@@ -586,7 +612,7 @@ a:hover {
     width:20px;
     margin-top:4px;
     margin-bottom:4px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
     transform:rotate(45deg) translateY(-3px) translateX(-2px);
     transition:0.3s ease;
 }
@@ -596,7 +622,7 @@ a:hover {
     width:20px;
     margin-top:4px;
     margin-bottom:4px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
     transform:rotate(-45deg) translateY(3px) translateX(-2px);
     transition:.3s ease;
 }
@@ -698,7 +724,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -715,7 +741,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     left:0;
     color:transparent;
-    background-image: linear-gradient(90deg, #FFFDFA 50%, #43f7e8aa 50%);
+    background-image: linear-gradient(90deg, #FFFDFA 50%, var(--secondaryColour) 50%);
     background-position:-100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -737,7 +763,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 
 .highlightableText {
     text-decoration: none;
-    background-image: linear-gradient(#43F7E9, #43F7E9);
+    background-image: linear-gradient(var(--baseColour), var(--baseColour));
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0% 3px;
@@ -748,7 +774,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 }
 .highlightableRed {
     text-decoration: none;
-    background-image: linear-gradient(#43f7e8aa, #43f7e8aa);
+    background-image: linear-gradient(var(--secondaryColour), var(--secondaryColour));
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0% 3px;
@@ -767,7 +793,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:0%;
     background-size:200% 100%;
     background-clip:text;
@@ -784,7 +810,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     right:0;
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -825,8 +851,8 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     border-left-width:0px;
     border-right-width: 0px;
     border-style:solid;
-    border-color:#258d84;
-    background-color:#002424;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
 }
 
 .sectionDivider::after {
@@ -834,14 +860,14 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     content:"";
     width:100%;
     height:24px;
-    background-image: linear-gradient(90deg, #003b3b, transparent, #003b3b);
+    background-image: linear-gradient(90deg, var(--quinaryColour), transparent, var(--quinaryColour));
     background-repeat:repeat;
 }
 
 .sectionTwo {
     height: fit-content;
     box-sizing:border-box;
-    background: #144642;
+    background: var(--quaternaryColour);
     padding:clamp(32px, 8vw, 64px);
     z-index:-2;
     position:relative;
@@ -853,7 +879,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -870,7 +896,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     left:0;
     color:transparent;
-    background-image: linear-gradient(90deg, #FFFDFA 50%, #43f7e8aa 50%);
+    background-image: linear-gradient(90deg, #FFFDFA 50%, var(--secondaryColour) 50%);
     background-position:-100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -891,7 +917,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:0%;
     background-size:200% 100%;
     background-clip:text;
@@ -908,7 +934,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     left:0;
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -954,7 +980,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, #43f7e8aa 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -989,7 +1015,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 .sectionFour {
     height: fit-content;
     box-sizing:border-box;
-    background: #144642;
+    background: var(--quaternaryColour);
     padding:clamp(32px, 8vw, 64px);
     z-index:-2;
     position:relative;
@@ -998,7 +1024,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 .footer {
     height:96px;
     box-sizing:border-box;
-    background:#002424;
+    background:var(--dullColour);
     padding:24px;
     position:relative;
     border-top-width: 2px;
@@ -1006,7 +1032,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     border-right-width:0px;
     border-bottom-width:0px;
     border-style:solid;
-    border-color:#43f7e850;
+    border-color:var(--tertiaryColour);
     transition: border-color .3s ease,
         background-color .3s ease;
     display:flex;
@@ -1033,10 +1059,10 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     transition: .5s;
     width:80%;
     height:80%;
-    background-color:#002424;
+    background-color:var(--dullColour);
     border-width:2px;
     border-style:solid;
-    border-color:#43f7e850;
+    border-color:var(--tertiaryColour);
     z-index:35;
     position:fixed;
     top:10%;
@@ -1056,9 +1082,9 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     border-top-width:0;
     border-right-width:0;
     border-left-width:0;
-    background-color:#003333;
+    background-color:var(--quinaryColour);
     border-style:solid;
-    border-color:#43f7e850;
+    border-color:var(--tertiaryColour);
     display:flex;
     justify-content:space-between;
 }
@@ -1073,7 +1099,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 .settingsExitBar1, .settingsExitBar2 {
     width:32px;
     height:2px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
     position:absolute;
 }
 
@@ -1097,7 +1123,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 
 .settingsHeader {
     font-size: 32px;
-    color:#43f7e8aa;
+    color:var(--secondaryColour);
     position:relative;
 }
 
@@ -1108,13 +1134,13 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     width:100%;
     bottom:0;
     left:0;
-    background:#43f7e8aa;
+    background:var(--secondaryColour);
 }
 
 .accentColorSection {
     width:100%;
     margin-top:12px;
-    background-color:#003333;
+    background-color:var(--quinaryColour);
     padding-bottom:16px;
 }
 
@@ -1144,30 +1170,30 @@ input[type=range] {
 /*WHY HOW DO I STYLE THIS STUPID SLIDER SOMEONE STAB ME WHY MUST I CHANGE IT FOR EVERYTHING!!!*/
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #43F7E9;
+  border: 1px solid var(--baseColour);
   height: 36px;
   width: 16px;
   border-radius: 3px;
-  background: #002424;
+  background: var(--dullColour);
   cursor: pointer;
   margin-top: -14px;
 }
 
 input[type=range]::-moz-range-thumb {
-  border: 1px solid #43F7E9;
+  border: 1px solid var(--baseColour);
   height: 20px;
   width: 12px;
   border-radius: 3px;
-  background: #002424;
+  background: var(--dullColour);
   cursor: pointer;
 }
 
 input[type=range]::-ms-thumb {
-  border: 1px solid #43F7E9;
+  border: 1px solid var(--baseColour);
   height: 36px;
   width: 16px;
   border-radius: 3px;
-  background: #002424;
+  background: var(--dullColour);
   cursor: pointer;
 }
 
@@ -1175,20 +1201,20 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
-  background: #002424;
+  background: var(--dullColour);
   border-radius: 1.3px;
-  border: 0.2px solid #258d84;
+  border: 0.2px solid var(--tertiaryColour);
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #002424;
+  background: var(--dullColour);
 }
 input[type=range]::-moz-range-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
-  background: #002424;
+  background: var(--dullColour);
   border-radius: 1.3px;
-  border: 0.2px solid #258d84;
+  border: 0.2px solid var(--tertiaryColour);
 }
 input[type=range]::-ms-track {
   width: 100%;
@@ -1200,28 +1226,28 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-  background: #002424;
-  border: 0.2px solid #258d84;
+  background: var(--dullColour);
+  border: 0.2px solid var(--tertiaryColour);
   border-radius: 2.6px;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #002424;
+  background: var(--dullColour);
 }
 input[type=range]::-ms-fill-upper {
-  background: #002424;
-  border: 0.2px solid #258d84;
+  background: var(--dullColour);
+  border: 0.2px solid var(--tertiaryColour);
   border-radius: 2.6px;
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #002424;
+  background: var(--dullColour);
 }
 
 input[type=range]::-ms-track {
     width:100%;
     cursor: pointer;
-    background:#258d84;
-    border-color:#258d84;
-    color:#258d84;
+    background:var(--tertiaryColour);
+    border-color:var(--tertiaryColour);
+    color:var(--tertiaryColour);
     height:16px;
 }
 
@@ -1252,10 +1278,10 @@ input[type=text]::selection {
 
 .colourOutput {
     height:32px;
-    background-color:#003b3b;
+    background-color:var(--quinaryColour);
     border-width:2px;
     border-style:solid;
-    border-color:#258d84;
+    border-color:var(--tertiaryColour);
     padding:0;
     box-sizing:border-box;
     width:160px;
@@ -1266,9 +1292,9 @@ input[type=text]::selection {
     height:32px;
     padding:0;
     box-sizing:border-box;
-    width: 48px;
-    background-color:#003b3b;
-    border-color:#258d84;
+    width: 64px;
+    background-color:var(--quinaryColour);
+    border-color:var(--tertiaryColour);
     border-color:2px;
     border-style:solid;
     cursor:pointer;
@@ -1277,5 +1303,24 @@ input[type=text]::selection {
 .colourDisplay {
     height:24px;
     width:24px;
-    background-color:#43F7E9;
+    background-color:var(--baseColour);
+}
+
+.colourButtons {
+    display:flex;
+    gap:12px;
+    margin-left:12px;
+    margin-top:24px;
+}
+
+#applyPrimaryColourTheme {
+    height:32px;
+    padding:0;
+    box-sizing:border-box;
+    width: 64px;
+    background-color:var(--quinaryColour);
+    border-color:var(--tertiaryColour);
+    border-color:2px;
+    border-style:solid;
+    cursor:pointer;
 }
