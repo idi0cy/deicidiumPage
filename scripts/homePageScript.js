@@ -126,8 +126,56 @@ function closeSettings() {
   settings[0].classList.remove('opened')
 };
 
-const colourSliders = document.querySelectorAll(".ColourSelectSlider");
 
+const colourSlidersTwo = document.querySelectorAll(".colourSelectSliderTwo")
+
+const rSlider2 = document.getElementById('redSelect2')
+const gSlider2 = document.getElementById('greenSelect2')
+const bSlider2 = document.getElementById('blueSelect2')
+
+const colourDisplay2 = document.querySelector('.colourDisplay2')
+const copyColour2 = document.getElementById('copyColour2')
+
+const colourOutput2 = document.querySelector('.colourOutput2')
+
+var baseSecondaryColour =  `rgb(${255}, ${253}, ${250})`
+
+var baseRValue2 = 255
+var baseGValue2 = 253
+var baseBValue2 = 250
+
+let copyColourVal2 = () => {
+  colourOutput2.select();
+  document.execCommand("copy");
+  copyColour2.innerText = "Copied";
+  setTimeout(()=>{
+    copyColour2.innerText = "Copy"
+  }, 1000)
+}
+
+function applySecondaryColour() {
+  root.style.setProperty('--secondBaseColour', baseSecondaryColour)
+}
+
+copyColour2.addEventListener("click", copyColourVal2)
+
+let generateSecondaryColour = () => {
+  baseRValue2 = rSlider2.value
+  baseGValue2 = gSlider2.value
+  baseBValue2 = bSlider2.value
+
+  let outputSecondaryColour = `rgb(${baseRValue2}, ${baseGValue2}, ${baseBValue2})`
+
+  colourOutput2.value = outputSecondaryColour
+  colourDisplay2.style.backgroundColor = outputSecondaryColour
+  baseSecondaryColour = outputSecondaryColour
+}
+
+colourSlidersTwo.forEach((inp) => {
+  inp.addEventListener("input",generateSecondaryColour);
+})
+
+const colourSliders = document.querySelectorAll(".ColourSelectSlider");
 const rSlider = document.getElementById('redSelect');
 const gSlider = document.getElementById('greenSelect');
 const bSlider = document.getElementById('blueSelect');

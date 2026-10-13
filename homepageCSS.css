@@ -11,6 +11,8 @@
     --quinaryColour:#003333;
 
     --sideNavColourTrans:#43f7e823;
+
+    --secondBaseColour:#fffdfa;
 }
 
 /*
@@ -32,7 +34,7 @@ transparents:
 
 * {
     font-family: cmuTypewriter;
-    color:#FFFDFA;
+    color:var(--secondBaseColour);
     scrollbar-width: none;
 }
 
@@ -60,7 +62,7 @@ strong {
 }
 
 .link1 {
-    color:#FFFDFA;
+    color:var(--secondBaseColour);
     text-decoration:none;
     position:relative;
     display:inline-block;
@@ -194,7 +196,7 @@ a:hover {
     justify-content:flex-end;
     align-content:center;
     gap:24px;
-    color:#FFFDFA;
+    color:var(--secondBaseColour);
 }
 
 .menuDropdown {
@@ -420,7 +422,7 @@ a:hover {
     padding-left: 16px;
     padding-right: 16px;
     height: 100%;
-    color: #FFFDFA;
+    color: var(--secondBaseColour);
     text-align: left;
     font-size:32px;
     align-items:center;
@@ -655,6 +657,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     display:inline-block;
     z-index:-15;
     transition:ease .3s;
+
 }
 
 .mainBody.shrunk {
@@ -662,6 +665,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     margin-left:290px;
 }
 
+/*
 .mainBody::before {
     content: "";
     position:absolute;
@@ -678,6 +682,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
         -webkit-animation: moveGrid 2s linear infinite both,
             appearGrid 1.5s linear both;
 }
+*/
 
 @keyframes appearGrid {
     0%{
@@ -722,13 +727,31 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     height:fit-content;
 }
 
+.sectionOne::before {
+    content: "";
+    position:absolute;
+    z-index: -5;
+    width:calc(100% + 128px);
+    height: 150%;
+    top:-64px;
+    left:-128px;
+    background-size: 64px 64px;
+    background-image:linear-gradient(to right, var(--sideNavColourTrans) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--sideNavColourTrans) 1px, transparent 1px);
+    background-repeat:repeat;
+    animation: moveGrid 2s linear infinite both,
+        appearGrid 1.5s linear both;
+        -webkit-animation: moveGrid 2s linear infinite both,
+            appearGrid 1.5s linear both;
+}
+
 .secOneHeader {
     width: 100%;
     margin:0px;
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -745,7 +768,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     left:0;
     color:transparent;
-    background-image: linear-gradient(90deg, #FFFDFA 50%, var(--secondaryColour) 50%);
+    background-image: linear-gradient(90deg, var(--secondBaseColour) 50%, var(--secondaryColour) 50%);
     background-position:-100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -797,7 +820,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:0%;
     background-size:200% 100%;
     background-clip:text;
@@ -814,7 +837,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     right:0;
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -883,7 +906,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -900,7 +923,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     left:0;
     color:transparent;
-    background-image: linear-gradient(90deg, #FFFDFA 50%, var(--secondaryColour) 50%);
+    background-image: linear-gradient(90deg, var(--secondBaseColour) 50%, var(--secondaryColour) 50%);
     background-position:-100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -921,7 +944,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:0%;
     background-size:200% 100%;
     background-clip:text;
@@ -938,7 +961,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     bottom:0;
     left:0;
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:100%;
     background-size:200% 100%;
     transition: background-position .5s ease;
@@ -965,11 +988,12 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     position:absolute;
     z-index: -5;
     width:calc(100% + 128px);
-    height: 120%;
+    height: 150%;
     top:-64px;
     left:-128px;
     background-size: 64px 64px;
-    background-image:url(images/grid.svg);
+    background-image:linear-gradient(to right, var(--sideNavColourTrans) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--sideNavColourTrans) 1px, transparent 1px);
     background-repeat:repeat;
     animation: moveGrid 2s linear infinite both,
         appearGrid 1.5s linear both;
@@ -984,7 +1008,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     font-family:zenDots;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
-    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, #FFFDFA 50%);
+    background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
     background-position:100%;
     background-size:200% 100%;
     background-clip:text;
@@ -994,7 +1018,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 }
 
 .creditsHeader::after {
-    background:#FFFDFA;
+    background:var(--secondBaseColour);
     position:absolute;
     width:100%;
     content:"";
@@ -1053,7 +1077,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 .footerText {
     font-size:24px;
     transform:translateY(4px);
-    color:#FFFDFA;
+    color:var(--secondBaseColour);
     text-align:center;
 }
 
@@ -1072,6 +1096,8 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     top:10%;
     left:10%;
     box-sizing:border-box;
+    overflow-y:scroll;
+    padding-top:48px;
 }
 
 .settingsPopup.opened {
@@ -1091,6 +1117,10 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     border-color:var(--tertiaryColour);
     display:flex;
     justify-content:space-between;
+    position:fixed;
+    width:100%;
+    top:0%;
+    left:0%;
 }
 
 .settingsExitButton {
@@ -1122,12 +1152,12 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
 }
 
 .settingsBody {
-    padding: clamp(16px, 4vw, 32px)
+    padding: clamp(16px, 4vw, 32px);
 }
 
 .settingsHeader {
     font-size: 32px;
-    color:var(--secondaryColour);
+    color:var(--secondBaseColour);
     position:relative;
 }
 
@@ -1141,7 +1171,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     background:var(--secondaryColour);
 }
 
-.accentColorSection {
+.accentColorSection, .secondaryColourSelection {
     width:100%;
     margin-top:12px;
     background-color:var(--quinaryColour);
@@ -1160,7 +1190,7 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     gap:12px;
 }
 
-#blueSelect, #redSelect, #greenSelect {
+#blueSelect, #redSelect, #greenSelect, #redSelect2, #greenSelect2, #blueSelect2 {
     width:75%;
 }
 
@@ -1280,7 +1310,7 @@ input[type=text]::selection {
     align-items:center;
 }
 
-.colourOutput {
+.colourOutput, .colourOutput2 {
     height:32px;
     background-color:var(--quinaryColour);
     border-width:2px;
@@ -1292,7 +1322,7 @@ input[type=text]::selection {
     padding-left:4px;
 }
 
-#copyColour {
+#copyColour, #copyColour2 {
     height:32px;
     padding:0;
     box-sizing:border-box;
@@ -1304,7 +1334,7 @@ input[type=text]::selection {
     cursor:pointer;
 }
 
-.colourDisplay {
+.colourDisplay, .colourDisplay2 {
     height:24px;
     width:24px;
     background-color:var(--baseColour);
@@ -1317,7 +1347,7 @@ input[type=text]::selection {
     margin-top:24px;
 }
 
-#applyPrimaryColourTheme {
+#applyPrimaryColourTheme, #applySecondaryColourTheme {
     height:32px;
     padding:0;
     box-sizing:border-box;
