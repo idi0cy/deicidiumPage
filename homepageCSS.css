@@ -277,6 +277,11 @@ a:hover {
     transition:background-position 0.3s;
 }
 
+.currentNavLink {
+    text-decoration:underline;
+    text-decoration-color: var(--baseColour);
+}
+
 .navLink1:hover {
     background-position:100%;
 }
