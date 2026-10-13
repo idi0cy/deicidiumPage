@@ -270,17 +270,39 @@ function applyColourScheme() {
   root.style.setProperty('--sideNavColourTrans', colourPH)
 }
 
-/*
-
-primary: rgb(67, 247, 233)
-dull: 0, 36, 36
-secondary: rgb(52, 194, 182)
-tertiary: 37, 141, 132
-the fourth one: 20, 70, 66
-quinary: 0, 51, 51
-
-transparent: (67, 247, 232, 0.15)
-
-*/
-
 copyColourButton.addEventListener("click", copyColourVal)
+
+function resetAllStyles () {
+  console.log('styles resetting?')
+
+  root.style.setProperty('--baseColour', '#43f7e9')
+  root.style.setProperty('--dullColour', '#002424')
+  root.style.setProperty('--secondaryColour', '#34c2b6')
+  root.style.setProperty('--tertiaryColour', '#258d84')
+  root.style.setProperty('--quaternaryColour', '#144642')
+  root.style.setProperty('--quinaryColour', '#003333')
+  root.style.setProperty('--sideNavColourTrans', '#43f7e823')
+  root.style.setProperty('--secondBaseColour', '#FFFDFA')
+
+  rSlider.value = 67
+  gSlider.value = 247
+  bSlider.value = 233
+
+  rSlider2.value = 255
+  gSlider2.value = 253
+  bSlider2.value = 250
+
+  generateColour()
+  generateSecondaryColour()
+}
+
+rSlider2.value = 255
+gSlider2.value = 253
+bSlider2.value = 250
+
+rSlider.value = 67
+gSlider.value = 247
+bSlider.value = 233
+
+generateColour()
+generateSecondaryColour()
