@@ -338,11 +338,9 @@ a:hover {
 .sideNavHeader.indentOne {
     padding-left:24px;
 }
-
 .sideNavHeader.indentTwo {
     padding-left:44px;
 }
-
 .sideNavHeader:hover {
     background-position:100%;
 }
@@ -354,15 +352,16 @@ a:hover {
     width:100%;
     text-align:left;
     line-height:48px;
-    text-justify:center;
     height:48px;
     background-image: linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
     background-position:200%;
     background-size:200% 100%;
     transition:background-position 0.3s;
-    display:flex;
-    gap:8px;
     cursor:pointer;
+    display:inline-block;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow:"[..]";
 }
 
 .sideNavLink.indentOne {
@@ -381,7 +380,6 @@ a:hover {
     position:relative;
     height:0px;
     opacity:0;
-    transform:scaleY(0);
     transform-origin:top;
     transition:.25s;
     z-index:-10;
@@ -409,11 +407,10 @@ a:hover {
 }
 
 .minSideNavSec.opened {
-    transform:scaleY(1);
     opacity:1;
     z-index:1;
     pointer-events:all;
-    height:auto;
+    height:fit-content;
 }
 
 .dropDownContainerDown.opened {
@@ -444,8 +441,9 @@ a:hover {
     box-sizing:border-box;
     display:flex;
     flex-direction:column;
+    flex:1;
     width:290px;
-    height:100%;
+    height:calc(100% - 90px);
     border-right-width:2px;
     border-left-width: 0px;
     border-bottom-width: 0px;
@@ -465,6 +463,7 @@ a:hover {
     transform:translateX(-300px);
     transform-origin:left;
     opacity:0;
+    overflow-y:scroll;
 }
 
 .sideBarStory.focused {
@@ -646,11 +645,6 @@ a:hover {
     transform:rotate(45deg) translateY(3px) translateX(2px);
 }
 
-/*
-transform:rotate(-45deg) translateY(3px) translateX(-2px) scale(1);
-transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
-*/
-
 .mainBody {
     box-sizing:border-box;
     width:100%;
@@ -669,25 +663,6 @@ transform:rotate(45deg) translateY(-3px) translateX(-2px) scale(1);
     width:calc(100% - 290px);
     margin-left:290px;
 }
-
-/*
-.mainBody::before {
-    content: "";
-    position:absolute;
-    z-index: -5;
-    width:calc(100% + 128px);
-    height: 150%;
-    top:-64px;
-    left:-128px;
-    background-size: 64px 64px;
-    background-image:url(images/grid.svg);
-    background-repeat:repeat;
-    animation: moveGrid 2s linear infinite both,
-        appearGrid 1.5s linear both;
-        -webkit-animation: moveGrid 2s linear infinite both,
-            appearGrid 1.5s linear both;
-}
-*/
 
 @keyframes appearGrid {
     0%{

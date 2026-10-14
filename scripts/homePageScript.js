@@ -12,6 +12,8 @@ var mainBody = document.getElementsByClassName('mainBody')
 
 var settings = document.getElementsByClassName('settingsPopup')
 
+var minSideNavSec = document.getElementsByClassName('minSideNavSec')
+
 var isSideBarOpen = false
 
 function menuAnimation(x) {
@@ -50,7 +52,6 @@ function openSideBar() {
     if (window.innerWidth > 800) {
       mainBody[0].classList.add('shrunk')
     }
-    console.log(isSideBarOpen)
   } else {
     isSideBarOpen = false
     openBarButtonLine1[0].classList.remove('sideBarOpened')
@@ -80,6 +81,16 @@ function openSideBarSection(x) {
     x.children[0].children[0].classList.add('opened')
     x.children[0].children[1].classList.add('opened')
   }
+
+  //about to write some weirdlycomplex debug code
+  //IT DOESN"T EVEN WORK
+  let temp = 0
+  for (let i = 0; i < (sideBarLore[0].children.length); i++) {
+    temp = temp + sideBarLore[0].children[i].offsetHeight
+  }
+  console.log(temp)
+  console.log(`Scrollheight: ${sideBarLore[0].scrollHeight}`)
+  console.log(`SidebarHeight: ${sideBarLore[0].offsetHeight}`)
 };
 
 function openStorySideBar(x) {
@@ -192,8 +203,6 @@ var baseRValue = 67
 var baseGValue = 247
 var baseBValue = 233
 
-console.log(colourOutput)
-
 var themeColour = `rgb(${rSlider.value}, ${gSlider.value}, ${bSlider.value})`;
 colourDisplay.style.backgroundColor = themeColour
 
@@ -273,8 +282,6 @@ function applyColourScheme() {
 copyColourButton.addEventListener("click", copyColourVal)
 
 function resetAllStyles () {
-  console.log('styles resetting?')
-
   root.style.setProperty('--baseColour', '#43f7e9')
   root.style.setProperty('--dullColour', '#002424')
   root.style.setProperty('--secondaryColour', '#34c2b6')
