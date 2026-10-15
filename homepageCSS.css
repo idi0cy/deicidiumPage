@@ -19,7 +19,6 @@
 different colours:
 
 bases:
-
 #43f7e9
 #002424
 #003333 <-
@@ -28,7 +27,6 @@ bases:
 #34c2b6 <-
 
 transparents:
-
 #43f7e823 <-
 */
 
@@ -362,6 +360,7 @@ a:hover {
     overflow:hidden;
     white-space: nowrap;
     text-overflow:"[..]";
+    text-decoration:none;
 }
 
 .sideNavLink.indentOne {
@@ -1349,4 +1348,70 @@ input[type=text]::selection {
     text-align:center;
     margin-left:12px;
     font-size:20px;
+}
+
+.gridBackground {
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    overflow-y:hidden;
+    z-index:-15;
+}
+
+.gridBackground::before {
+    content: "";
+    position:absolute;
+    z-index: -5;
+    width:calc(100% + 128px);
+    height: 150%;
+    top:-64px;
+    left:-128px;
+    background-size: 64px 64px;
+    background-image:linear-gradient(to right, var(--sideNavColourTrans) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--sideNavColourTrans) 1px, transparent 1px);
+    background-repeat:repeat;
+    animation: moveGrid 2s linear infinite both,
+        appearGrid 1.5s linear both;
+        -webkit-animation: moveGrid 2s linear infinite both,
+            appearGrid 1.5s linear both;
+}
+
+.pageDocumentCenterer {
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.pageDocument {
+    width:1028px;
+    min-height:calc(90vh);
+    background-color:var(--dullColour);
+    border-top-width:0;
+    border-bottom-width:0;
+    border-left-width:2px;
+    border-right-width:2px;
+    border-style:solid;
+    border-color:var(--quaternaryColour);
+    transition: .3s ease;
+    padding:clamp(36px, 3vw, 64px);
+}
+
+.pageDocTitle {
+    font-size:clamp(20px, 5vw, 64px);
+    font-family:zendots;
+}
+
+.horizontalLine1 {
+    height:4px;
+    width:100%;
+    background-color:var(--secondBaseColour);
+    margin-bottom:16px;
+}
+
+.docText {
+    margin-top:16px;
+    margin-bottom:16px;
+    font-size:clamp(16px, 2vw, 20px);
 }

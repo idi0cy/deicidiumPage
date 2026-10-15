@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="homepageCSS.css">
     <title>Deicidium</title>
 </head>
+
 <body class="noPadding">
     <header class = "flexBoxTop">
         <div class="LogoAndTitleFlex">
@@ -72,57 +73,11 @@
     <div class="mainBodyAndSideBar">
         <div class="sideBarStuff">
             <div class="sideBarStory focused">
+
                 <div class="sideNavSec">
-                    <div class="sideNavHeader" onclick="openSideBarSection(this)">
-                        <div class="sideBarArrow">
-                            <div class="sideBarArrowLine1"></div>
-                            <div class="sideBarArrowLine2"></div>
-                        </div>
-                        <div>Story</div>
-                    </div>
-
-                    <div class="minSideNavSec indentNone">
-
-                        <div class="sideNavSec">
-                            <div class="sideNavHeader indentOne" onclick="openSideBarSection(this)">
-                                <div class="sideBarArrow">
-                                    <div class="sideBarArrowLine1"></div>
-                                    <div class="sideBarArrowLine2"></div>
-                                </div>
-                                <div>First</div>
-                            </div>
-                            
-                            <div class="minSideNavSec indentTwo">
-
-                                <div class="sideNavSec">
-                                    <a class="sideNavLink indentTwo">Another</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="sideNavSec">
-                            <div class="sideNavHeader indentOne" onclick="openSideBarSection(this)">
-                                <div class="sideBarArrow">
-                                    <div class="sideBarArrowLine1"></div>
-                                    <div class="sideBarArrowLine2"></div>
-                                </div>
-                                <div>Second</div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <a class="sideNavLink">No, not yet.</a>
                 </div>
-                
-                <div class="sideNavHeader" onclick="openSideBarSection(this)">
-                    <div class="sideBarArrow">
-                        <div class="sideBarArrowLine1"></div>
-                        <div class="sideBarArrowLine2"></div>
-                    </div>
-                    <div>Worldbuilding</div>
-                </div>
-                <a class="sideNavLink">Credits</a>
+
             </div>
             
             <div class="sideBarLore">
@@ -139,7 +94,7 @@
                     <div class="minSideNavSec indentNone">
                         <div class="sideNavSec">
 
-                            <a class="sideNavLink indentOne">Dimensionality</a>
+                            <a href="pages/dimensionsWB.html" class="sideNavLink indentOne">Dimensionality</a>
                             <a class="sideNavLink indentOne">Universe</a>
                             <a class="sideNavLink indentOne">Fractalverse</a>
                             <a class="sideNavLink indentOne">Energy Events</a>
@@ -186,12 +141,86 @@
                     </div>
 
                 </div>
-                <a class="sideNavLink">Plain Link</a>
+
+                <div class="sideNavSec">
+
+                    <div class="sideNavHeader" onclick="openSideBarSection(this)">
+                        <div class="sideBarArrow">
+                            <div class="sideBarArrowLine1"></div>
+                            <div class="sideBarArrowLine2"></div>
+                        </div>
+                        <div>Politics</div>
+                    </div>
+
+                    <div class="minSideNavSec indentNone">
+
+                        <div class="sideNavSec">
+                            <div class="sideNavHeader indentOne" onclick="openSideBarSection(this)">
+                                <div class="sideBarArrow">
+                                    <div class="sideBarArrowLine1"></div>
+                                    <div class="sideBarArrowLine2"></div>
+                                </div>
+                                <div>Political Theory</div>
+                            </div>
+                            
+                            <div class="minSideNavSec indentTwo">
+                                <div class="sideNavSec">
+                                    <a class="sideNavLink indentTwo">Governance</a>
+                                    <a class="sideNavLink indentTwo">Military</a>
+                                    <a class="sideNavLink indentTwo">Trade</a>
+                                    <a class="sideNavLink indentTwo">Universes (politics)</a>
+                                    <a class="sideNavLink indentTwo">Vacuum Space (politics)</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+                        <div class="sideNavSec">
+                            <div class="sideNavHeader indentOne" onclick="openSideBarSection(this)">
+                                <div class="sideBarArrow">
+                                    <div class="sideBarArrowLine1"></div>
+                                    <div class="sideBarArrowLine2"></div>
+                                </div>
+                                <div>GOIs</div>
+                            </div>
+                            
+                            <div class="minSideNavSec indentTwo">
+                                
+                                <div class="sideNavSec">
+                                    <a class="sideNavLink indentTwo">Amentic Incorporated</a>
+                                    <a class="sideNavLink indentTwo">Church of the Akrilith</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sideNavSec">
+
+                    <div class="sideNavHeader" onclick="openSideBarSection(this)">
+                        <div class="sideBarArrow">
+                            <div class="sideBarArrowLine1"></div>
+                            <div class="sideBarArrowLine2"></div>
+                        </div>
+                        <div>Technology</div>
+                    </div>
+
+                    <div class="minSideNavSec indentNone">
+
+                        <div class="sideNavSec">
+                            <a class="sideNavLink indentOne">Scanning</a>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
 
             <div class="sideBarMisc">
-                <a class="sideNavLink currentNavLink">Too Lazy To Put Things Here</a>
+                <a href="index.html" class="sideNavLink currentNavLink">Home Page</a>
             </div>
 
             <div class="sideBarManipulations">
@@ -210,6 +239,7 @@
                 </button>
             </div>
         </div>
+
         <div class="mainBody">
             <section class="sectionOne">
                 <h1 class="secOneHeader">WELCOME</h1>
@@ -382,7 +412,7 @@
         </div>
     </div>
 
-    <!--JAVASCRIPT LINK-->
+    <!--JAVASCRIPT LINK (from root directory doesn't work?)-->
     <script src="scripts/homePageScript.js"></script>
     <!--JAVASCRIPT LINK-->
 </body>
