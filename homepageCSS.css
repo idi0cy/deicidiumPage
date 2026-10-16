@@ -275,11 +275,6 @@ a:hover {
     transition:background-position 0.3s;
 }
 
-.currentNavLink {
-    text-decoration:underline;
-    text-decoration-color: var(--baseColour);
-}
-
 .navLink1:hover {
     background-position:100%;
 }
@@ -361,6 +356,11 @@ a:hover {
     white-space: nowrap;
     text-overflow:"[..]";
     text-decoration:none;
+}
+
+.currentNavLink {
+    text-decoration:underline;
+    text-decoration-color: var(--baseColour);
 }
 
 .sideNavLink.indentOne {
@@ -1184,7 +1184,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid var(--baseColour);
-  height: 36px;
+  height: 20px;
   width: 16px;
   border-radius: 3px;
   background: var(--dullColour);
@@ -1203,7 +1203,7 @@ input[type=range]::-moz-range-thumb {
 
 input[type=range]::-ms-thumb {
   border: 1px solid var(--baseColour);
-  height: 36px;
+  height: 20px;
   width: 16px;
   border-radius: 3px;
   background: var(--dullColour);
@@ -1385,7 +1385,7 @@ input[type=text]::selection {
 }
 
 .pageDocument {
-    width:1028px;
+    width:768px;
     min-height:calc(90vh);
     background-color:var(--dullColour);
     border-top-width:0;
@@ -1414,4 +1414,38 @@ input[type=text]::selection {
     margin-top:16px;
     margin-bottom:16px;
     font-size:clamp(16px, 2vw, 20px);
+}
+
+.markdownParagraph {
+    padding-bottom: 0.8rem !important;
+}
+
+.docImageSection
+
+.docImageContainer {
+    height:clamp(192px, 75vw, 512px);
+    width:clamp(192px, 75vw, 512px);
+}
+
+.indented {
+    text-indent:64px;
+}
+
+.textGoBlue {
+    color:transparent;
+    background-image: linear-gradient(90deg, var(--secondBaseColour) 50%, var(--secondaryColour) 50%);
+    background-position:200%;
+    background-size:200% 100%;
+    transition:background-position 0.5s;
+    background-clip:text;
+    -webkit-background-clip: text;
+    font-size:clamp(20px, 2vw, 24px);
+}
+
+.textGoBlue:hover {
+    background-position:100%;
+}
+
+.quoteContainer {
+    margin-bottom:12px;
 }
