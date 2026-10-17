@@ -1385,7 +1385,8 @@ input[type=text]::selection {
 }
 
 .pageDocument {
-    width:768px;
+    max-width:768px;
+    min-width:0;
     min-height:calc(90vh);
     background-color:var(--dullColour);
     border-top-width:0;
@@ -1395,12 +1396,13 @@ input[type=text]::selection {
     border-style:solid;
     border-color:var(--quaternaryColour);
     transition: .3s ease;
-    padding:clamp(36px, 3vw, 64px);
+    padding:clamp(36px, 4vw, 64px);
 }
 
 .pageDocTitle {
-    font-size:clamp(20px, 5vw, 64px);
+    font-size:clamp(24px, 5vw, 64px);
     font-family:zendots;
+    word-wrap:break-word;
 }
 
 .horizontalLine1 {
@@ -1413,7 +1415,7 @@ input[type=text]::selection {
 .docText {
     margin-top:16px;
     margin-bottom:16px;
-    font-size:clamp(16px, 2vw, 20px);
+    font-size:clamp(14px, 2vw, 20px);
 }
 
 .markdownParagraph {
@@ -1423,12 +1425,34 @@ input[type=text]::selection {
 .docImageSection
 
 .docImageContainer {
-    height:clamp(192px, 75vw, 512px);
-    width:clamp(192px, 75vw, 512px);
+    padding:12px;
+    width:fit-content;
+    background-color:var(--quinaryColour);
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--secondaryColour);
+    margin-right:36px;
+    margin-bottom:24px;
+    width:clamp(192px, 75vw, 384px);
+}
+
+.docImageContainer.left {
+    float:left;
+}
+
+.docImageContainer.rg {
+    float:right;
+}
+
+.docImage {
+    width:100%;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--tertiaryColour);
 }
 
 .indented {
-    text-indent:64px;
+    text-indent:48px;
 }
 
 .textGoBlue {
@@ -1439,7 +1463,7 @@ input[type=text]::selection {
     transition:background-position 0.5s;
     background-clip:text;
     -webkit-background-clip: text;
-    font-size:clamp(20px, 2vw, 24px);
+    font-size:clamp(16px, 2vw, 24px);
 }
 
 .textGoBlue:hover {
