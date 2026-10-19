@@ -1,4 +1,5 @@
 const imageSlide1 = document.querySelector('.docImage.firstImage')
+const imageContainer1 = document.querySelector('.imgWrapper .firstImage')
 console.log(imageSlide1)
 const imageDesc1 = document.querySelector('.imgDesc1')
 const firstTextSet = ["(1) The almighty soy sauce bucket.", "(2) If this is playing it should be working"]
