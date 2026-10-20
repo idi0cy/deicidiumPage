@@ -16,6 +16,7 @@ var minSideNavSec = document.getElementsByClassName('minSideNavSec')
 
 var isSideBarOpen = false
 
+
 function menuAnimation(x) {
   var menuToAnimate = x.children
   for (let i = 0; i < (menuToAnimate.length); i++) {
@@ -29,13 +30,16 @@ function menuAnimation(x) {
   }
 };
 
+
 function openDropdown() {
   dropDownContainerDown[0].classList.toggle('opened');
 };
 
+
 function closeDropdown() {
   dropDownContainerDown[0].classList.remove('opened');
 };
+
 
 function openSideBar() {
   if (isSideBarOpen === false) {
@@ -66,6 +70,7 @@ function openSideBar() {
   }
   
 };
+
 
 function openSideBarSection(x) {
   if (x.children[0].children[0].classList.contains('opened')) {
