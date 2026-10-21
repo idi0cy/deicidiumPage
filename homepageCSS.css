@@ -213,11 +213,9 @@ a:hover {
 .clickedMenu.menuBar1 {
     transform: translate(0, 10px) rotate(-45deg);
 }
-
 .clickedMenu.menuBar2 {
     opacity:0;
 }
-
 .clickedMenu.menuBar3 {
     transform: translate(0, -10px) rotate(45deg);
 }
@@ -259,7 +257,6 @@ a:hover {
     background-size:200% 100%;
     transition:background-position 0.3s;
 }
-
 .navLink1:hover {
     background-position:100%;
 }
@@ -336,10 +333,11 @@ a:hover {
     background-size:200% 100%;
     transition:background-position 0.3s;
     cursor:pointer;
-    display:inline-block;
+    /*This solution has no right to be this easy*/
+    display:block;
     overflow:hidden;
     white-space: nowrap;
-    text-overflow:"[..]";
+    text-overflow:"[...]";
     text-decoration:none;
 }
 
@@ -1406,12 +1404,6 @@ input[type=text]::selection {
     font-size:clamp(14px, 2vw, 20px);
 }
 
-.markdownParagraph {
-    padding-bottom: 0.8rem !important;
-}
-
-.docImageSection
-
 .docImageContainer {
     padding:12px;
     width:fit-content;
@@ -1419,7 +1411,6 @@ input[type=text]::selection {
     border-width:2px;
     border-style:solid;
     border-color:var(--secondaryColour);
-    margin-right:36px;
     margin-bottom:24px;
     width:clamp(192px, 75vw, 384px);
 }
@@ -1431,16 +1422,18 @@ input[type=text]::selection {
     margin-bottom:12px;
     padding:0;
     box-sizing:border-box;
-    transition:0.5s;
+    transition:0.25s;
     overflow-y:hidden;
 }
 
 .docImageContainer.left {
     float:left;
+    margin-right:36px;
 }
 
-.docImageContainer.rg {
+.docImageContainer.right {
     float:right;
+    margin-left:36px;
 }
 
 .docImage {
@@ -1556,7 +1549,7 @@ input[type=text]::selection {
     margin-top:-2px;
 }
 
-.displayIndicatorFirst {
+.displayIndicatorFirst, .displayIndicatorSecond {
     width:8px;
     height:8px;
     box-sizing:border-box;
@@ -1567,16 +1560,16 @@ input[type=text]::selection {
     transition:.1s;
 }
 
-.displayIndicatorFirst.selected {
+.displayIndicatorFirst.selected, .displayIndicatorSecond.selected {
     border-color:var(--baseColour);
     width:12px;
     height:12px;
 }
 
-.imgDesc1 {
+.imgDesc1, .imgDesc2 {
     transition:.1s;
 }
 
-.imgDesc1.hiding {
+.imgDesc1.hiding, .imgDesc2.hiding {
     opacity:0;
 }
