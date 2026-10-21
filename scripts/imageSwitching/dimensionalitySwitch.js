@@ -4,11 +4,16 @@ const imageIndexDisplays = document.getElementsByClassName('displayIndicatorFirs
 const imageDesc1 = document.querySelector('.imgDesc1')
 const firstTextSet = ["(1) The almighty soy sauce bucket.", "(2) Watch how the image box size changes smoooothly", "(3) Weird logo that I made."]
 const firstImageSet = ['../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png', '../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg', '../../../images/deicidiumLogo.svg']
+
 var firstIndex = 0
+
 
 imageDesc1.innerText = firstTextSet[firstIndex]
 imageSlide1.src = firstImageSet[firstIndex]
 imageIndexDisplays[firstIndex].classList.add('selected')
+console.log(`${imageSlide1.offsetHeight + 3} | ${firstIndex}`)
+console.log(imageSlide1.src)
+
 
 function switchImageForward(x) {
     for (let i = 0; i < (imageIndexDisplays.length); i++) {
@@ -28,12 +33,6 @@ function switchImageForward(x) {
     setTimeout(() => {
         imageDesc1.innerText = firstTextSet[firstIndex]
         imageSlide1.src = firstImageSet[firstIndex]
-
-        imageSlide1.parentNode.setAttribute('style', `height:${imageSlide1.offsetHeight + 3}px;`)
-
-        imageIndexDisplays[firstIndex].classList.add('selected')
-        imageSlide1.classList.remove('hiding')
-        imageDesc1.classList.remove('hiding')
     }, 200)
 }
 
@@ -55,11 +54,17 @@ function switchImageBack(x) {
     setTimeout(() => {
         imageDesc1.innerText = firstTextSet[firstIndex]
         imageSlide1.src = firstImageSet[firstIndex]
-
-        imageSlide1.parentNode.setAttribute('style', `height:${imageSlide1.offsetHeight + 3}px;`)
-
-        imageIndexDisplays[firstIndex].classList.add('selected')
-        imageSlide1.classList.remove('hiding')
-        imageDesc1.classList.remove('hiding')
     }, 200)
+}
+
+
+//this function ensures that all the heights are calculated after the image is finished loading.
+imageSlide1.onload = function() {
+    console.log('different solution?')
+    imageSlide1.parentNode.setAttribute('style', `height:${imageSlide1.offsetHeight + 3}px;`)
+
+    imageIndexDisplays[firstIndex].classList.add('selected')
+    imageSlide1.classList.remove('hiding')
+    imageDesc1.classList.remove('hiding')
+    console.log(`${imageSlide1.offsetHeight + 3} | ${firstIndex}`)
 }
