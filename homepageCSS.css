@@ -23,7 +23,7 @@
 
 @font-face {
     font-family: cmuTypewriter;
-    src: url(../deicidiumPage/fonts/cmuntt.ttf);
+    src: url(fonts/cmuntt.ttf);
 }
 
 @font-face {
@@ -1573,3 +1573,4 @@ input[type=text]::selection {
 .imgDesc1.hiding, .imgDesc2.hiding {
     opacity:0;
 }
+

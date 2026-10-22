@@ -1,4 +1,3 @@
-
 //Variable setup
 const root = document.querySelector(':root');
 
@@ -30,7 +29,6 @@ function storageAvailable(type) {
     return (
       e instanceof DOMException &&
       e.name === "QuotaExceededError" &&
-      // acknowledge QuotaExceededError only if there's something already stored
       storage &&
       storage.length !== 0
     );
@@ -56,10 +54,8 @@ function checkST() {
     return 2
   }
 }
-
-console.log(checkST())
-
 //End of that section
+
 
 function menuAnimation(x) {
   var menuToAnimate = x.children
@@ -137,9 +133,6 @@ function openSideBarSection(x) {
   for (let i = 0; i < (sideBarLore[0].children.length); i++) {
     temp = temp + sideBarLore[0].children[i].offsetHeight
   }
-  console.log(temp)
-  console.log(`Scrollheight: ${sideBarLore[0].scrollHeight}`)
-  console.log(`SidebarHeight: ${sideBarLore[0].offsetHeight}`)
 };
 
 function openStorySideBar(x) {
@@ -187,7 +180,6 @@ function closeSettings() {
 };
 
 //COLOURS 2
-
 const colourSlidersTwo = document.querySelectorAll(".colourSelectSliderTwo")
 const rSlider2 = document.getElementById('redSelect2')
 const gSlider2 = document.getElementById('greenSelect2')
@@ -201,21 +193,52 @@ var baseRValue2 = 255
 var baseGValue2 = 253
 var baseBValue2 = 250
 
+function grabStoredSecondaryColour() {
+  baseSecondaryColour = localStorage.getItem("baseSecondaryColour_stored")
+  baseRValue2 = parseInt(localStorage.getItem("baseRValue2_stored"))
+  baseGValue2 = parseInt(localStorage.getItem("baseGValue2_stored"))
+  baseBValue2 = parseInt(localStorage.getItem("baseBValue2_stored"))
 
-///If any of this needs to be reset, then do it somehow idk
+  rSlider2.value = parseInt(localStorage.getItem("baseRValue2_stored"))
+  gSlider2.value = parseInt(localStorage.getItem("baseGValue2_stored"))
+  bSlider2.value = parseInt(localStorage.getItem("baseBValue2_stored"))
+
+  applySecondaryColour()
+}
+
+function updateSecondaryColourStorage () {
+  localStorage.setItem("baseSecondaryColour_stored", baseSecondaryColour)
+  localStorage.setItem("baseRValue2_stored", baseRValue2)
+  localStorage.setItem("baseGValue2_stored", baseGValue2)
+  localStorage.setItem("baseBValue2_stored", baseBValue2)
+}
+
 ///this code is for setting the secondary colour in localStorage OR pulling it from localStorage
 if (checkST() === 0) {
-  if (!localStorage.getItem("baseSecondaryColourStored")) {
+  if (!localStorage.getItem("baseSecondaryColour_stored")) {
     ///put code here to make the baseSecondaryColour variable in localstorage
-    //localStorage.setItem("baseSecondaryColourStored", baseSecondaryColour)
+    localStorage.setItem("baseSecondaryColour_stored", `rgb(${255}, ${253}, ${250})`)
+    localStorage.setItem("baseRValue2_stored", 255)
+    localStorage.setItem("baseGValue2_stored", 253)
+    localStorage.setItem("baseBValue2_stored", 250)
     ///REMEMBER TO SET THESE PULLED STYLES AFTER THIS CODE
   } else {
     ///put code here to start applying the already set baseSecondaryColour variable in local storage
-    //baseSecondaryColour = localStorage.getItem("baseSecondaryColourStored")
+    grabStoredSecondaryColour()
     ///REMEMBER TO SET THESE PULLED STYLES AFTER THIS CODE
   }
 } else {
+
   console.log("well that's not good")
+  if (checkST() === 1) {
+
+    console.log("getting better")
+
+  } else {
+
+    console.log("really not good")
+
+  }
 }
 
 let copyColourVal2 = () => {
@@ -228,6 +251,7 @@ let copyColourVal2 = () => {
 }
 
 function applySecondaryColour() {
+  updateSecondaryColourStorage()
   root.style.setProperty('--secondBaseColour', baseSecondaryColour)
 }
 
@@ -264,15 +288,50 @@ var baseRValue = 67
 var baseGValue = 247
 var baseBValue = 233
 
+function grabStoredBaseColour() {
+  baseColour = localStorage.getItem("baseColour_stored")
+  baseRValue = parseInt(localStorage.getItem("baseRValue_stored"))
+  baseGValue = parseInt(localStorage.getItem("baseGValue_stored"))
+  baseBValue = parseInt(localStorage.getItem("baseBValue_stored"))
+
+  //why not work? :(
+  rSlider.value = parseInt(localStorage.getItem("baseRValue_stored"))
+  gSlider.value = parseInt(localStorage.getItem("baseGValue_stored"))
+  bSlider.value = parseInt(localStorage.getItem("baseBValue_stored"))
+
+  applyColourScheme()
+}
+
+function updateBaseColourStorage() {
+  localStorage.setItem("baseColour_stored", baseColour)
+  localStorage.setItem("baseRValue_stored", baseRValue)
+  localStorage.setItem("baseGValue_stored", baseGValue)
+  localStorage.setItem("baseBValue_stored", baseBValue)
+}
+
 ///this code is for setting base colour in localStorage OR pulling it from localStorage
 if (checkST() === 0) {
-  if (!localStorage.getItem("baseColourStored")) {
+  if (!localStorage.getItem("baseColour_stored")) {
+    rSlider2.value = 255
+    gSlider2.value = 253
+    bSlider2.value = 250
+
+    rSlider.value = 67
+    gSlider.value = 247
+    bSlider.value = 233
     ///put code here to make the baseColour variable in localstorage
-    //localStorage.setItem("baseColourStored", baseColour)
+    localStorage.setItem("baseColour_stored", `rgb(${67}, ${247}, ${233})`)
+    localStorage.setItem("baseRValue_stored", 67)
+    localStorage.setItem("baseGValue_stored", 247)
+    localStorage.setItem("baseBValue_stored", 233)
+    console.log("SETTING?")
+    //localStorage.setItem("baseColour_stored", baseColour)
   } else {
     ///put code here to start applying the already set baseColour variable in local storage
+    grabStoredBaseColour()
   }
 } else {
+  //start using some backup methods or something
   console.log("well that isn't good")
 }
 ///End of storage section
@@ -311,7 +370,9 @@ let copyColourVal = () => {
   }, 1000)
 }
 
+
 function applyColourScheme() {
+  updateBaseColourStorage()
   root.style.setProperty('--baseColour', baseColour)
 
   let redPH = Math.floor(baseRValue * 0.15)
@@ -353,6 +414,7 @@ function applyColourScheme() {
   root.style.setProperty('--sideNavColourTrans', colourPH)
 }
 
+
 copyColourButton.addEventListener("click", copyColourVal)
 
 function resetAllStyles () {
@@ -375,15 +437,11 @@ function resetAllStyles () {
 
   generateColour()
   generateSecondaryColour()
+
+  applySecondaryColour()
+  applyColourScheme()
 }
 
-rSlider2.value = 255
-gSlider2.value = 253
-bSlider2.value = 250
-
-rSlider.value = 67
-gSlider.value = 247
-bSlider.value = 233
-
+//what does this code even do anymore? I can't remove it though unless something might break...
 generateColour()
 generateSecondaryColour()
