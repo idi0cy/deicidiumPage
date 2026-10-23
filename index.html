@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepageCSS.css">
+    <link rel="stylesheet" href="/homepageCSS.css">
     <title>Deicidium</title>
 </head>
 
 <body class="noPadding">
     <header class = "flexBoxTop">
         <div class="LogoAndTitleFlex">
-            <a href="index.html">
+            <a href="/index.html">
 
                 <!--BIG SPOOKY SVG-->
                 <?xml version="1.0" encoding="utf-8"?>
@@ -52,7 +52,7 @@
 
             </a>
             <div class="cmu topTitle">
-                <a href="index.html" class="deicidiumTitle link1">Deicidium</a>
+                <a href="/index.html" class="deicidiumTitle link1">Deicidium</a>
             </div>
         </div>
         <div class="cmu topBarButtonContainer">
@@ -94,11 +94,11 @@
                     <div class="minSideNavSec indentNone">
                         <div class="sideNavSec">
 
-                            <a href="pages/worldbuilding/cosmology/dimensionsWB.html" class="sideNavLink indentOne">Dimensionality</a>
+                            <a href="/pages/worldbuilding/cosmology/dimensionsWB.html" class="sideNavLink indentOne">Dimensionality</a>
                             <a class="sideNavLink indentOne">Universe</a>
                             <a class="sideNavLink indentOne">Fractalverse</a>
                             <a class="sideNavLink indentOne">Energy Events</a>
-                            <a href="pages/worldbuilding/cosmology/noosphereWB.html" class="sideNavLink indentOne">Noosphere</a>
+                            <a href="/pages/worldbuilding/cosmology/noosphereWB.html" class="sideNavLink indentOne">Noosphere</a>
                             
                         </div>
                     </div>
@@ -356,11 +356,11 @@
 
         <div class="settingsBody">
             <div class="settingsHeader">Appearance</div>
-            <div class="resetStyles">
+            <div class="settingsBox">
                 <div class="settingLabel">Reset Styles</div>
                 <button id="resetAllStyles" onclick="resetAllStyles()">RESET</button>
             </div>
-            <div class="accentColorSection">
+            <div class="settingsBox">
                 <div class="settingLabel">Primary Colour</div>
                 
                 <div class="colorSelectBar">
@@ -385,7 +385,7 @@
                 </div>
             </div>
 
-            <div class="secondaryColourSelection">
+            <div class="settingsBox">
                 <div class="settingLabel">Secondary Colour</div>
 
                 <div class="colourSelectBar">
@@ -409,11 +409,77 @@
                     <button id="applySecondaryColourTheme" onclick="applySecondaryColour()">Apply</button>
                 </div>
             </div>
+
+            <div class="settingsBox">
+                <div class="settingLabel">Body Text Font</div>
+
+                <div class="fontScrollAndSearch">
+                    <div class="wheelAndButtons">
+                        <div class="fontScrollWheel1"></div>
+                        <div class="upAndDownButtons">
+                            <div class="upButton">
+                                <div class="upScrollButtonBar1"></div>
+                                <div class="upScrollButtonBar2"></div>
+                            </div>
+                            <div class="downButton">
+                                <div class="downScrollButtonBar1"></div>
+                                <div class="downScrollButtonBar2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input type="text" class="fontSearchBar"></input>
+                </div>
+
+                <div id="applyBodyTextFont">Apply</div>
+            </div>
+
+            <div class="settingsBox">
+                <div class="settingLabel">Title Text Font</div>
+
+                <div class="fontScrollAndSearch">
+                    <div class="wheelAndButtons">
+                        <div class="fontScrollWheel2"></div>
+                        <div class="upAndDownButtons">
+                            <div class="upButton">
+                                <div class="upScrollButtonBar1"></div>
+                                <div class="upScrollButtonBar2"></div>
+                            </div>
+                            <div class="downButton">
+                                <div class="downScrollButtonBar1"></div>
+                                <div class="downScrollButtonBar2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" class="fontSearchBar"></input>
+                </div>
+
+                <div id="applyTitleTextFont">Apply</div>
+            </div>
+
+            <!--
+            
+            FONTS TO INCLUDE (LIST):
+
+                CMU typewriter [goated] (installed)
+                Jetbrains Mono (installed)
+                Arial [boring one] (installed)
+                Calibri [also boring one] (installed)
+                Times New Roman (installed)
+                Zendots (installed)
+                Ubuntu (installed)
+                Comic Sans? [Weird choice] (installed)
+
+                Other font ideas:
+
+                Okkay well I'm not going to lie I think we have enough
+            
+            -->
         </div>
     </div>
 
     <!--JAVASCRIPT LINK (from root directory doesn't work?)-->
-    <script src="scripts/homePageScript.js"></script>
+    <script src="/scripts/homePageScript.js"></script>
     <!--JAVASCRIPT LINK-->
 </body>
 </html>

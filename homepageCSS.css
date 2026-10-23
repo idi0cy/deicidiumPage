@@ -16,18 +16,18 @@
 }
 
 * {
-    font-family: cmuTypewriter;
+    font-family: bodyTextFont;
     color:var(--secondBaseColour);
     scrollbar-width: none;
 }
 
 @font-face {
-    font-family: cmuTypewriter;
+    font-family: bodyTextFont;
     src: url(fonts/cmuntt.ttf);
 }
 
 @font-face {
-    font-family: zenDots;
+    font-family: titleTextFont ;
     src: url(fonts/ZenDots-Regular.ttf);
 }
 
@@ -710,7 +710,7 @@ a:hover {
 .secOneHeader {
     width: 100%;
     margin:0px;
-    font-family:zenDots;
+    font-family:titleTextFont ;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
     background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
@@ -779,7 +779,7 @@ a:hover {
     text-align:right;
     width: 100%;
     margin:0px;
-    font-family:zenDots;
+    font-family:titleTextFont ;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
     background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
@@ -865,7 +865,7 @@ a:hover {
 .secTwoHeader {
     width: 100%;
     margin:0px;
-    font-family:zenDots;
+    font-family:titleTextFont ;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
     background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
@@ -903,7 +903,7 @@ a:hover {
     text-align:right;
     width: 100%;
     margin:0px;
-    font-family:zenDots;
+    font-family:titleTextFont ;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
     background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
@@ -967,7 +967,7 @@ a:hover {
     width: 100%;
     text-align:center;
     margin:0px;
-    font-family:zenDots;
+    font-family:titleTextFont ;
     font-size: clamp(24px, 5vw, 5vw);
     color:transparent;
     background-image: linear-gradient(90deg, var(--secondaryColour) 50%, var(--secondBaseColour) 50%);
@@ -1136,7 +1136,7 @@ a:hover {
     background:var(--secondaryColour);
 }
 
-.accentColorSection, .secondaryColourSelection, .resetStyles {
+.settingsBox {
     width:100%;
     margin-top:12px;
     background-color:var(--quinaryColour);
@@ -1387,7 +1387,7 @@ input[type=text]::selection {
 
 .pageDocTitle {
     font-size:clamp(24px, 5vw, 64px);
-    font-family:zendots;
+    font-family:titleTextFont ;
     word-wrap:break-word;
 }
 
@@ -1549,7 +1549,7 @@ input[type=text]::selection {
     margin-top:-2px;
 }
 
-.displayIndicatorFirst, .displayIndicatorSecond {
+.displayIndicatorFirst, .displayIndicatorSecond, .displayIndicatorThird {
     width:8px;
     height:8px;
     box-sizing:border-box;
@@ -1560,7 +1560,7 @@ input[type=text]::selection {
     transition:.1s;
 }
 
-.displayIndicatorFirst.selected, .displayIndicatorSecond.selected {
+.displayIndicatorFirst.selected, .displayIndicatorSecond.selected, .displayIndicatorThird.selected {
     border-color:var(--baseColour);
     width:12px;
     height:12px;
@@ -1574,3 +1574,100 @@ input[type=text]::selection {
     opacity:0;
 }
 
+.fontScrollAndSearch {
+    min-width:200px;
+    gap:16px;
+}
+
+.wheelAndButtons {
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.upAndDownButtons {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    justify-content:center;
+}
+
+.upButton, .downButton {
+    width:32px;
+    height:32px;
+    box-sizing:border-box;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
+    transition:.25s;
+}
+
+.upButton:hover, .downButton:hover {
+    background-color:var(--sideNavColourTrans);
+}
+
+/*There has GOT to be a better way to do this*/
+.upScrollButtonBar1, .upScrollButtonBar2, .downScrollButtonBar1, .downScrollButtonBar2 {
+    height:2px;
+    width:12px;
+    background-color:var(--baseColour);
+}
+.upScrollButtonBar1 {
+    transform:rotate(-45deg) translateY(12px) translateX(-7px)
+}
+.upScrollButtonBar2 {
+    transform:rotate(45deg) translateY(0px) translateX(16px)
+}
+.downScrollButtonBar1 {
+    transform:rotate(-45deg) translateY(17px) translateX(-1px)
+}
+.downScrollButtonBar2 {
+    transform:rotate(45deg) translateY(5px) translateX(10px)
+}
+
+.fontScrollWheel1, .fontScrollWheel2 {
+    height:128px;
+    width:164px;
+    margin:12px;
+    background-color:var(--dullColour);
+    box-sizing:border-box;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--tertiaryColour);
+    transition:.5s;
+}
+
+.fontScrollWheel1:hover, .fontScrollWheel2:hover {
+    background-color:var(--sideNavColourTrans);
+}
+
+.fontSearchBar {
+    height:32px;
+    width:196px;
+    margin:12px;
+    box-sizing:border-box;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
+    transition:.5s;
+}
+
+/*I want to turn off selects but whatever, this crap will have to do.*/
+.fontSearchBar:focus {
+    background-color:var(--sideNavColourTrans);
+}
+
+#applyBodyTextFont, #applyTitleTextFont {
+    width: 64px;
+    height:32px;
+    box-sizing:border-box;
+    border-style:solid;
+    border-width:2px;
+    border-color:var(--tertiaryColour);
+    background-color:var(--dullColour);
+    margin:12px;
+    line-height:30px;
+    text-align:center;
+}

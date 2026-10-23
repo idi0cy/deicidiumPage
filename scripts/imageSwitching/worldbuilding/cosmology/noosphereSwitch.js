@@ -11,9 +11,6 @@ imageDesc1.innerText = firstTextSet[firstIndex]
 imageSlide1.src = firstImageSet[firstIndex]
 firstImageIndexDisplays[firstIndex].classList.add('selected')
 
-console.log("literally anything")
-console.log(imageSlide1)
-
 function switchFirstImageForward() {
     for (let i = 0; i < (firstImageIndexDisplays.length); i++) {
         firstImageIndexDisplays[i].classList.remove('selected')
@@ -84,12 +81,14 @@ function switchSecondImageForward() {
     for (let i = 0; i < (secondImageIndexDisplays.length); i++) {
         secondImageIndexDisplays[i].classList.remove('selected')
     }
+
     
     if (secondIndex === (secondTextSet.length - 1)) {
         secondIndex = 0
     } else {
         secondIndex += 1
     }
+
     
     imageDesc2.classList.add('hiding')
     imageSlide2.classList.add('hiding')
@@ -127,4 +126,68 @@ imageSlide2.onload = function() {
     secondImageIndexDisplays[secondIndex].classList.add('selected')
     imageSlide2.classList.remove('hiding')
     imageDesc2.classList.remove('hiding')
+}
+
+//START OF THIRD SECTION
+
+const imageSlide3 = document.querySelector('.docImage.thirdImage')
+const thirdImageIndexDisplays = document.getElementsByClassName('displayIndicatorThird')
+const imageDesc3 = document.querySelector('.imgDesc3')
+const thirdTextSet = ["(1) Preperation images for when I make those", "(2) Check out this terrible flavour text", "(3) Woah, it switched to the same image (backtracking notwithstanding)"]
+const thirdImageSet = ['/images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg', '/images/deicidiumLogo.svg', '/images/deicidiumLogo.svg']
+var thirdIndex = 0
+
+imageDesc3.innerText = thirdTextSet[thirdIndex]
+imageSlide3.src = thirdImageSet[secondIndex]
+thirdImageIndexDisplays[thirdIndex].classList.add('selected')
+
+function switchThirdImageForward() {
+    for (let i = 0; i < (thirdImageIndexDisplays.length); i++) {
+        thirdImageIndexDisplays[i].classList.remove('selected')
+    }
+
+    
+    if (thirdIndex === (thirdTextSet.length - 1)) {
+        thirdIndex = 0
+    } else {
+        thirdIndex += 1
+    }
+
+
+    imageDesc3.classList.add('hiding')
+    imageSlide3.classList.add('hiding')
+
+    imageSlide3.parentNode.setAttribute('style', `height:${imageSlide3.offsetHeight + 3}px;`)
+    setTimeout(() => {
+        imageDesc3.innerText = thirdTextSet[thirdIndex]
+        imageSlide3.src = thirdImageSet[thirdIndex]
+    }, 200)
+}
+
+function switchThirdImageBack() {
+    for (let i = 0; i < (thirdImageIndexDisplays.length); i++) {
+        thirdImageIndexDisplays[i].classList.remove('selected')
+    }
+    if (thirdIndex === (0)) {
+        thirdIndex = secondTextSet.length - 1
+    } else {
+        thirdIndex -= 1
+    }
+    
+    imageDesc2.classList.add('hiding')
+    imageSlide2.classList.add('hiding')
+
+    imageSlide3.parentNode.setAttribute('style', `height:${imageSlide3.offsetHeight + 3}px;`)
+    setTimeout(() => {
+        imageDesc3.innerText = thirdTextSet[thirdIndex]
+        imageSlide3.src = thirdImageSet[thirdIndex]
+    }, 200)
+}
+
+imageSlide3.onload = function() {
+    imageSlide3.parentNode.setAttribute('style', `height:${imageSlide3.offsetHeight + 3}px;`)
+
+    thirdImageIndexDisplays[thirdIndex].classList.add('selected')
+    imageSlide3.classList.remove('hiding')
+    imageDesc3.classList.remove('hiding')
 }

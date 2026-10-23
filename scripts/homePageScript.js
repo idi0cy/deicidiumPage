@@ -445,3 +445,17 @@ function resetAllStyles () {
 //what does this code even do anymore? I can't remove it though unless something might break...
 generateColour()
 generateSecondaryColour()
+
+
+//CODE FOR BLANK LINK WARNINGS
+
+const blankLinks = document.querySelectorAll(".sideNavLink")
+
+//I could probably just use foreach or something
+
+blankLinks.forEach((link) => {
+  if (link.href === '') {
+    //IT WORKS
+    link.onclick = function() {alert(`The page "${link.innerText}" has not been added to the site. It will be added in a future update.`)}
+  }
+});
