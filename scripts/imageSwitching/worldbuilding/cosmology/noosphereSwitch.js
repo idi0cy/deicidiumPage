@@ -134,7 +134,7 @@ const imageSlide3 = document.querySelector('.docImage.thirdImage')
 const thirdImageIndexDisplays = document.getElementsByClassName('displayIndicatorThird')
 const imageDesc3 = document.querySelector('.imgDesc3')
 const thirdTextSet = ["(1) Preperation images for when I make those", "(2) Check out this terrible flavour text", "(3) Woah, it switched to the same image (backtracking notwithstanding)"]
-const thirdImageSet = ['/images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg', '/images/deicidiumLogo.svg', '/images/deicidiumLogo.svg']
+const thirdImageSet = ['../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg', '../../../images/deicidiumLogo.svg', '../../../images/deicidiumLogo.svg']
 var thirdIndex = 0
 
 imageDesc3.innerText = thirdTextSet[thirdIndex]

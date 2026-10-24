@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/homepageCSS.css">
+    <link rel="stylesheet" href="homepageCSS.css">
     <title>Deicidium</title>
 </head>
 
@@ -415,13 +415,28 @@
 
                 <div class="fontScrollAndSearch">
                     <div class="wheelAndButtons">
-                        <div class="fontScrollWheel1"></div>
+                        <div class="fontScrollWheel1">
+                            Example
+                            <br>
+                            Example 2 is for some reason very very long
+                            <br>
+                            <div class="selectedFont">Example 3</div>
+                            Example 4
+                            <br>
+                            Example 5
+                            <br>
+                            Example 6
+                            <br>
+                            Example 7
+                            <br>
+                            Example 8
+                        </div>
                         <div class="upAndDownButtons">
-                            <div class="upButton">
+                            <div class="upButton first" onclick="wheel1Move('-')">
                                 <div class="upScrollButtonBar1"></div>
                                 <div class="upScrollButtonBar2"></div>
                             </div>
-                            <div class="downButton">
+                            <div class="downButton first" onclick="wheel1Move('+')">
                                 <div class="downScrollButtonBar1"></div>
                                 <div class="downScrollButtonBar2"></div>
                             </div>
@@ -439,17 +454,20 @@
 
                 <div class="fontScrollAndSearch">
                     <div class="wheelAndButtons">
+
                         <div class="fontScrollWheel2"></div>
+
                         <div class="upAndDownButtons">
-                            <div class="upButton">
+                            <div class="upButton second" onclick="wheel2Move('-')">
                                 <div class="upScrollButtonBar1"></div>
                                 <div class="upScrollButtonBar2"></div>
                             </div>
-                            <div class="downButton">
+                            <div class="downButton second" onclick="wheel2Move('+')">
                                 <div class="downScrollButtonBar1"></div>
                                 <div class="downScrollButtonBar2"></div>
                             </div>
                         </div>
+
                     </div>
                     <input type="text" class="fontSearchBar"></input>
                 </div>
@@ -479,7 +497,7 @@
     </div>
 
     <!--JAVASCRIPT LINK (from root directory doesn't work?)-->
-    <script src="/scripts/homePageScript.js"></script>
+    <script src="scripts/homePageScript.js"></script>
     <!--JAVASCRIPT LINK-->
 </body>
 </html>

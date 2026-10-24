@@ -450,12 +450,69 @@ generateSecondaryColour()
 //CODE FOR BLANK LINK WARNINGS
 
 const blankLinks = document.querySelectorAll(".sideNavLink")
-
-//I could probably just use foreach or something
-
 blankLinks.forEach((link) => {
   if (link.href === '') {
     //IT WORKS
     link.onclick = function() {alert(`The page "${link.innerText}" has not been added to the site. It will be added in a future update.`)}
   }
 });
+
+// #region CODE FOR FONT WHEEL
+
+const fontWheel1 = document.querySelector(".fontScrollWheel1")
+const fontWheel2 = document.querySelector(".fontScrollWheel2")
+
+const fw1UpButton = document.querySelector(".upButton.first")
+const fw1DownButton = document.querySelector(".downButton.first")
+const fw2UpButton = document.querySelector(".upButton.second")
+const fw2DownButton = document.querySelector(".downButton.second")
+
+//efficiency. automation. unmatched. introducing:
+const availableFonts = [
+  "../fonts/ArialCE.ttf",
+  "../fonts/calibri-regular.ttf",
+  "../fonts/cmuntt.ttf",
+  "../fonts/COMIC.TTF",
+  "../fonts/JetBrainsMono-Regular.ttf",
+  "../fonts/times.ttf",
+  "../fonts/Ubuntu-Regular.ttf",
+  "../fonts/ZenDots-Regular.ttf"
+]
+
+var FW1scrollIndex = 0
+var FW2scrollIndex = 0
+
+var selectedBodyFont = availableFonts[2]
+var selectedTitleFont = availableFonts[7]
+
+
+//there is almost certainly a better way to get this job done
+function doMath(a, b, plusOrMinus) {
+  if (plusOrMinus === '+') {
+    return (a + b)
+  } else {
+    return (a - b)
+  }
+}
+
+//actually kinda super inefficient, but I'm sure it is fine
+//here, it is mostly likely that 7 stands for the maximum index allowed based on font count
+function wheel1Move(orientation) {
+  FW1scrollIndex = doMath(FW1scrollIndex, 1, orientation)
+  if (FW1scrollIndex < 0) {
+    FW1scrollIndex = 7
+  } else if (FW1scrollIndex > 7) {
+    FW1scrollIndex = 0
+  }
+}
+
+function wheel2Move(orientation) {
+  FW2scrollIndex = doMath(FW2scrollIndex, 1, orientation)
+  if (FW2scrollIndex < 0) {
+    FW2scrollIndex = 7
+  } else if (FW2scrollIndex > 7) {
+    FW2scrollIndex = 0
+  }
+}
+
+// #endregion code for font wheel

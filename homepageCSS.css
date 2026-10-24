@@ -1,5 +1,7 @@
 /* https://animista.net/ */
 
+/* #region root variables and universals*/
+
 :root {
     interpolate-size: allow-keywords;
     --baseColour:#43f7e9;
@@ -30,6 +32,8 @@
     font-family: titleTextFont ;
     src: url(fonts/ZenDots-Regular.ttf);
 }
+
+/* #endregion*/
 
 body {
     padding: 0px;
@@ -1081,7 +1085,7 @@ a:hover {
     width:100%;
     top:0%;
     left:0%;
-    z-index:35;
+    z-index:40;
 }
 
 .settingsExitButton {
@@ -1626,20 +1630,45 @@ input[type=text]::selection {
     transform:rotate(45deg) translateY(5px) translateX(10px)
 }
 
+/*why does text scroll not work with background clip*/
+
 .fontScrollWheel1, .fontScrollWheel2 {
     height:128px;
-    width:164px;
+    width:clamp(148px, 16vw, 256px);
     margin:12px;
-    background-color:var(--dullColour);
     box-sizing:border-box;
     border-width:2px;
     border-style:solid;
     border-color:var(--tertiaryColour);
     transition:.5s;
+    overflow-y:hidden;
+    background-image: linear-gradient(to bottom, transparent 5%, var(--secondBaseColour) 50%, transparent 95%);
+    z-index:39;
+    background-clip:text;
+    color:transparent;
+    font-size:20px;
+    line-height:24px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display:block;
+    white-space:nowrap;
+}
+.fontScrollWheel1:active, .fontScrollWheel2:active {
+    pointer-events:none;
 }
 
-.fontScrollWheel1:hover, .fontScrollWheel2:hover {
-    background-color:var(--sideNavColourTrans);
+.selectedFont {
+    width:100%;
+    background-image:linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
+    background-size:200% 100%;
+    background-position:100%;
+    background-clip:initial;
+    transition:.25s;
+    text-indent:12px;
+}
+.selectedFont.unselecting {
+    background-position:200%;
+    text-indent:0px;
 }
 
 .fontSearchBar {
@@ -1651,7 +1680,7 @@ input[type=text]::selection {
     border-style:solid;
     border-color:var(--tertiaryColour);
     background-color:var(--dullColour);
-    transition:.5s;
+    transition:.25s;
 }
 
 /*I want to turn off selects but whatever, this crap will have to do.*/
