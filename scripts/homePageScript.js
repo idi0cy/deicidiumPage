@@ -489,11 +489,10 @@ const fontNames = [
   "Zen Dots"
 ]
 
-var FW1scrollIndex = 0
-var FW2scrollIndex = 0
+var scrolldexMax = 7
 
-var FW1trueScrollIndex = 0
-var FW2trueStrollIndex = 0
+var FW1scrollIndex = 2
+var FW2scrollIndex = 7
 
 var selectedBodyFont = availableFonts[2]
 var selectedTitleFont = availableFonts[7]
@@ -510,48 +509,55 @@ function doMath(a, b, plusOrMinus) {
 }
 
 //Setup for revolving scroll content
-function wheelSet() {
+function wheel1Set() {
   fontWheel1.innerHTML = ''
 
-  fontNames.forEach((font) => {
-    fontWheel1.innerHTML += font
+  for (let i = 0; i < 3; i ++) {
+    let count = 0
+    fontNames.forEach((font) => {
+      if (count != FW1scrollIndex) {
+        fontWheel1.innerHTML += font
+        fontWheel1.appendChild(lineBreak)
+      } else {
+        let selectedFontElement = document.createElement("div")
+        selectedFontElement.innerText = font
+        selectedFontElement.classList.add("selectedFont")
 
-    fontWheel1.appendChild(lineBreak)
-  })
-  fontNames.forEach((font) => {
-    fontWheel1.innerHTML += font
-
-    fontWheel1.appendChild(lineBreak)
-  })
-  fontNames.forEach((font) => {
-    fontWheel1.innerHTML += font
-
-    fontWheel1.appendChild(lineBreak)
+        fontWheel1.appendChild(selectedFontElement)
+      }
+      count += 1
+    })
+  }
+  fontWheel1.scrollTo({
+    top: ((FW1scrollIndex + (scrolldexMax - 1)) *24),
+    left: 0,
+    behavior: 'smooth'
   })
 }
 
-wheelSet()
-
-function scrollIncrimentally() {
-
-}
+wheel1Set()
 
 //actually kinda super inefficient, but I'm sure it is fine
 //here, it is mostly likely that 7 stands for the maximum index allowed based on font count
 function wheel1Move(orientation) {
-  /*
   FW1scrollIndex = doMath(FW1scrollIndex, 1, orientation)
   if (FW1scrollIndex < 0) {
-    FW1scrollIndex = 7
-  } else if (FW1scrollIndex > 7) {
+    FW1scrollIndex = scrolldexMax
+  } else if (FW1scrollIndex > scrolldexMax) {
     FW1scrollIndex = 0
   }
-  fontWheel1.scrollTo(0, (FW1scrollIndex*24))
-  */
-  fontWheel1.scrollBy({
-    top:doMath(0,24, orientation),
-    left:0,
-    behavior:'smooth'
+
+  wheel1Set()
+
+  fontWheel1.scrollTo({
+    top:((FW1scrollIndex + (scrolldexMax - doMath(1, 1, orientation))) *24),
+    left: 0
+  })
+
+  fontWheel1.scrollTo({
+    top: ((FW1scrollIndex + (scrolldexMax - 1)) *24),
+    left: 0,
+    behavior: 'smooth'
   })
 }
 

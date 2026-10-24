@@ -1630,10 +1630,8 @@ input[type=text]::selection {
     transform:rotate(45deg) translateY(5px) translateX(10px)
 }
 
-/*why does text scroll not work with background clip*/
-
 .fontScrollWheel1, .fontScrollWheel2 {
-    height:128px;
+    height:120px;
     width:clamp(148px, 16vw, 256px);
     margin:12px;
     box-sizing:border-box;
