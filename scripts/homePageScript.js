@@ -508,26 +508,51 @@ function doMath(a, b, plusOrMinus) {
   }
 }
 
-//Setup for revolving scroll content
-function wheel1Set() {
-  fontWheel1.innerHTML = ''
+function audit(parameter) {
+  if (parameter > scrolldexMax) {
+    return 0
+  } else if (parameter < 0) {
+    return scrolldexMax
+  } else {
+    return parameter
+  }
+}
 
+function wheel1Set(orientation) {
+  fontWheel1.innerHTML = ''
   for (let i = 0; i < 3; i ++) {
     let count = 0
     fontNames.forEach((font) => {
-      if (count != FW1scrollIndex) {
+      if ((count != FW1scrollIndex)&&(count != audit(FW1scrollIndex - doMath(0,1,orientation)))) {
         fontWheel1.innerHTML += font
         fontWheel1.appendChild(lineBreak)
-      } else {
+      } else if(count === FW1scrollIndex){
         let selectedFontElement = document.createElement("div")
         selectedFontElement.innerText = font
-        selectedFontElement.classList.add("selectedFont")
-
+        selectedFontElement.classList.add("selectedFont1")
+        
         fontWheel1.appendChild(selectedFontElement)
+      } else {
+        console.log("this should be printing three times")
+        let unselectingFontElement = document.createElement("div")
+        unselectingFontElement.innerText = font
+        unselectingFontElement.classList.add("unselectingFont1")
+
+        fontWheel1.appendChild(unselectingFontElement)
       }
       count += 1
     })
   }
+
+  document.querySelectorAll(".selectedFont1").forEach((selectedFont) => {
+    selectedFont.offsetHeight
+    selectedFont.classList.add("selecting")
+  })
+  document.querySelectorAll(".unselectingFont1").forEach((selectedFont) => {
+    selectedFont.offsetHeight
+    selectedFont.classList.add("unselecting")
+  })
+
   fontWheel1.scrollTo({
     top: ((FW1scrollIndex + (scrolldexMax - 1)) *24),
     left: 0,
@@ -535,7 +560,7 @@ function wheel1Set() {
   })
 }
 
-wheel1Set()
+wheel1Set('+')
 
 //actually kinda super inefficient, but I'm sure it is fine
 //here, it is mostly likely that 7 stands for the maximum index allowed based on font count
@@ -547,13 +572,12 @@ function wheel1Move(orientation) {
     FW1scrollIndex = 0
   }
 
-  wheel1Set()
+  wheel1Set(orientation)
 
   fontWheel1.scrollTo({
     top:((FW1scrollIndex + (scrolldexMax - doMath(1, 1, orientation))) *24),
     left: 0
   })
-
   fontWheel1.scrollTo({
     top: ((FW1scrollIndex + (scrolldexMax - 1)) *24),
     left: 0,
