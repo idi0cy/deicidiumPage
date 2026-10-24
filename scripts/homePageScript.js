@@ -556,14 +556,21 @@ function wheel1Move(orientation) {
 }
 
 function wheel2Move(orientation) {
+  /*
   FW2scrollIndex = doMath(FW2scrollIndex, 1, orientation)
   if (FW2scrollIndex < 0) {
     FW2scrollIndex = 7
   } else if (FW2scrollIndex > 7) {
     FW2scrollIndex = 0
   }
-
   fontWheel2.scrollTo(0, (FW2scrollIndex*24))
+  */
+
+  fontWheel2.scrollBy({
+    top:doMath(0,24, orientation),
+    left:0,
+    behavior:'smooth'
+  })
 }
 
 // #endregion code for font wheel
