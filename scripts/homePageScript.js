@@ -478,13 +478,27 @@ const availableFonts = [
   "../fonts/Ubuntu-Regular.ttf",
   "../fonts/ZenDots-Regular.ttf"
 ]
+const fontNames = [
+  "Arial",
+  "Calibri",
+  "CMU Typewriter",
+  "Comic Sans",
+  "JetBrains Mono",
+  "Times New Roman",
+  "Ubuntu",
+  "Zen Dots"
+]
 
 var FW1scrollIndex = 0
 var FW2scrollIndex = 0
 
+var FW1trueScrollIndex = 0
+var FW2trueStrollIndex = 0
+
 var selectedBodyFont = availableFonts[2]
 var selectedTitleFont = availableFonts[7]
 
+var lineBreak = document.createElement("br")
 
 //there is almost certainly a better way to get this job done
 function doMath(a, b, plusOrMinus) {
@@ -495,15 +509,50 @@ function doMath(a, b, plusOrMinus) {
   }
 }
 
+//Setup for revolving scroll content
+function wheelSet() {
+  fontWheel1.innerHTML = ''
+
+  fontNames.forEach((font) => {
+    fontWheel1.innerHTML += font
+
+    fontWheel1.appendChild(lineBreak)
+  })
+  fontNames.forEach((font) => {
+    fontWheel1.innerHTML += font
+
+    fontWheel1.appendChild(lineBreak)
+  })
+  fontNames.forEach((font) => {
+    fontWheel1.innerHTML += font
+
+    fontWheel1.appendChild(lineBreak)
+  })
+}
+
+wheelSet()
+
+function scrollIncrimentally() {
+
+}
+
 //actually kinda super inefficient, but I'm sure it is fine
 //here, it is mostly likely that 7 stands for the maximum index allowed based on font count
 function wheel1Move(orientation) {
+  /*
   FW1scrollIndex = doMath(FW1scrollIndex, 1, orientation)
   if (FW1scrollIndex < 0) {
     FW1scrollIndex = 7
   } else if (FW1scrollIndex > 7) {
     FW1scrollIndex = 0
   }
+  fontWheel1.scrollTo(0, (FW1scrollIndex*24))
+  */
+  fontWheel1.scrollBy({
+    top:doMath(0,24, orientation),
+    left:0,
+    behavior:'smooth'
+  })
 }
 
 function wheel2Move(orientation) {
@@ -513,6 +562,8 @@ function wheel2Move(orientation) {
   } else if (FW2scrollIndex > 7) {
     FW2scrollIndex = 0
   }
+
+  fontWheel2.scrollTo(0, (FW2scrollIndex*24))
 }
 
 // #endregion code for font wheel
