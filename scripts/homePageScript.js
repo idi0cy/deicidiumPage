@@ -1,4 +1,4 @@
-//Variable setup
+// #region | Basic variable setup
 const root = document.querySelector(':root');
 
 var dropDownContainerDown = document.getElementsByClassName('dropDownContainerDown')
@@ -14,8 +14,9 @@ var settings = document.getElementsByClassName('settingsPopup')
 var minSideNavSec = document.getElementsByClassName('minSideNavSec')
 
 var isSideBarOpen = false
+//#endregion
 
-//Checking if localStorage is available
+// #region | Checking storage type available
 
 function storageAvailable(type) {
   let storage;
@@ -54,9 +55,9 @@ function checkST() {
     return 2
   }
 }
-//End of that section
+// #endregion
 
-
+// #region | Menu dropdown logistics
 function menuAnimation(x) {
   var menuToAnimate = x.children
   for (let i = 0; i < (menuToAnimate.length); i++) {
@@ -69,18 +70,15 @@ function menuAnimation(x) {
     closeDropdown();
   }
 };
-
-
 function openDropdown() {
   dropDownContainerDown[0].classList.toggle('opened');
 };
-
-
 function closeDropdown() {
   dropDownContainerDown[0].classList.remove('opened');
 };
+//#endregion
 
-
+// #region | Side bar functionality
 function openSideBar() {
   if (isSideBarOpen === false) {
     isSideBarOpen = true
@@ -126,9 +124,6 @@ function openSideBarSection(x) {
     x.children[0].children[0].classList.add('opened')
     x.children[0].children[1].classList.add('opened')
   }
-
-  //about to write some weirdlycomplex debug code
-  //IT DOESN"T EVEN WORK
   let temp = 0
   for (let i = 0; i < (sideBarLore[0].children.length); i++) {
     temp = temp + sideBarLore[0].children[i].offsetHeight
@@ -170,7 +165,9 @@ function openMiscSideBar(x) {
   sideBarLore[0].classList.remove('focused')
   sideBarStory[0].classList.remove('focused')
 };
+//#endregion
 
+//#region | Literally two lines to open settings
 function openSettings() {
   settings[0].classList.add('opened')
 };
@@ -178,8 +175,9 @@ function openSettings() {
 function closeSettings() {
   settings[0].classList.remove('opened')
 };
+//#endregion
 
-//COLOURS 2
+//#region | Secondary colour selection (Photosystem II and I type organization)
 const colourSlidersTwo = document.querySelectorAll(".colourSelectSliderTwo")
 const rSlider2 = document.getElementById('redSelect2')
 const gSlider2 = document.getElementById('greenSelect2')
@@ -216,16 +214,12 @@ function updateSecondaryColourStorage () {
 ///this code is for setting the secondary colour in localStorage OR pulling it from localStorage
 if (checkST() === 0) {
   if (!localStorage.getItem("baseSecondaryColour_stored")) {
-    ///put code here to make the baseSecondaryColour variable in localstorage
     localStorage.setItem("baseSecondaryColour_stored", `rgb(${255}, ${253}, ${250})`)
     localStorage.setItem("baseRValue2_stored", 255)
     localStorage.setItem("baseGValue2_stored", 253)
     localStorage.setItem("baseBValue2_stored", 250)
-    ///REMEMBER TO SET THESE PULLED STYLES AFTER THIS CODE
   } else {
-    ///put code here to start applying the already set baseSecondaryColour variable in local storage
     grabStoredSecondaryColour()
-    ///REMEMBER TO SET THESE PULLED STYLES AFTER THIS CODE
   }
 } else {
 
@@ -272,8 +266,9 @@ let generateSecondaryColour = () => {
 colourSlidersTwo.forEach((inp) => {
   inp.addEventListener("input",generateSecondaryColour);
 })
+//#endregion
 
-//COLOURS 1
+//#region | Primary colour selection (Joke was already made)
 
 const colourSliders = document.querySelectorAll(".ColourSelectSlider");
 const rSlider = document.getElementById('redSelect');
@@ -319,22 +314,17 @@ if (checkST() === 0) {
     rSlider.value = 67
     gSlider.value = 247
     bSlider.value = 233
-    ///put code here to make the baseColour variable in localstorage
     localStorage.setItem("baseColour_stored", `rgb(${67}, ${247}, ${233})`)
     localStorage.setItem("baseRValue_stored", 67)
     localStorage.setItem("baseGValue_stored", 247)
     localStorage.setItem("baseBValue_stored", 233)
     console.log("SETTING?")
-    //localStorage.setItem("baseColour_stored", baseColour)
   } else {
-    ///put code here to start applying the already set baseColour variable in local storage
     grabStoredBaseColour()
   }
 } else {
-  //start using some backup methods or something
   console.log("well that isn't good")
 }
-///End of storage section
 
 var themeColour = `rgb(${rSlider.value}, ${gSlider.value}, ${bSlider.value})`;
 colourDisplay.style.backgroundColor = themeColour
@@ -345,7 +335,6 @@ let generateColour = () => {
   let gColourVal = gSlider.value;
   let bColourVal = bSlider.value;
 
-  //is this even needed anymore?
   baseRValue = rSlider.value;
   baseGValue = gSlider.value;
   baseBValue = bSlider.value;
@@ -414,9 +403,10 @@ function applyColourScheme() {
   root.style.setProperty('--sideNavColourTrans', colourPH)
 }
 
-
 copyColourButton.addEventListener("click", copyColourVal)
+//#endregion
 
+//#region | Resetting ALL styles for appearance
 function resetAllStyles () {
   root.style.setProperty('--baseColour', '#43f7e9')
   root.style.setProperty('--dullColour', '#002424')
@@ -441,13 +431,13 @@ function resetAllStyles () {
   applySecondaryColour()
   applyColourScheme()
 }
+//#endregion
 
 //what does this code even do anymore? I can't remove it though unless something might break...
 generateColour()
 generateSecondaryColour()
 
-
-//CODE FOR BLANK LINK WARNINGS
+//#region | Blank link warnings
 
 const blankLinks = document.querySelectorAll(".sideNavLink")
 blankLinks.forEach((link) => {
@@ -457,7 +447,9 @@ blankLinks.forEach((link) => {
   }
 });
 
-// #region CODE FOR FONT WHEEL
+//#endregion
+
+// #region | Code for font settings
 
 const fontWheel1 = document.querySelector(".fontScrollWheel1")
 const fontWheel2 = document.querySelector(".fontScrollWheel2")
