@@ -434,11 +434,11 @@
 
         <div class="settingsBody">
             <div class="settingsHeader">Appearance</div>
-            <div class="resetStyles">
+            <div class="settingsBox">
                 <div class="settingLabel">Reset Styles</div>
                 <button id="resetAllStyles" onclick="resetAllStyles()">RESET</button>
             </div>
-            <div class="accentColorSection">
+            <div class="settingsBox">
                 <div class="settingLabel">Primary Colour</div>
                 
                 <div class="colorSelectBar">
@@ -463,7 +463,7 @@
                 </div>
             </div>
 
-            <div class="secondaryColourSelection">
+            <div class="settingsBox">
                 <div class="settingLabel">Secondary Colour</div>
 
                 <div class="colourSelectBar">
@@ -487,6 +487,75 @@
                     <button id="applySecondaryColourTheme" onclick="applySecondaryColour()">Apply</button>
                 </div>
             </div>
+
+            <div class="settingsBox">
+                <div class="settingLabel">Body Text Font</div>
+
+                <div class="fontScrollAndSearch">
+                    <div class="wheelAndButtons">
+                        <div class="fontScrollWheel1"></div>
+                        <div class="upAndDownButtons">
+                            <div class="upButton first" onclick="wheel1Move('-')">
+                                <div class="upScrollButtonBar1"></div>
+                                <div class="upScrollButtonBar2"></div>
+                            </div>
+                            <div class="downButton first" onclick="wheel1Move('+')">
+                                <div class="downScrollButtonBar1"></div>
+                                <div class="downScrollButtonBar2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input type="text" class="fontSearchBar"></input>
+                </div>
+
+                <div id="applyBodyTextFont" onclick="applyBodyFont()">Apply</div>
+            </div>
+
+            <div class="settingsBox">
+                <div class="settingLabel">Title Text Font</div>
+
+                <div class="fontScrollAndSearch">
+                    <div class="wheelAndButtons">
+
+                        <div class="fontScrollWheel2"></div>
+
+                        <div class="upAndDownButtons">
+                            <div class="upButton second" onclick="wheel2Move('-')">
+                                <div class="upScrollButtonBar1"></div>
+                                <div class="upScrollButtonBar2"></div>
+                            </div>
+                            <div class="downButton second" onclick="wheel2Move('+')">
+                                <div class="downScrollButtonBar1"></div>
+                                <div class="downScrollButtonBar2"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <input type="text" class="fontSearchBar"></input>
+                </div>
+
+                <div id="applyTitleTextFont" onclick="applyTitleFont()">Apply</div>
+            </div>
+
+            <!--
+            
+            FONTS TO INCLUDE (LIST):
+
+                CMU typewriter [goated] (installed)
+                Jetbrains Mono (installed)
+                Arial [boring one] (installed)
+                Calibri [also boring one] (installed)
+                Times New Roman (installed)
+                Zendots (installed)
+                Ubuntu (installed)
+                Comic Sans? [Weird choice] (installed)
+
+                Other font ideas:
+
+                Okkay well I'm not going to lie I think we have enough
+            
+            -->
         </div>
     </div>
 
