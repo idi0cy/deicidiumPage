@@ -1293,11 +1293,16 @@ input[type=text]::selection {
     padding:0;
     box-sizing:border-box;
     width: 64px;
-    background-color:var(--quinaryColour);
+    background-color:var(--dullColour);
     border-color:var(--tertiaryColour);
     border-color:2px;
     border-style:solid;
     cursor:pointer;
+    transition:.25s;
+}
+
+#copyColour:hover, #copyColour2:hover {
+    background-color:var(--quaternaryColour);
 }
 
 .colourDisplay, .colourDisplay2 {
@@ -1318,11 +1323,16 @@ input[type=text]::selection {
     padding:0;
     box-sizing:border-box;
     width: 64px;
-    background-color:var(--quinaryColour);
+    background-color:var(--dullColour);
     border-color:var(--tertiaryColour);
     border-color:2px;
     border-style:solid;
     cursor:pointer;
+    transition:.25s;
+}
+
+#applyPrimaryColourTheme:hover, #applySecondaryColourTheme:hover {
+    background-color:var(--quaternaryColour)
 }
 
 #resetAllStyles {
@@ -1330,7 +1340,7 @@ input[type=text]::selection {
     padding:0;
     box-sizing:border-box;
     width: 96px;
-    background-color:var(--quinaryColour);
+    background-color:var(--dullColour);
     border-color:var(--tertiaryColour);
     border-color:2px;
     border-style:solid;
@@ -1338,6 +1348,11 @@ input[type=text]::selection {
     text-align:center;
     margin-left:12px;
     font-size:20px;
+    transition:.25s;
+}
+
+#resetAllStyles:hover {
+    background-color:var(--quaternaryColour);
 }
 
 .gridBackground {
@@ -1675,7 +1690,7 @@ input[type=text]::selection {
     background-size:200% 100%;
     background-clip: initial;
     background-position:100%;
-    color:var(--secondBaseColour);
+    color:transparent;
     text-indent:12px;
 }
 .unselectingFont1.unselecting, .unselectingFont2.unselecting {
@@ -1711,4 +1726,10 @@ input[type=text]::selection {
     margin:12px;
     line-height:30px;
     text-align:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+#applyBodyTextFont:hover, #applyTitleTextFont:hover {
+    background-color:var(--quaternaryColour);
 }

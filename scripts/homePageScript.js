@@ -318,7 +318,6 @@ if (checkST() === 0) {
     localStorage.setItem("baseRValue_stored", 67)
     localStorage.setItem("baseGValue_stored", 247)
     localStorage.setItem("baseBValue_stored", 233)
-    console.log("SETTING?")
   } else {
     grabStoredBaseColour()
   }
@@ -490,6 +489,33 @@ var selectedTitleFont = availableFonts[7]
 
 var lineBreak = document.createElement("br")
 
+function updateFontLocalStorage () {
+  FW1scrollIndex = parseInt(localStorage.getItem("selectedBodyFont_stored"))
+  FW2scrollIndex = parseInt(localStorage.getItem("selectedTitleFont_stored"))
+}
+
+function applyBodyFontLocalStorage () {
+  localStorage.setItem("selectedBodyFont_stored", FW1scrollIndex)
+  updateFontLocalStorage()
+}
+
+function applyTitleFontLocalStorage () {
+  localStorage.setItem("selectedTitleFont_stored", FW2scrollIndex)
+  updateFontLocalStorage()
+}
+
+if (checkST() === 0) {
+  if (!localStorage.getItem("selectedBodyFont_stored")) {
+    localStorage.setItem("selectedBodyFont_stored", 2)
+    localStorage.setItem("selectedTitleFont_stored", 7)
+    updateFontLocalStorage()
+  } else {
+    updateFontLocalStorage()
+  }
+} else {
+
+}
+
 //there is almost certainly a better way to get this job done
 function doMath(a, b, plusOrMinus) {
   if (plusOrMinus === '+') {
@@ -498,7 +524,6 @@ function doMath(a, b, plusOrMinus) {
     return (a - b)
   }
 }
-
 function audit(parameter) {
   if (parameter > scrolldexMax) {
     return 0
@@ -590,7 +615,6 @@ function wheel2Set(orientation) {
     behavior: 'smooth'
   })
 }
-
 wheel1Set('+')
 wheel2Set('+')
 
@@ -631,5 +655,13 @@ function wheel2Move(orientation) {
     left: 0,
     behavior: 'smooth'
   })
+}
+
+function applyBodyFont() {
+  applyBodyFontLocalStorage()
+}
+
+function applyTitleFont() {
+  applyTitleFontLocalStorage()
 }
 // #endregion code for font wheel
