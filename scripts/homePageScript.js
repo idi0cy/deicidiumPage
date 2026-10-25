@@ -405,33 +405,6 @@ function applyColourScheme() {
 copyColourButton.addEventListener("click", copyColourVal)
 //#endregion
 
-//#region | Resetting ALL styles for appearance
-function resetAllStyles () {
-  root.style.setProperty('--baseColour', '#43f7e9')
-  root.style.setProperty('--dullColour', '#002424')
-  root.style.setProperty('--secondaryColour', '#34c2b6')
-  root.style.setProperty('--tertiaryColour', '#258d84')
-  root.style.setProperty('--quaternaryColour', '#144642')
-  root.style.setProperty('--quinaryColour', '#003333')
-  root.style.setProperty('--sideNavColourTrans', '#43f7e823')
-  root.style.setProperty('--secondBaseColour', '#FFFDFA')
-
-  rSlider.value = 67
-  gSlider.value = 247
-  bSlider.value = 233
-
-  rSlider2.value = 255
-  gSlider2.value = 253
-  bSlider2.value = 250
-
-  generateColour()
-  generateSecondaryColour()
-
-  applySecondaryColour()
-  applyColourScheme()
-}
-//#endregion
-
 //what does this code even do anymore? I can't remove it though unless something might break...
 generateColour()
 generateSecondaryColour()
@@ -492,6 +465,8 @@ var lineBreak = document.createElement("br")
 function updateFontLocalStorage () {
   FW1scrollIndex = parseInt(localStorage.getItem("selectedBodyFont_stored"))
   FW2scrollIndex = parseInt(localStorage.getItem("selectedTitleFont_stored"))
+  root.style.setProperty("--bodyFont", `font${FW1scrollIndex}`)
+  root.style.setProperty("--titleFont", `font${FW2scrollIndex}`)
 }
 
 function applyBodyFontLocalStorage () {
@@ -513,7 +488,7 @@ if (checkST() === 0) {
     updateFontLocalStorage()
   }
 } else {
-
+  console.log("gulp")
 }
 
 //there is almost certainly a better way to get this job done
@@ -657,11 +632,48 @@ function wheel2Move(orientation) {
   })
 }
 
+//applying the styles
 function applyBodyFont() {
   applyBodyFontLocalStorage()
+  root.style.setProperty("--bodyFont", `font${FW1scrollIndex}`)
 }
-
 function applyTitleFont() {
   applyTitleFontLocalStorage()
+  root.style.setProperty("--titleFont", `font${FW2scrollIndex}`)
 }
 // #endregion code for font wheel
+
+//#region | Resetting ALL styles for appearance
+function resetAllStyles () {
+  root.style.setProperty('--baseColour', '#43f7e9')
+  root.style.setProperty('--dullColour', '#002424')
+  root.style.setProperty('--secondaryColour', '#34c2b6')
+  root.style.setProperty('--tertiaryColour', '#258d84')
+  root.style.setProperty('--quaternaryColour', '#144642')
+  root.style.setProperty('--quinaryColour', '#003333')
+  root.style.setProperty('--sideNavColourTrans', '#43f7e823')
+  root.style.setProperty('--secondBaseColour', '#FFFDFA')
+
+  rSlider.value = 67
+  gSlider.value = 247
+  bSlider.value = 233
+
+  rSlider2.value = 255
+  gSlider2.value = 253
+  bSlider2.value = 250
+
+  generateColour()
+  generateSecondaryColour()
+  applySecondaryColour()
+  applyColourScheme()
+
+
+  //fonts
+  FW1scrollIndex = 2
+  applyBodyFont()
+  FW2scrollIndex = 7
+  applyTitleFont()
+  wheel1Set("+")
+  wheel2Set("+")
+}
+//#endregion
