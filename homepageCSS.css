@@ -4,6 +4,7 @@
 
 :root {
     interpolate-size: allow-keywords;
+    scroll-behavior:smooth;
     /* Setting colour variables */
     --baseColour:#43f7e9;
     --dullColour:#002424;
@@ -57,7 +58,6 @@
     font-family: font7;
     src: url(fonts/ZenDots-Regular.ttf);
 }
-
 /* #endregion*/
 
 body {
@@ -1673,8 +1673,6 @@ input[type=text]::selection {
     transform:rotate(45deg) translateY(5px) translateX(10px)
 }
 
-/* background-clip:text; works differently across browsers????? */
-/* How does one make styles different per browser? */
 .fontScrollWheel1, .fontScrollWheel2 {
     height:120px;
     width:clamp(148px, 16vw, 256px);
@@ -1684,11 +1682,10 @@ input[type=text]::selection {
     border-style:solid;
     border-color:var(--tertiaryColour);
     transition:.5s;
-    overflow-y:hidden;
     background-image: linear-gradient(to bottom, transparent 5%, var(--secondBaseColour) 50%, transparent 95%);
-    background-size:cover;
     z-index:39;
     background-clip:text;
+    -webkit-background-clip:text;
     color:transparent;
     font-size:20px;
     line-height:24px;
@@ -1696,9 +1693,6 @@ input[type=text]::selection {
     text-overflow: ellipsis;
     display:block;
     white-space:nowrap;
-    background-position:fixed;
-}
-.fontScrollWheel1:active, .fontScrollWheel2:active {
     pointer-events:none;
 }
 
@@ -1708,6 +1702,7 @@ input[type=text]::selection {
     background-image:linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
     background-size:200% 100%;
     background-clip:initial;
+    -webkit-background-clip:initial;
     background-position:200%;
     color:var(--secondBaseColour);
 }
@@ -1721,6 +1716,7 @@ input[type=text]::selection {
     background-image:linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
     background-size:200% 100%;
     background-clip: text;
+    -webkit-background-clip:text;
     background-position:100%;
     color:transparent;
     text-indent:12px;
