@@ -492,6 +492,7 @@ if (checkST() === 0) {
 }
 
 //there is almost certainly a better way to get this job done
+
 function doMath(a, b, plusOrMinus) {
   if (plusOrMinus === '+') {
     return (a + b)
