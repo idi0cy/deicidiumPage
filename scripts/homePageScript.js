@@ -633,7 +633,6 @@ function wheel2Move(orientation) {
   })
 }
 
-//applying the styles
 function applyBodyFont() {
   applyBodyFontLocalStorage()
   root.style.setProperty("--bodyFont", `font${FW1scrollIndex}`)
@@ -669,7 +668,6 @@ function resetAllStyles () {
   applyColourScheme()
 
 
-  //fonts
   FW1scrollIndex = 2
   applyBodyFont()
   FW2scrollIndex = 7
