@@ -642,7 +642,7 @@ function wheel2Move(orientation) {
     left: 0,
     behavior: 'smooth'
   })
-}
+} 
 
 function applyBodyFont() {
   applyBodyFontLocalStorage()
@@ -680,21 +680,26 @@ function checkSearchQuery1() {
     let count2 = 0
 
     candidates.forEach((candidate) => {
-      count2 = candidate.length - 1
+      count2 = candidate.length
       while (proctor === true) {
-        if (candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), count2)) {
+        //index of exists
+        if (candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), count2) && !candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), (count2+1))) {
           if (smallest > count2) {
             smallest = count2
             chosenCandidate = candidate
+            //console.log(`${candidate}: ${smallest} (${count2})`)
           }
         }
-        if (count2 === 0) {
+        if (count2 === -1) {
           proctor = false
+          
         }
         count2 -= 1
       }
       proctor = true
     })
+
+    console.log(chosenCandidate)
 
     for (let i = 0; i < fontNames.length; i++) {
       if (fontNames[i] === chosenCandidate) {
@@ -705,7 +710,6 @@ function checkSearchQuery1() {
   }
 }
 
-//not really done yet
 function checkSearchQuery2() {
   let candidates = []
   searchBar2Query = searchBar2.value
