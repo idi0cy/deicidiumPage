@@ -675,14 +675,12 @@ function checkSearchQuery1() {
 
     //Asserting dominance module
     let proctor = true
-    //if a font's name is longer than 1000 characters I give up
-    let smallest = 1000
+    let smallest = 1000 //if a font's name is longer than 1000 characters I quit
     let chosenCandidate = "none"
     let count2 = 0
 
     candidates.forEach((candidate) => {
       count2 = candidate.length - 1
-
       while (proctor === true) {
         if (candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), count2)) {
           if (smallest > count2) {
@@ -690,7 +688,6 @@ function checkSearchQuery1() {
             chosenCandidate = candidate
           }
         }
-
         if (count2 === 0) {
           proctor = false
         }
@@ -699,7 +696,6 @@ function checkSearchQuery1() {
       proctor = true
     })
 
-    console.log(chosenCandidate)
     for (let i = 0; i < fontNames.length; i++) {
       if (fontNames[i] === chosenCandidate) {
         FW1scrollIndex = i
@@ -711,9 +707,44 @@ function checkSearchQuery1() {
 
 //not really done yet
 function checkSearchQuery2() {
-  searchBar2Query = searchBar1.value
+  let candidates = []
+  searchBar2Query = searchBar2.value
   if (searchBar2Query != '') {
-    console.log(searchBar2Query)
+    for (let i = 0; i < fontNames.length; i++) {
+      if (fontNames[i].toLowerCase().includes(searchBar2Query.toLowerCase())) {
+        candidates.push(fontNames[i])
+      }
+    }
+
+    //Asserting dominance module
+    let proctor = true
+    let smallest = 1000 //if a font's name is longer than 1000 characters I quit
+    let chosenCandidate = "none"
+    let count2 = 0
+
+    candidates.forEach((candidate) => {
+      count2 = candidate.length - 1
+      while (proctor === true) {
+        if (candidate.toLowerCase().includes(searchBar2Query.toLowerCase(), count2)) {
+          if (smallest > count2) {
+            smallest = count2
+            chosenCandidate = candidate
+          }
+        }
+        if (count2 === 0) {
+          proctor = false
+        }
+        count2 -= 1
+      }
+      proctor = true
+    })
+
+    for (let i = 0; i < fontNames.length; i++) {
+      if (fontNames[i] === chosenCandidate) {
+        FW2scrollIndex = i
+        wheel2Set("nah")
+      }
+    }
   }
 }
 
