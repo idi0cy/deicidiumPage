@@ -516,8 +516,13 @@ function wheel1Set(orientation) {
     let count = 0
     fontNames.forEach((font) => {
       if ((count != FW1scrollIndex)&&(count != audit(FW1scrollIndex - doMath(0,1,orientation)))) {
-        fontWheel1.innerHTML += font
-        fontWheel1.appendChild(lineBreak)
+        let divAlternative = document.createElement("div")
+        divAlternative.innerText = font
+        divAlternative.classList.add("becomeTrans")
+        fontWheel1.appendChild(divAlternative)
+
+        /* fontWheel1.innerHTML += font
+        fontWheel1.appendChild(lineBreak) */
       } else if(count === FW1scrollIndex){
         let selectedFontElement = document.createElement("div")
         selectedFontElement.innerText = font
@@ -557,8 +562,13 @@ function wheel2Set(orientation) {
     let count = 0
     fontNames.forEach((font) => {
       if ((count != FW2scrollIndex)&&(count != audit(FW2scrollIndex - doMath(0,1,orientation)))) {
-        fontWheel2.innerHTML += font
-        fontWheel2.appendChild(lineBreak)
+        let divAlternative = document.createElement("div")
+        divAlternative.innerText = font
+        divAlternative.classList.add("becomeTrans")
+        fontWheel2.appendChild(divAlternative)
+        
+        /* fontWheel2.innerHTML += font
+        fontWheel2.appendChild(lineBreak) */
       } else if(count === FW2scrollIndex){
         let selectedFontElement = document.createElement("div")
         selectedFontElement.innerText = font
@@ -569,7 +579,6 @@ function wheel2Set(orientation) {
         let unselectingFontElement = document.createElement("div")
         unselectingFontElement.innerText = font
         unselectingFontElement.classList.add("unselectingFont2")
-
         fontWheel2.appendChild(unselectingFontElement)
       }
       count += 1

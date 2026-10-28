@@ -23,6 +23,8 @@
     font-family: var(--bodyFont);
     color:var(--secondBaseColour);
     scrollbar-width: none;
+
+    overscroll-behavior: contain;
 }
 
 /* Defining 800 font families, and they ALL must be alphabetical */
@@ -1682,18 +1684,23 @@ input[type=text]::selection {
     border-style:solid;
     border-color:var(--tertiaryColour);
     transition:.5s;
-    background-image: linear-gradient(to bottom, transparent 5%, var(--secondBaseColour) 50%, transparent 95%);
     z-index:39;
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
     font-size:20px;
     line-height:24px;
-    overflow:hidden;
     text-overflow: ellipsis;
     display:block;
     white-space:nowrap;
     pointer-events:none;
+
+    overflow:hidden;
+    /* background: linear-gradient(to bottom, transparent 5%, var(--secondBaseColour) 50%, transparent 95%);
+    color:transparent;
+    background-clip:text;
+        -webkit-background-clip:text; */
+}
+.becomeTrans {
+    color:var(--tertiaryColour);
+    /* color:transparent; */
 }
 
 .selectedFont1, .selectedFont2 {
@@ -1715,10 +1722,11 @@ input[type=text]::selection {
     width:100%;
     background-image:linear-gradient(90deg, transparent 50%, var(--sideNavColourTrans) 50%);
     background-size:200% 100%;
-    background-clip: text;
-    -webkit-background-clip:text;
+    /* background-clip: text;
+    -webkit-background-clip:text; */
     background-position:100%;
-    color:transparent;
+    color:var(--tertiaryColour);
+    /* color:transparent; */
     text-indent:12px;
 }
 .unselectingFont1.unselecting, .unselectingFont2.unselecting {
@@ -1766,4 +1774,11 @@ input[type=text]::selection {
     background-image:linear-gradient(to bottom, transparent 5%, var(--secondBaseColour) 50%, transparent 95%);
     color:transparent;
     background-clip:text;
+    height:256px;
+    width:256px;
+    overflow:scroll;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--baseColour);
+    pointer-events:all;
 }
