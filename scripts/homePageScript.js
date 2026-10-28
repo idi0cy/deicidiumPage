@@ -496,8 +496,10 @@ if (checkST() === 0) {
 function doMath(a, b, plusOrMinus) {
   if (plusOrMinus === '+') {
     return (a + b)
-  } else {
+  } else if (plusOrMinus === '-') {
     return (a - b)
+  } else if (plusOrMinus === 'nah') {
+    return (0)
   }
 }
 function audit(parameter) {
@@ -650,6 +652,71 @@ function applyTitleFont() {
   applyTitleFontLocalStorage()
   root.style.setProperty("--titleFont", `font${FW2scrollIndex}`)
 }
+
+const searchBar1 = document.querySelector("#fontSearch1")
+const searchBar2 = document.querySelector("#fontSearch2")
+var searchBar1Query = searchBar1.value
+var searchBar2Query = searchBar2.value
+
+searchBar1.addEventListener("input", checkSearchQuery1)
+searchBar2.addEventListener("input", checkSearchQuery2)
+
+function checkSearchQuery1() {
+  let candidates = []
+  searchBar1Query = searchBar1.value
+  if (searchBar1Query != '') {
+    for (let i = 0; i < fontNames.length; i++) {
+      if (fontNames[i].toLowerCase().includes(searchBar1Query.toLowerCase())) {
+        
+        candidates.push(fontNames[i])
+
+      }
+    }
+
+    //Asserting dominance module
+    let proctor = true
+    //if a font's name is longer than 1000 characters I give up
+    let smallest = 1000
+    let chosenCandidate = "none"
+    let count2 = 0
+
+    candidates.forEach((candidate) => {
+      count2 = candidate.length - 1
+
+      while (proctor === true) {
+        if (candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), count2)) {
+          if (smallest > count2) {
+            smallest = count2
+            chosenCandidate = candidate
+          }
+        }
+
+        if (count2 === 0) {
+          proctor = false
+        }
+        count2 -= 1
+      }
+      proctor = true
+    })
+
+    console.log(chosenCandidate)
+    for (let i = 0; i < fontNames.length; i++) {
+      if (fontNames[i] === chosenCandidate) {
+        FW1scrollIndex = i
+        wheel1Set("nah")
+      }
+    }
+  }
+}
+
+//not really done yet
+function checkSearchQuery2() {
+  searchBar2Query = searchBar1.value
+  if (searchBar2Query != '') {
+    console.log(searchBar2Query)
+  }
+}
+
 // #endregion code for font wheel
 
 //#region | Resetting ALL styles for appearance
