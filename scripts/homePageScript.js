@@ -674,32 +674,15 @@ function checkSearchQuery1() {
     }
 
     //Asserting dominance module
-    let proctor = true
     let smallest = 1000 //if a font's name is longer than 1000 characters I quit
     let chosenCandidate = "none"
-    let count2 = 0
 
     candidates.forEach((candidate) => {
-      count2 = candidate.length
-      while (proctor === true) {
-        //index of exists
-        if (candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), count2) && !candidate.toLowerCase().includes(searchBar1Query.toLowerCase(), (count2+1))) {
-          if (smallest > count2) {
-            smallest = count2
-            chosenCandidate = candidate
-            //console.log(`${candidate}: ${smallest} (${count2})`)
-          }
-        }
-        if (count2 === -1) {
-          proctor = false
-          
-        }
-        count2 -= 1
+      if (candidate.toLowerCase().indexOf(searchBar1Query.toLowerCase()) < smallest) {
+        smallest = candidate.toLowerCase().indexOf(searchBar1Query.toLowerCase())
+        chosenCandidate = candidate
       }
-      proctor = true
     })
-
-    console.log(chosenCandidate)
 
     for (let i = 0; i < fontNames.length; i++) {
       if (fontNames[i] === chosenCandidate) {
@@ -721,26 +704,14 @@ function checkSearchQuery2() {
     }
 
     //Asserting dominance module
-    let proctor = true
     let smallest = 1000 //if a font's name is longer than 1000 characters I quit
     let chosenCandidate = "none"
-    let count2 = 0
 
     candidates.forEach((candidate) => {
-      count2 = candidate.length - 1
-      while (proctor === true) {
-        if (candidate.toLowerCase().includes(searchBar2Query.toLowerCase(), count2)) {
-          if (smallest > count2) {
-            smallest = count2
-            chosenCandidate = candidate
-          }
-        }
-        if (count2 === 0) {
-          proctor = false
-        }
-        count2 -= 1
+      if (candidate.toLowerCase().indexOf(searchBar1Query.toLowerCase()) < smallest) {
+        smallest = candidate.toLowerCase().indexOf(searchBar1Query.toLowerCase())
+        chosenCandidate = candidate
       }
-      proctor = true
     })
 
     for (let i = 0; i < fontNames.length; i++) {

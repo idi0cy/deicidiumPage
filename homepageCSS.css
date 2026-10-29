@@ -1771,14 +1771,6 @@ input[type=text]::selection {
 }
 
 .randomTesting {
-    background-image:linear-gradient(to bottom, transparent 5%, var(--secondBaseColour) 50%, transparent 95%);
+    /* This is for testing things if I don't know why they don't work */
     color:transparent;
-    background-clip:text;
-    height:256px;
-    width:256px;
-    overflow:scroll;
-    border-width:2px;
-    border-style:solid;
-    border-color:var(--baseColour);
-    pointer-events:all;
 }
