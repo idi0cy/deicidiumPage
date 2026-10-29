@@ -1770,7 +1770,36 @@ input[type=text]::selection {
     background-color:var(--quaternaryColour);
 }
 
-.randomTesting {
-    /* This is for testing things if I don't know why they don't work */
-    color:transparent;
+/* #region | Buncha font displays */
+.fontDisplay0 {
+    font-family:font0;
 }
+.fontDisplay1 {
+    font-family:font1;
+}
+.fontDisplay2 {
+    font-family:font2;
+}
+.fontDisplay3 {
+    font-family:font3;
+}
+.fontDisplay4 {
+    font-family:font4;
+}
+.fontDisplay5 {
+    font-family:font5;
+}
+.fontDisplay6 {
+    font-family:font6;
+}
+.fontDisplay7 {
+    font-family:font7;
+}
+/* #endregion */
+
+/* #region */
+/* This is for testing things if I don't know why they don't work */
+
+
+
+/* #endregion */

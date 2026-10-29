@@ -81,18 +81,15 @@ function switchSecondImageForward() {
     for (let i = 0; i < (secondImageIndexDisplays.length); i++) {
         secondImageIndexDisplays[i].classList.remove('selected')
     }
-
     
     if (secondIndex === (secondTextSet.length - 1)) {
         secondIndex = 0
     } else {
         secondIndex += 1
     }
-
     
     imageDesc2.classList.add('hiding')
     imageSlide2.classList.add('hiding')
-
     imageSlide2.parentNode.setAttribute('style', `height:${imageSlide2.offsetHeight + 3}px;`)
     setTimeout(() => {
         imageDesc2.innerText = secondTextSet[secondIndex]
@@ -145,14 +142,11 @@ function switchThirdImageForward() {
     for (let i = 0; i < (thirdImageIndexDisplays.length); i++) {
         thirdImageIndexDisplays[i].classList.remove('selected')
     }
-
-    
     if (thirdIndex === (thirdTextSet.length - 1)) {
         thirdIndex = 0
     } else {
         thirdIndex += 1
     }
-
 
     imageDesc3.classList.add('hiding')
     imageSlide3.classList.add('hiding')

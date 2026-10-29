@@ -222,16 +222,11 @@ if (checkST() === 0) {
     grabStoredSecondaryColour()
   }
 } else {
-
   console.log("well that's not good")
   if (checkST() === 1) {
-
     console.log("getting better")
-
   } else {
-
     console.log("really not good")
-
   }
 }
 
@@ -521,6 +516,7 @@ function wheel1Set(orientation) {
         let divAlternative = document.createElement("div")
         divAlternative.innerText = font
         divAlternative.classList.add("becomeTrans")
+        divAlternative.classList.add(`fontDisplay${count}`)
         fontWheel1.appendChild(divAlternative)
 
         /* fontWheel1.innerHTML += font
@@ -529,12 +525,14 @@ function wheel1Set(orientation) {
         let selectedFontElement = document.createElement("div")
         selectedFontElement.innerText = font
         selectedFontElement.classList.add("selectedFont1")
+        selectedFontElement.classList.add(`fontDisplay${count}`)
         
         fontWheel1.appendChild(selectedFontElement)
       } else {
         let unselectingFontElement = document.createElement("div")
         unselectingFontElement.innerText = font
         unselectingFontElement.classList.add("unselectingFont1")
+        unselectingFontElement.classList.add(`fontDisplay${count}`)
 
         fontWheel1.appendChild(unselectingFontElement)
       }
@@ -567,6 +565,7 @@ function wheel2Set(orientation) {
         let divAlternative = document.createElement("div")
         divAlternative.innerText = font
         divAlternative.classList.add("becomeTrans")
+        divAlternative.classList.add(`fontDisplay${count}`)
         fontWheel2.appendChild(divAlternative)
         
         /* fontWheel2.innerHTML += font
@@ -575,12 +574,14 @@ function wheel2Set(orientation) {
         let selectedFontElement = document.createElement("div")
         selectedFontElement.innerText = font
         selectedFontElement.classList.add("selectedFont2")
+        selectedFontElement.classList.add(`fontDisplay${count}`)
         
         fontWheel2.appendChild(selectedFontElement)
       } else {
         let unselectingFontElement = document.createElement("div")
         unselectingFontElement.innerText = font
         unselectingFontElement.classList.add("unselectingFont2")
+        unselectingFontElement.classList.add(`fontDisplay${count}`)
         fontWheel2.appendChild(unselectingFontElement)
       }
       count += 1
@@ -725,6 +726,9 @@ function checkSearchQuery2() {
 
 // #endregion code for font wheel
 
+//#region | Updating styles across tabs
+//#endregion
+
 //#region | Resetting ALL styles for appearance
 function resetAllStyles () {
   root.style.setProperty('--baseColour', '#43f7e9')
@@ -758,3 +762,15 @@ function resetAllStyles () {
   wheel2Set("+")
 }
 //#endregion
+
+/* Things to still code
+
+settings:
+ - update things across different tabs???
+ - pasting in RGB values?
+ - I don't think font size would work
+
+pages:
+ - Much better image switching system that isn't trash
+
+*/
