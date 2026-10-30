@@ -10,16 +10,41 @@ function doMathAgain(a, b, orientation) {
     }
 }
 
-const firstTextSet = ["this is description one", "will my new code actually work all of a sudden?"]
-const secondTextSet = ["This is the second text set", "I hope the system is actually scalable"]
-const thirdtextSet = ["Oh my god they made it a trio", "it's almost as if I need more things to scale for futureproofing..."]
+const firstImageSet = [
+    "../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png",
+    "../../../images/deicidiumLogo.svg",
+    "../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg"
+]
+const firstTextSet = ["this is description one",
+    "will my new code actually work all of a sudden?",
+    "Lorum ipsum that's the only part I know"
+]
+
+const secondImageSet = [
+    "../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg",
+    "../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg",
+    "../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg"
+]
+const secondTextSet = [
+    "This is the second text set",
+    "I hope the system is actually scalable",
+    "third text option!"
+]
+
+const thirdImageSet = [
+    "../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg",
+    "../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png",
+]
+const thirdtextSet = [
+    "Oh my god they made it a trio", 
+    "it's almost as if I need more things to scale for futureproofing..."
+]
 
 var firstIndex = 0
 var secondIndex = 0
 var thirdIndex = 0
 
 //Uncoded indexing territory
-
 //End of that territory
 
 function updateIndex (whichOne, orientation) {
@@ -68,6 +93,29 @@ function updateIndex (whichOne, orientation) {
     }
 }
 
+function updateImageAndDesc (whichOne, image, desc) {
+    if (whichOne === 'First') {
+        desc.innerText = firstTextSet[firstIndex]
+        image.src = firstImageSet[firstIndex]
+    } else if (whichOne === 'Second') {
+        desc.innerText = secondTextSet[secondIndex]
+        image.src = secondImageSet[secondIndex]
+    } else if (whichOne === 'Third') {
+        desc.innerText = thirdTextSet[thirdIndex]
+        image.src = thirdImageSet[thirdIndex]
+    }
+}
+
+function returnIndexToUse(whichOne) {
+    if (whichOne === 'First') {
+        return firstIndex
+    } else if (whichOne === 'Second') {
+        return secondIndex
+    } else if (whichOne === 'Third') {
+        return thirdIndex
+    }
+}
+
 //ensure that in this function index has its first letter capitalized
 function switchImage(index, orientation, actualIndex) {
     let upperDex = index
@@ -83,8 +131,41 @@ function switchImage(index, orientation, actualIndex) {
 
     updateIndex(index, orientation)
 
-    /* targetImageDesc.classList.add('hiding')
-    targetImage.classList.add('hiding') */
+    targetImageDesc.classList.add('hiding')
+    targetImage.classList.add('hiding')
+
+    targetImage.parentNode.setAttribute('style', `height:${(targetImage.offsetHeight + 3)}px;`)
+    
+    updateImageAndDesc(index, targetImage, targetImageDesc)
+
+    targetIndexDisplays[returnIndexToUse(index)].classList.add('selected')
+}
+
+const allImages = document.querySelectorAll(".docImage")
+const allDescriptions = document.querySelectorAll(".desc")
+
+// #region | Declaring all images
+
+const image1 = document.querySelector('.docImage.firstImage')
+const image2 = document.querySelector('.docImage.secondImage')
+
+// #endregion
+
+function reveal() {
+    for (let i = 0; i < allImages.length; i++) {
+        allImages[i].parentNode.setAttribute('style', `height:${(allImages[i].offsetHeight + 3)}px;`)
+        allImages[i].classList.remove('hiding')
+        allDescriptions[i].classList.remove('hiding')
+        console.log(allImages[i])
+    }
+}
+
+//This is legitimately so annoying
+image1.onload = function () {
+    reveal()
+}
+image2.onload = function () {
+    reveal()
 }
 
 //Fatuous old code
