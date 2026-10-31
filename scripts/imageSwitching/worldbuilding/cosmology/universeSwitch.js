@@ -105,7 +105,6 @@ function returnIndexToUse(whichOne) {
     }
 }
 
-
 //ensure that in this function index has its first letter capitalized
 function switchImage(index, orientation, actualIndex) {
     let upperDex = index
@@ -153,11 +152,10 @@ function reveal() {
         allDescriptions[i].classList.remove('hiding')
     }
 }
-//This is legitimately so annoying
+
+
 image1.onload = function () {
     reveal()
-    /* image1.parentNode.setAttribute('style', `height:${(image1.offsetHeight + 3)}`) */
-    /* image1.classList.remove('hiding') */
 }
 image2.onload = function () {
     reveal()
