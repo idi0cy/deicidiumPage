@@ -1,5 +1,4 @@
 //Cool new code
-
 function doMathAgain(a, b, orientation) {
     if (orientation === '+') {
         return (a + b)
@@ -10,6 +9,7 @@ function doMathAgain(a, b, orientation) {
     }
 }
 
+// #region | image and text sets
 const firstImageSet = [
     "../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png",
     "../../../images/deicidiumLogo.svg",
@@ -35,17 +35,15 @@ const thirdImageSet = [
     "../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg",
     "../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png",
 ]
-const thirdtextSet = [
+const thirdTextSet = [
     "Oh my god they made it a trio", 
     "it's almost as if I need more things to scale for futureproofing..."
 ]
+// #endregion
 
 var firstIndex = 0
 var secondIndex = 0
 var thirdIndex = 0
-
-//Uncoded indexing territory
-//End of that territory
 
 function updateIndex (whichOne, orientation) {
     if (whichOne === 'First') {
@@ -136,13 +134,18 @@ function switchImage(index, orientation, actualIndex) {
 
     targetImage.parentNode.setAttribute('style', `height:${(targetImage.offsetHeight + 3)}px;`)
     
-    updateImageAndDesc(index, targetImage, targetImageDesc)
-
+    setTimeout(() => {
+        updateImageAndDesc(index, targetImage, targetImageDesc)
+    }, 200)
+    
     targetIndexDisplays[returnIndexToUse(index)].classList.add('selected')
 }
 
 const allImages = document.querySelectorAll(".docImage")
 const allDescriptions = document.querySelectorAll(".desc")
+
+const allTextSets = [firstTextSet, secondTextSet, thirdTextSet]
+const allImageSets = [firstImageSet, secondImageSet, thirdImageSet]
 
 // #region | Declaring all images
 
@@ -159,14 +162,23 @@ function reveal() {
         console.log(allImages[i])
     }
 }
-
 //This is legitimately so annoying
 image1.onload = function () {
     reveal()
+    /* image1.parentNode.setAttribute('style', `height:${(image1.offsetHeight + 3)}`) */
+    /* image1.classList.remove('hiding') */
 }
-image2.onload = function () {
+/* image2.onload = function () {
     reveal()
+} */
+
+function initialImageSet () {
+    for (let i = 0; i < allImages.length; i++) {
+        allImages[i].src = allImageSets[i][0]
+        allDescriptions[i].innerText = allTextSets[i][0]
+    }
 }
+initialImageSet()
 
 //Fatuous old code
 
