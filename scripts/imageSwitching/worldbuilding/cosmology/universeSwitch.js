@@ -105,6 +105,7 @@ function returnIndexToUse(whichOne) {
     }
 }
 
+
 //ensure that in this function index has its first letter capitalized
 function switchImage(index, orientation, actualIndex) {
     let upperDex = index
@@ -150,7 +151,6 @@ function reveal() {
         allImages[i].parentNode.setAttribute('style', `height:${(allImages[i].offsetHeight + 3)}px;`)
         allImages[i].classList.remove('hiding')
         allDescriptions[i].classList.remove('hiding')
-        console.log(allImages[i])
     }
 }
 //This is legitimately so annoying
@@ -159,14 +159,19 @@ image1.onload = function () {
     /* image1.parentNode.setAttribute('style', `height:${(image1.offsetHeight + 3)}`) */
     /* image1.classList.remove('hiding') */
 }
-/* image2.onload = function () {
+image2.onload = function () {
     reveal()
-} */
+}
+
+const indicator1_1 = document.querySelector(".displayIndicatorFirst")
+const indicator2_1 = document.querySelector(".displayIndicatorSecond")
 
 function initialImageSet () {
     for (let i = 0; i < allImages.length; i++) {
         allImages[i].src = allImageSets[i][0]
         allDescriptions[i].innerText = allTextSets[i][0]
     }
+    indicator1_1.classList.add("selected")
+    indicator2_1.classList.add("selected")
 }
 initialImageSet()
