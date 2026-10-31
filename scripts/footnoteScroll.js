@@ -12,7 +12,6 @@ function scrollToFootnote(footnote) {
 }
 
 function focusFootnote (footnote) {
-    console.log("THis is registering")
     allFootnotes.forEach((note) => {
         if (note != footnote.parentNode) {
             note.classList.remove("selectedFootnote")

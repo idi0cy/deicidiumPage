@@ -1840,7 +1840,6 @@ input[type=text]::selection {
     line-height:clamp(14px, 2vw, 20px);
 }
 
-/* This one isn't done yet */
 sup {
     color:var(--secondaryColour);
     font-size:clamp(10px, 1.75vw, 16px);
