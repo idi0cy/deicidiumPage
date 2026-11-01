@@ -1,5 +1,3 @@
-/* https://animista.net/ */
-
 /* #region root variables and universals*/
 
 :root {
@@ -131,7 +129,6 @@ a:hover {
         scale:0.85;
     }
 }
-
 @-webkit-keyframes logoSpawn {
     0% {
         opacity: 0;
@@ -153,7 +150,6 @@ a:hover {
             transform: rotate(-360deg);
     }
 }
-
 @-webkit-keyframes logo {
     0% {
         -webkit-transform: rotate(0);
@@ -686,7 +682,6 @@ a:hover {
         opacity: 1;
     }
 }
-
 @-webkit-keyframes appearGrid {
     0%{
         opacity: 0;
@@ -704,7 +699,6 @@ a:hover {
         transform: translate(128px, 64px);
     }
 }
-
 @-webkit-keyframes moveGrid {
     0% {
         transform: translate(0);
@@ -720,7 +714,6 @@ a:hover {
     padding:clamp(32px, 8vw, 64px);
     height:fit-content;
 }
-
 .sectionOne::before {
     content: "";
     position:absolute;
@@ -753,7 +746,6 @@ a:hover {
     transition: background-position .5s ease;
     position:relative;
 }
-
 .secOneHeader::after {
     position:absolute;
     width:100%;
@@ -767,11 +759,9 @@ a:hover {
     background-size:200% 100%;
     transition: background-position .5s ease;
 }
-
 .secOneHeader:hover {
     background-position:0;
 }
-
 .secOneHeader:hover::after {
     background-position:0;
 }
@@ -1858,6 +1848,10 @@ sup:hover {
 }
 .footerListPoint.selectedFootnote {
     padding-left:24px;
+}
+
+.noclick {
+    cursor:initial;
 }
 
 /* #region */

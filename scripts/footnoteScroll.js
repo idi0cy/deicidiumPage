@@ -3,7 +3,10 @@ const allFootnotes = document.querySelectorAll('.footerListPoint')
 
 function scrollToFootnote(footnote) {
     let targetFootnote = document.querySelector(`.${footnote}`)
-    targetFootnote.scrollIntoView()
+    targetFootnote.scrollIntoView({
+        inline:'center',
+        block:'center'
+    })
 
     allFootnotes.forEach((note) => {
         note.classList.remove("selectedFootnote")
