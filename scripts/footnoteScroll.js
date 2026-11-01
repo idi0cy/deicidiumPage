@@ -1,5 +1,5 @@
-const pageDocument = document.querySelector('.mainBody')
 const allFootnotes = document.querySelectorAll('.footerListPoint')
+const allRelArticles = document.querySelectorAll(".relArticlePoint")
 
 function scrollToFootnote(footnote) {
     let targetFootnote = document.querySelector(`.${footnote}`)
@@ -25,4 +25,17 @@ function focusFootnote (footnote) {
     } else {
         footnote.parentNode.classList.remove('selectedFootnote')
     }
+}
+
+function referToArticle(article) {
+    let targetArticle = document.querySelector(`.${article}`)
+    targetArticle.scrollIntoView({
+        inline:'center',
+        block:'center'
+    })
+
+    allRelArticles.forEach((point) => {
+        point.classList.remove("selectedArticle")
+    })
+    targetArticle.classList.add('selectedArticle')
 }

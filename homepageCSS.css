@@ -1809,7 +1809,7 @@ input[type=text]::selection {
     flex-direction:column;
     padding-left:24px;
 }
-.footerListPoint {
+.footerListPoint, .relArticlePoint {
     display:flex;
     gap:8px;
     margin-bottom:24px;
@@ -1822,7 +1822,7 @@ input[type=text]::selection {
     transition:.25s;
     cursor: pointer;
 }
-.footerListPoint:hover > .listIndex {
+.footerListPoint:hover > .listIndex, .relArticlePoint:hover > .listIndex {
     color:var(--secondaryColour);
 }
 .listText {
@@ -1846,8 +1846,12 @@ sup:hover {
 .selectedFootnote > .listText {
     color:var(--baseColour)
 }
-.footerListPoint.selectedFootnote {
+.footerListPoint.selectedFootnote, .selectedArticle {
     padding-left:24px;
+}
+
+.selectedArticle > .listIndex {
+    color:var(--baseColour);
 }
 
 .noclick {
