@@ -1851,7 +1851,7 @@ sup:hover {
 }
 
 .noclick {
-    cursor:initial;
+    cursor:normal;
 }
 
 /* #region */
