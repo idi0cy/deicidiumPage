@@ -241,7 +241,23 @@
         </div>
 
         <div class="mainBody">
+            <div class="gridBackground"></div>
             
+            <div class="pageDocumentCenterer">
+                <div class="pageDocument">
+                    <div class="pageDocTitle centeredTitle">404 Not Found</div>
+                    <div class="quoteContainer centeredTitle"><div class="textGoBlue"><strong>"</strong>Request is invalid. Please see document below for further details on your error.<strong>"</strong></div></div>
+                    <div class="horizontalLine1"></div>
+
+                    <div class="docText">
+
+                        <p>Hello USER. If you are currently on the page being displayed before you, then it appears something has gone wrong and you have deviated from your typical Deicidium experience.</p>
+                        <p class="indented">Fear not, the incident you are faced with today is not irregular in any way, and you can resume browsing with little to no issue.</p>
+
+                    </div>
+                </div>
+            </div>
+
             <section class="footer">
 
                 <!--BIG SPOOKY SVG-->
@@ -424,8 +440,18 @@
         </div>
     </div>
 
-    <!--JAVASCRIPT LINK (from root directory doesn't work?)-->
-    <script src="scripts/homePageScript.js"></script>
-    <!--JAVASCRIPT LINK-->
+    <!--JAVASCRIPT SHENANIGANS-->
+    <script>
+        script_loaded = false
+    </script>
+    <script src="/deicidiumPage/scripts/homePageScript.js" id="homePageScript"></script>
+    <!--Some weird logic to make an epic epileptic backupic scriptic-->
+    <script>
+        if (script_loaded === false) {
+            let backupScript = document.createElement('script')
+            backupScript.src = "/scripts/homePageScript.js"
+            document.body.appendChild(backupScript)
+        }
+    </script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 // #region | Basic variable setup
+
+script_loaded = true
+
 const root = document.querySelector(':root');
 
 var dropDownContainerDown = document.getElementsByClassName('dropDownContainerDown')
