@@ -1909,6 +1909,21 @@ sup:hover {
     height:32px;
     margin-right:12px;
     margin-bottom:12px;
+    transition:.25s;
+}
+.docCollapseArrow.open {
+    transform:rotate(180deg)
+}
+.dcArrowBar1, .dcArrowBar2 {
+    height:2px;
+    width:20px;
+    background-color:var(--baseColour);
+}
+.dcArrowBar1 {
+    transform:rotate(-45deg) translateY(10px) translateX(-11px)
+}
+.dcArrowBar2 {
+    transform:rotate(45deg) translateY(0px) translateX(18px)
 }
 
 /* #region */

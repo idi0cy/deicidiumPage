@@ -263,8 +263,8 @@
                         <p class="indented">If the address you are using to access this network seems strange or out of place, with links that just don't make sense (for example if it contains, 'fdsalae.html', 'fsomthingnobodywouldcode.html', 'notwithstanding.html', 'whereisthesixthsubnote.html', or 'anaphylacticpenguinzfdsefa.html') that's a surefire way of telling that you've received a 404 error because what you're looking for just isn't there.</p>
                         <p class="indented">Of course, there are likely other ways that you could have ended up here that aren't just a simple mistake in the address bar. Take a look at our FAQ for some other sources of the issue that users such as you have faced.</p>
 
-                        <div class="docCollapseTrigger first header1">
-                            <div class="docCollapseArrow">
+                        <div class="docCollapseTrigger first header1" onclick="collapseSection('first')">
+                            <div class="docCollapseArrow first">
                                 <div class="dcArrowBar1"></div>
                                 <div class="dcArrowBar2"></div>
                             </div>
@@ -463,12 +463,17 @@
         script_loaded = false
     </script>
     <script src="/deicidiumPage/scripts/homePageScript.js" id="homePageScript"></script>
+    <script src="/deicidiumPage/scripts/collapsableSections.js"></script>
     <!--Some weird logic to make an epic epileptic backupic scriptic-->
     <script>
         if (script_loaded === false) {
             let backupScript = document.createElement('script')
             backupScript.src = "/scripts/homePageScript.js"
             document.body.appendChild(backupScript)
+
+            let backupScript2 = document.createElement('script')
+            backupScript2.src = "/scripts/collapsableSections.js"
+            document.body.appendChild(backupScript2)
         }
     </script>
 </body>
