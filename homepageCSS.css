@@ -1863,6 +1863,54 @@ sup:hover {
     text-align:center;
 }
 
+.returnHome {
+    width:196px;
+    height:32px;
+    margin-top:32px;
+    margin-bottom:32px;
+    border-width: 2px;
+    border-color:var(--baseColour);
+    border-style:solid;
+    padding-left:8px;
+    line-height:32px;
+    cursor: pointer;
+}
+.returnHome:hover > span {
+    display:none;
+}
+.returnHome:hover {
+    background-color: var(--quaternaryColour);
+}
+.returnHome::after {
+    opacity:0;
+    left:0;
+    right:0;
+    width:128px;
+    height:64px;
+    text-align:center;
+    line-height:32px;
+    content:"Don't come back";
+}
+.returnHome:hover::after {
+    opacity:1;
+    transition:25s;
+}
+
+.header1 {
+    font-size:clamp(20px, 5vw, 48px);
+}
+.docCollapseTrigger {
+    cursor: pointer;
+    display:flex;
+    align-items:end;
+}
+.docCollapseArrow {
+    width:32px;
+    height:32px;
+    margin-right:12px;
+    margin-bottom:12px;
+}
+
 /* #region */
 /* This is for testing things if I don't know why they don't work */
 
