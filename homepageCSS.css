@@ -1898,21 +1898,24 @@ sup:hover {
 
 .header1 {
     font-size:clamp(20px, 5vw, 48px);
+    align-items:end;
+    /* font-size:48px; */
+    line-height:100%;
 }
 .docCollapseTrigger {
     cursor: pointer;
     display:flex;
-    align-items:end;
+    align-items: center;
 }
 .docCollapseArrow {
     width:32px;
     height:32px;
     margin-right:12px;
-    margin-bottom:12px;
-    transition:.25s;
+    transition:.5s;
+    transform:scale(0.7)
 }
 .docCollapseArrow.open {
-    transform:rotate(180deg)
+    transform:rotate(180deg) scale(0.7)
 }
 .dcArrowBar1, .dcArrowBar2 {
     height:2px;
@@ -1945,6 +1948,36 @@ sup:hover {
     visibility:visible;
 }
 
+.collapseMini {
+    max-width:512px;
+    padding:12px;
+    border-width: 2px;
+    border-style:solid;
+    border-color:var(--secondaryColour);
+    background-color: var(--quaternaryColour);
+}
+.collapseMiniContent {
+    display:grid;
+    transition: grid-template-rows .5s;
+    grid-template-rows: 0fr;
+    overflow:hidden;
+}
+.collapseMiniContent.open {
+    grid-template-rows:1fr;
+}
+.collapseMiniContent.open .weirdProxy {
+    visibility:visible;
+}
+.collapseBoxHeader {
+    font-size:clamp(16px, 2vw, 24px);
+    cursor: pointer;
+}
+.horizontalLine2 {
+    height:2px;
+    width:100%;
+    background-color:var(--secondBaseColour);
+    margin-bottom:8px;
+}
 
 /* #region */
 /* This is for testing things if I don't know why they don't work */

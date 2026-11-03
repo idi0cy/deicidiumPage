@@ -14,3 +14,17 @@ function collapseSection(selector) {
         targetContent.classList.add('open')
     }
 }
+
+function collapseMiniSection(selector) {
+    let targetMiniSection = document.querySelector(`.collapseBoxHeader.${selector}`)
+    let targetContent = document.querySelector (`.collapseMiniContent.${selector}`)
+
+    if (targetMiniSection.classList.contains('open')) {
+        targetContent.classList.remove('open')
+        targetMiniSection.classList.remove('open')
+    } else {
+        targetContent.classList.add('open')
+        targetMiniSection.classList.add('open')
+    }
+
+}
