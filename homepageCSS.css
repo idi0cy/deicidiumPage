@@ -1926,6 +1926,26 @@ sup:hover {
     transform:rotate(45deg) translateY(0px) translateX(18px)
 }
 
+/* How does one grid template rows??? */
+.docCollapseContent {
+    display:grid;
+    transition: grid-template-rows .5s;
+    grid-template-rows:0fr;
+    overflow:hidden;
+}
+.docCollapseContent.open {
+    grid-template-rows:1fr;
+}
+.weirdProxy {
+    min-height:0;
+    transition:visibility 0.5s;
+    visibility:hidden;
+}
+.docCollapseContent.open .weirdProxy {
+    visibility:visible;
+}
+
+
 /* #region */
 /* This is for testing things if I don't know why they don't work */
 
