@@ -50,6 +50,8 @@ Throughout this readme I have achieved all shipment criteria setout by the hackc
 6. Can be experienced with those with less technical knowledge/knowhow
 7. The entire codebase has been published on github
   
+Please consider the above points before denying the project and requesting changes be made.
+    
 MY ACTUAL ORIGINAL README
 ---
 Hello boys, girls, neithers, boths and in between!  
