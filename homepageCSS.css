@@ -1941,7 +1941,6 @@ sup:hover {
 .weirdProxy {
     transition:visibility 0.5s;
     visibility:hidden;
-    overflow-y:auto;
 }
 .docCollapseContent.open .weirdProxy {
     visibility:visible;
@@ -1962,7 +1961,6 @@ sup:hover {
     transition: grid-template-rows .5s;
     grid-template-rows:0fr;
     overflow:hidden;
-    align-items:start;
 }
 .collapseMiniContent.open {
     grid-template-rows:1fr;
@@ -1995,6 +1993,20 @@ sup:hover {
     border-color:var(--secondaryColour);
     background-color: var(--quaternaryColour);
     margin-top:12px;
+}
+
+.pleaseworkHeader {
+    font-size:clamp(16px, 2vw, 24px);
+    cursor: pointer;
+    color:var(--baseColour);
+}
+.pleaseworkContent {
+    height:0;
+    transition:1s ease;
+    overflow:hidden;
+}
+.pleaseworkContent.open {
+    overflow:visible;
 }
 
 /* #endregion */

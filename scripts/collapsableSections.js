@@ -16,7 +16,7 @@ function collapseSection(selector) {
 
 function collapseMiniSection(selector) {
     let targetMiniSection = document.querySelector(`.collapseBoxHeader.${selector}`)
-    let targetContent = document.querySelector (`.collapseMiniContent.${selector}`)
+    let targetContent = document.querySelector(`.collapseMiniContent.${selector}`)
     if (targetMiniSection.classList.contains('open')) {
         targetContent.classList.remove('open')
         targetMiniSection.classList.remove('open')
@@ -24,4 +24,19 @@ function collapseMiniSection(selector) {
         targetContent.classList.add('open')
         targetMiniSection.classList.add('open')
     }
+}
+
+function pleaseworkFunction(selector) {
+    let theTarget = document.querySelector(`.pleaseworkContent.${selector}`)
+
+    if (theTarget.classList.contains('open')) {
+        theTarget.style.height = `0px`;
+
+        theTarget.classList.remove('open')
+    } else {
+        theTarget.style.height = `${theTarget.scrollHeight}px`;
+
+        theTarget.classList.add('open')
+    }
+    console.log(theTarget.scrollHeight)
 }
