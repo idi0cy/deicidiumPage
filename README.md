@@ -47,6 +47,8 @@ Throughout this readme I have achieved all shipment criteria setout by the hackc
 3. No gated credentials
 4. A demonstrative image of the project working
 5. All elements of project that purport to function work, with the exception of sidebar navigation links, in which only some articles are filled out and the others give an alert that the page will be coming soon, meeting the burden of a minimum viable project (MVP) as set out in the Terra FAQ.
+6. Can be experienced with those with less technical knowledge/knowhow
+7. The entire codebase has been published on github
   
 MY ACTUAL ORIGINAL README
 ---
