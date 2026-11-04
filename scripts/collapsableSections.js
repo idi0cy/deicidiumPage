@@ -44,3 +44,19 @@ function pleaseworkFunction(selector) {
         }
     })
 }
+
+function foldSection(selector) {
+    let foldingContent = document.querySelector(`.foldingContent.${selector}`)
+    let contentFoldWrapper = document.querySelector(`.foldingContent.${selector} > .contentFoldWrapper`)
+
+    console.log(foldingContent)
+    console.log(contentFoldWrapper)
+
+    if (foldingContent.classList.contains('open')) {
+        foldingContent.classList.remove('open')
+        contentFoldWrapper.classList.remove('open')
+    } else {
+        foldingContent.classList.add('open')
+        contentFoldWrapper.classList.add('open')        
+    }
+}

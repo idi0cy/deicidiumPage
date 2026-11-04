@@ -4,7 +4,7 @@ HOW TO RUN THE WEBSITE
 ---
 Some reviewers have kindly rejected my ship because they claim that the instructions for running the project are not sufficient. I understand these concerns, so below is a compilation of methods that you can use to run this project properly. README originally written can be found below this section.  
   
-Below, I will attach an image of the website running, if you are skeptical of the website not actually working and for some reason can't go to it to check that it does run (or are just lazy, which I understand), below is an image of the project running in the Zen browser. Similar to the dozens of other screenshots I have of the project running in my devlogs, it depicts the project running. If you believe this photo evidence is doctored, or AI generated in any way, visit the website so you can see that it works, and that the image is valid.    
+Before that, below I will attach an image of the website running if you are skeptical of the website not actually working and for some reason can't go to it to check that it does run (or are just lazy, which I understand), below is an image of the project running in the Zen browser. Similar to the dozens of other screenshots I have of the project running in my devlogs, it depicts the project running. If you believe this photo evidence is doctored, or AI generated in any way, visit the website so you can see that it works, and that the image is valid.  
   
 ![image info](./yeahthewebsiteworks.png)
   
@@ -14,8 +14,10 @@ https://idi0cy.github.io/deicidiumPage/
   
 This link will lead directly to the github.io page that I have set up specifically so you can access the entire website in one link. This link will indeed run the website on your browser, provided you possess an internet connection.  
   
-Too much? What if you need to run it locally? You can start a localhost server with python, so first follow these steps.  
+What if you need to run it locally for whatever reason? You can start a localhost server with python, so first follow these steps.  
   
+Keep in mind that these steps are completely optional, and the link provided will work infinitely better. Also keep in mind that these steps are not required at all for project shipping in accordance with the Terra FAQ as well as the submission guidelines for hackclub.  
+    
 1. Install python. To use python on your computer to run the python command, you are going to need to have python installed on your computer. Search up python installation on your browser of choice, and you should be directed to the python website where they tell you all about how to install python.
 2. Add python to the PATH. Search up a tutorial on how to add python to the Windows PATH (if you're using windows). I can't help you with localhosting the website on MAC or LINUX, so search up a respective tutorial for those operating systems.
 3. Download the deicidium page folder, with all the stuff in it. Navigate to the github repository, and hit the big green "code" button. Then, select "download ZIP." Rename the zip file to whatever you want. After extracting, rename the folder inside of the zip file title "deicidiumPage-main" to just "deicidiumPage." You can rename files in the file explorer.
@@ -37,8 +39,15 @@ I'm assuming you followed the local host example. If you didn't, remember that y
   
 If you have a default browser set, double click the index.html file under the deicidiumPage-main file (or deicidiumPage, if you renamed it that). This will open it in your browser. This version will be severely lacking in features. No absolute links will work, and your website customizations will not function.  
   
-If you are reviewing this project and wish to run it some other way, or believe that I have not provided enough information pertaining to the running of this project, I have a request. Stop reviewing on terra. If you can't enter a URL in your browser bar, or download code from github, ***you are not built for this line of work.***
-
+If you are reviewing this project and wish to run it some other way, or believe that I have not provided enough information pertaining to the running of this project, the below statement is here to clarify.  
+  
+Throughout this readme I have achieved all shipment criteria setout by the hackclub authority.
+1. Non-ephemeral link that leads to the project demo page
+2. Less than two minute setup, provided you used the link provided for github.io and already have any internet browser installed
+3. No gated credentials
+4. A demonstrative image of the project working
+5. All elements of project that purport to function work, with the exception of sidebar navigation links, in which only some articles are filled out and the others give an alert that the page will be coming soon, meeting the burden of a minimum viable project (MVP) as set out in the Terra FAQ.
+  
 MY ACTUAL ORIGINAL README
 ---
 Hello boys, girls, neithers, boths and in between!  

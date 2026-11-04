@@ -1937,6 +1937,7 @@ sup:hover {
 }
 .docCollapseContent.open {
     grid-template-rows:1fr;
+    pointer-events:none;
 }
 .weirdProxy {
     transition:visibility 0.5s;
@@ -1964,6 +1965,7 @@ sup:hover {
 }
 .collapseMiniContent.open {
     grid-template-rows:1fr;
+    pointer-events:none;
 }
 .collapseMiniContent.open .weirdProxy {
     visibility:visible;
@@ -1972,18 +1974,70 @@ sup:hover {
     font-size:clamp(16px, 2vw, 24px);
     cursor: pointer;
     color:var(--baseColour);
+    pointer-events:all;
 }
 .horizontalLine2 {
     height:2px;
     width:100%;
     background-color:var(--secondBaseColour);
-    margin-bottom:8px;
+    margin-bottom:0px;
 }
 .nomargin {
     margin:8px;
 }
 
 /* WE CAN POSSIBLY APPLY OVERFLOW SOLUTION TO ORIGINAL GRID PROCESS, WE ALSO NEED TO FIX THE JAVASCRIPT DUMPSTER FIRE */
+
+
+
+
+/* #region | Code for collapsing sections*/
+
+.foldingSection {
+    max-width:512px;
+    padding:12px;
+    border-width: 2px;
+    border-style:solid;
+    border-color:var(--secondaryColour);
+    background-color: var(--quaternaryColour);
+    margin-top:12px;
+}
+
+.foldHeader1 {
+    font-size:clamp(16px, 2vw, 24px);
+    color:var(--baseColour);
+}
+
+.foldingContent {
+    display:grid;
+    grid-template-rows:0fr;
+    transition: grid-template-rows 1s ease;
+    overflow:hidden;
+}
+.contentFoldWrapper {
+    min-height:0;
+    visibility:hidden;
+    transition:1s ease;
+    opacity:0;
+}
+
+.foldingContent.open {
+    grid-template-rows:1fr;
+    pointer-events:none;
+}
+.contentFoldWrapper.open {
+    opacity:1;
+    visibility:visible;
+}
+.foldingHeader {
+    cursor: pointer;
+    pointer-events:all;
+}
+
+/* #endregion */
+
+
+
 
 /* #region */
 /* This is for testing things if I don't know why they don't work */
