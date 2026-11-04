@@ -1985,6 +1985,7 @@ sup:hover {
 /* #region */
 /* This is for testing things if I don't know why they don't work */
 
+/* it finally kinda works, except i'm not sure if this will actually apply to things like, children, because that might goof everything up */
 .pleaseworkContainer {
     max-width:512px;
     padding:12px;
@@ -1994,19 +1995,18 @@ sup:hover {
     background-color: var(--quaternaryColour);
     margin-top:12px;
 }
-
-.pleaseworkHeader {
-    font-size:clamp(16px, 2vw, 24px);
-    cursor: pointer;
-    color:var(--baseColour);
-}
 .pleaseworkContent {
     height:0;
     transition:1s ease;
     overflow:hidden;
 }
 .pleaseworkContent.open {
-    overflow:visible;
+    pointer-events: none;
 }
-
+.pleaseworkHeader {
+    font-size:clamp(16px, 2vw, 24px);
+    cursor: pointer;
+    color:var(--baseColour);
+    pointer-events:all;
+}
 /* #endregion */

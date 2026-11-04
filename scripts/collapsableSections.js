@@ -26,17 +26,21 @@ function collapseMiniSection(selector) {
     }
 }
 
+//this might never actually work ngl
 function pleaseworkFunction(selector) {
     let theTarget = document.querySelector(`.pleaseworkContent.${selector}`)
+    let allOfThem = document.querySelectorAll('.pleaseworkContent')
 
     if (theTarget.classList.contains('open')) {
         theTarget.style.height = `0px`;
-
         theTarget.classList.remove('open')
     } else {
         theTarget.style.height = `${theTarget.scrollHeight}px`;
-
         theTarget.classList.add('open')
     }
-    console.log(theTarget.scrollHeight)
+    allOfThem.forEach((container) => {
+        if (container.classList.contains('open')) {
+            container.style.height = `${container.scrollHeight}px`;
+        }
+    })
 }
