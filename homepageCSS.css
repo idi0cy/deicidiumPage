@@ -1899,7 +1899,6 @@ sup:hover {
 .header1 {
     font-size:clamp(20px, 5vw, 48px);
     align-items:end;
-    /* font-size:48px; */
     line-height:100%;
 }
 .docCollapseTrigger {
@@ -1929,25 +1928,25 @@ sup:hover {
     transform:rotate(45deg) translateY(0px) translateX(18px)
 }
 
-/* How does one grid template rows??? */
 .docCollapseContent {
     display:grid;
     transition: grid-template-rows .5s;
     grid-template-rows:0fr;
     overflow:hidden;
+    align-items:start;
 }
 .docCollapseContent.open {
     grid-template-rows:1fr;
 }
 .weirdProxy {
-    min-height:0;
     transition:visibility 0.5s;
     visibility:hidden;
+    overflow-y:auto;
 }
 .docCollapseContent.open .weirdProxy {
     visibility:visible;
 }
-
+/* This one is a blanket element that covers everything */
 .collapseMini {
     max-width:512px;
     padding:12px;
@@ -1955,12 +1954,15 @@ sup:hover {
     border-style:solid;
     border-color:var(--secondaryColour);
     background-color: var(--quaternaryColour);
+    margin-top:12px;
 }
+/* This one only covers content that is being disappeared */
 .collapseMiniContent {
     display:grid;
     transition: grid-template-rows .5s;
-    grid-template-rows: 0fr;
+    grid-template-rows:0fr;
     overflow:hidden;
+    align-items:start;
 }
 .collapseMiniContent.open {
     grid-template-rows:1fr;
@@ -1971,6 +1973,7 @@ sup:hover {
 .collapseBoxHeader {
     font-size:clamp(16px, 2vw, 24px);
     cursor: pointer;
+    color:var(--baseColour);
 }
 .horizontalLine2 {
     height:2px;
@@ -1978,10 +1981,20 @@ sup:hover {
     background-color:var(--secondBaseColour);
     margin-bottom:8px;
 }
-
+.nomargin {
+    margin:8px;
+}
 /* #region */
 /* This is for testing things if I don't know why they don't work */
 
-
+.pleaseworkContainer {
+    max-width:512px;
+    padding:12px;
+    border-width: 2px;
+    border-style:solid;
+    border-color:var(--secondaryColour);
+    background-color: var(--quaternaryColour);
+    margin-top:12px;
+}
 
 /* #endregion */
