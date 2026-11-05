@@ -411,8 +411,7 @@ generateSecondaryColour()
 
 const blankLinks = document.querySelectorAll(".sideNavLink")
 blankLinks.forEach((link) => {
-  if (link.href === '') {
-    //IT WORKS
+  if (link.href === '' && !link.classList.contains('currentNavLink')) {
     link.onclick = function() {alert(`The page "${link.innerText}" has not been added to the site. It will be added in a future update.`)}
   }
 });
