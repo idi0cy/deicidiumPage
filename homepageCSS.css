@@ -1928,84 +1928,28 @@ sup:hover {
     transform:rotate(45deg) translateY(0px) translateX(18px)
 }
 
-.docCollapseContent {
-    display:grid;
-    transition: grid-template-rows .5s;
-    grid-template-rows:0fr;
-    overflow:hidden;
-    align-items:start;
-}
-.docCollapseContent.open {
-    grid-template-rows:1fr;
-    pointer-events:none;
-}
-.weirdProxy {
-    transition:visibility 0.5s;
-    visibility:hidden;
-}
-.docCollapseContent.open .weirdProxy {
-    visibility:visible;
-}
-/* This one is a blanket element that covers everything */
-.collapseMini {
-    max-width:512px;
-    padding:12px;
-    border-width: 2px;
-    border-style:solid;
-    border-color:var(--secondaryColour);
-    background-color: var(--quaternaryColour);
-    margin-top:12px;
-}
-/* This one only covers content that is being disappeared */
-.collapseMiniContent {
-    display:grid;
-    transition: grid-template-rows .5s;
-    grid-template-rows:0fr;
-    overflow:hidden;
-}
-.collapseMiniContent.open {
-    grid-template-rows:1fr;
-    pointer-events:none;
-}
-.collapseMiniContent.open .weirdProxy {
-    visibility:visible;
-}
-.collapseBoxHeader {
-    font-size:clamp(16px, 2vw, 24px);
-    cursor: pointer;
-    color:var(--baseColour);
-    pointer-events:all;
-}
+
 .horizontalLine2 {
     height:2px;
     width:100%;
-    background-color:var(--secondBaseColour);
-    margin-bottom:0px;
+    background-color:var(--tertiaryColour);
+    margin-top:8px;
+    margin-bottom:8px;
 }
-.nomargin {
-    margin:8px;
-}
-
-/* WE CAN POSSIBLY APPLY OVERFLOW SOLUTION TO ORIGINAL GRID PROCESS, WE ALSO NEED TO FIX THE JAVASCRIPT DUMPSTER FIRE */
-
-
-
-
 /* #region | Code for collapsing sections*/
 
 .foldingSection {
-    max-width:512px;
+    max-width:100%;
     padding:12px;
-    border-width: 2px;
-    border-style:solid;
-    border-color:var(--secondaryColour);
     background-color: var(--quaternaryColour);
-    margin-top:12px;
+    margin-top:24px;
+    margin-bottom:24px;
+    clip-path: polygon(0 0, calc(100% - 1.5em) 0, 100% 1.5em, 100% 100%, 100% 99%, 0 100%, 0 100%, 0 0);
 }
 
 .foldHeader1 {
     font-size:clamp(16px, 2vw, 24px);
-    color:var(--baseColour);
+    color:var(--secondBaseColour);
 }
 
 .foldingContent {
@@ -2013,6 +1957,9 @@ sup:hover {
     grid-template-rows:0fr;
     transition: grid-template-rows 1s ease;
     overflow:hidden;
+    background-color: var(--quinaryColour);
+    padding-left: 16px;
+    padding-right: 16px;
 }
 .contentFoldWrapper {
     min-height:0;
@@ -2030,40 +1977,40 @@ sup:hover {
     visibility:visible;
 }
 .foldingHeader {
-    cursor: pointer;
-    pointer-events:all;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+    padding-right:1.25em;
 }
 
-/* #endregion */
-
-
-
-
-/* #region */
-/* This is for testing things if I don't know why they don't work */
-
-/* it finally kinda works, except i'm not sure if this will actually apply to things like, children, because that might goof everything up */
-.pleaseworkContainer {
-    max-width:512px;
-    padding:12px;
-    border-width: 2px;
+.foldingArrow {
+    border-width:2px;
     border-style:solid;
     border-color:var(--secondaryColour);
-    background-color: var(--quaternaryColour);
-    margin-top:12px;
-}
-.pleaseworkContent {
-    height:0;
-    transition:1s ease;
-    overflow:hidden;
-}
-.pleaseworkContent.open {
-    pointer-events: none;
-}
-.pleaseworkHeader {
-    font-size:clamp(16px, 2vw, 24px);
-    cursor: pointer;
-    color:var(--baseColour);
     pointer-events:all;
+    cursor:pointer;
+    height:24px;
+    width:24px;
+    flex-shrink:0;
 }
+.foldArrow1, .foldArrow2 {
+    width:12px;
+    height:2px;
+    background-color:var(--secondaryColour);
+}
+.foldArrow1 {
+    transform:rotate(45deg) translateX(15px) translateY(1px)
+}
+.foldArrow2 {
+    transform:rotate(-45deg) translateX(-5px) translateY(8px)
+}
+.foldingArrowContainer {
+    transition:1s;
+    transform:scaleY(1) translateY(0px)
+}
+.foldingArrowContainer.open {
+    transform:scaleY(-1) translateY(-20px)
+}
+
 /* #endregion */
