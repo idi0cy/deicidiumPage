@@ -1944,7 +1944,7 @@ sup:hover {
     background-color: var(--quaternaryColour);
     margin-top:24px;
     margin-bottom:24px;
-    clip-path: polygon(0 0, calc(100% - 1.5em) 0, 100% 1.5em, 100% 100%, 100% 99%, 0 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, calc(100% - 1.5em) 0, 100% 1.5em, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
 }
 
 .foldHeader1 {
