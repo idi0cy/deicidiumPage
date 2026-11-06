@@ -2014,3 +2014,15 @@ sup:hover {
 }
 
 /* #endregion */
+
+.lessMargin {
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+.horizontalLine3 {
+    height:2px;
+    width:100%;
+    background-color:var(--secondBaseColour);
+    margin-bottom:8px;
+}
