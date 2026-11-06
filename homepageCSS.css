@@ -1277,6 +1277,7 @@ input[type=range]:focus {
 }
 input[type=text]::selection {
     background-color:transparent;
+    font-size:20px;
 }
 
 .colorSelectLabel {
@@ -2025,4 +2026,9 @@ sup:hover {
     width:100%;
     background-color:var(--secondBaseColour);
     margin-bottom:8px;
+}
+
+input::placeholder {
+    font-size:20px;
+    color:var(--tertiaryColour);
 }
