@@ -1999,6 +1999,7 @@ sup:hover {
     width:12px;
     height:2px;
     background-color:var(--secondaryColour);
+    transition:.5s;
 }
 .foldArrow1 {
     transform:rotate(45deg) translateX(15px) translateY(1px)
@@ -2006,12 +2007,13 @@ sup:hover {
 .foldArrow2 {
     transform:rotate(-45deg) translateX(-5px) translateY(8px)
 }
-.foldingArrowContainer {
-    transition:1s;
-    transform:scaleY(1) translateY(0px)
+
+/* These arrows are for some reason slightly misaligned on different arrows and I don't understand why */
+.foldingArrowContainer.open > .foldArrow1 {
+    transform:rotate(-45deg) translateX(-1px) translateY(15px);
 }
-.foldingArrowContainer.open {
-    transform:scaleY(-1) translateY(-20px)
+.foldingArrowContainer.open > .foldArrow2 {
+    transform:rotate(45deg) translateX(8px) translateY(4px);
 }
 
 /* #endregion */
