@@ -407,7 +407,7 @@ copyColourButton.addEventListener("click", copyColourVal)
 generateColour()
 generateSecondaryColour()
 
-//#region | Blank link warnings
+//#region | Blank link warnings which will soon be rendered obsolete
 
 const blankLinks = document.querySelectorAll(".sideNavLink")
 blankLinks.forEach((link) => {
