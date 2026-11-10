@@ -1,7 +1,13 @@
 
 // #region | image and text sets
 
-const firstImageSet = ['wow its the first invalid link', 'second one', 'fooooourth', 'dont you dare doubt my counting capacities', 'thiiiiiiiiird']
+const firstImageSet = [
+    '../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png',
+    '../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg',
+    '../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png',
+    '../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg',
+    '../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png'
+]
 const firstTextSet = ['very creative placeholder', 'yipeeeeeeeeeeees', 'okay well', 'it needs', 'five of these']
 
 // #endregion
@@ -42,6 +48,11 @@ function updateTargetIndex(index, orientation, targetTextSet) {
     }
 }
 
+function updateContent(targetImage, targetDesc, index, imageSet, textSet) {
+    targetImage.src = imageSet[index]
+    targetDesc.innerText = textSet[index]
+}
+
 function switchImage(orientation, index) {
     switch (index) {
         case "first":
@@ -57,6 +68,7 @@ function switchImage(orientation, index) {
             break
         
         case "second":
+            //write much of the same logic over here
             targetImage = "there isn't a second one"
             break
         
@@ -68,5 +80,26 @@ function switchImage(orientation, index) {
             console.log("this should never be happening")
     }
 
-    console.log(targetIndex)
+    for (let i = 0; i < (targetIndexDisplays.length); i++) {
+        targetIndexDisplays[i].classList.remove('selected')
+    }
+
+    targetDesc.classList.add('hiding')
+    targetImage.classList.add('hiding')
+
+    targetImage.parentNode.setAttribute('style', `height:${(targetImage.offsetHeight + 3)}px;`)
+
+    setTimeout (() => {
+        updateContent(targetImage, targetDesc, targetIndex, targetImageSet, targetTextSet)
+    }, 200)
+
+    targetIndexDisplays[targetIndex].classList.add('selected')
+}
+
+function unHoudini() {
+    console.log("we're so unhoudiniing")
+}
+
+image1.onload = function () {
+    unHoudini()
 }
