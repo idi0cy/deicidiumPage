@@ -96,10 +96,30 @@ function switchImage(orientation, index) {
     targetIndexDisplays[targetIndex].classList.add('selected')
 }
 
+
+const allImages = document.querySelectorAll('.docImage')
+const allDescriptions = document.querySelectorAll('.desc')
+const allImageSets = [firstImageSet]
+const allTextSets = [firstTextSet]
+
 function unHoudini() {
-    console.log("we're so unhoudiniing")
+    for (let i = 0; i < allImages.length; i++) {
+        allImages[i].parentNode.setAttribute("style", `height:${(allImages[i].offsetHeight + 3)}px;`)
+        allImages[i].classList.remove('hiding')
+        allDescriptions[i].classList.remove('hiding')
+    }
 }
 
 image1.onload = function () {
     unHoudini()
+}
+
+/* 
+image2.onload = function () {
+    unHoudini
+}
+*/
+
+function initiate() {
+    
 }
