@@ -20,6 +20,8 @@
 * {
     font-family: var(--bodyFont);
     color:var(--secondBaseColour);
+
+    /* Potential scrollbar design in the future? */
     scrollbar-width: none;
 
     overscroll-behavior: contain;
@@ -1464,6 +1466,7 @@ input[type=text]::selection {
     box-sizing:border-box;
     transition:0.25s;
     overflow-y:hidden;
+    pointer-events:none;
 }
 
 .docImageContainer.left {
@@ -1481,6 +1484,13 @@ input[type=text]::selection {
     display:block;
     transition:.1s;
     height:auto;
+    pointer-events:all;
+}
+
+@media only screen and (max-width: 600px) {
+    .docImage {
+        pointer-events:none;
+    }
 }
 
 .docImage.hiding {

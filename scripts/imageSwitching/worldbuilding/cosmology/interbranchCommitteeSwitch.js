@@ -6,9 +6,13 @@ const firstImageSet = [
     '../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg',
     '../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png',
     '../../../images/worldbuilding/cosmology/dimensionality/manBreaksChains.jpg',
-    '../../../images/worldbuilding/cosmology/dimensionality/soySauceBucket.png'
 ]
-const firstTextSet = ['very creative placeholder', 'yipeeeeeeeeeeees', 'okay well', 'it needs', 'five of these']
+const firstTextSet = [
+    'Emblem of the State Collective',
+    'Emblem of the Academic Collective',
+    'Emblem of the Commerce Collective',
+    'Emblem of the Philanthropic Collective'
+]
 
 // #endregion
 
