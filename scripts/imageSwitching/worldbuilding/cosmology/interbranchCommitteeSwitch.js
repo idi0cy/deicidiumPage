@@ -23,12 +23,15 @@ const image1 = document.querySelector('.docImage.firstImage')
 var firstIndex = 0
 var secondIndex = 0 //currently vestigial
 
+
 ///Index displays
 const firstIndexDisplays = document.querySelectorAll('.displayIndicatorFirst')
+//const secondIndexDisplays = document.querySelectorAll('.displayIndicatorSecond')
 
 ///Image descriptions
 const imageDesc1 = document.querySelector('.imgDesc1')
 
+//all temp variables
 var targetImage
 var targetDesc
 var targetIndexDisplays
