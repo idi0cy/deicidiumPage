@@ -2084,7 +2084,6 @@ input::placeholder {
 .scrollBar:hover > .scrollThumb {
     border-color:var(--secondaryColour)
 }
-
 .scrollThumbDot {
     width: 4px;
     height:4px;

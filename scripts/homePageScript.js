@@ -786,8 +786,32 @@ let computeScroll = () => {
   console.log('existent')
 }
 
-scrollThumb.addEventListener('drag', function() {
+/* scrollThumb.addEventListener('drag', function() {
   console.log('even more existent')
-})
+}) */
+var running = false
 
+//well a while loop wouldn't work here
+
+var scrollThumbDown = false
+
+scrollThumb.onpointerdown = function(){
+  scrollThumbDown = true
+}
+document.onpointerup = function(){
+  if (scrollThumbDown === true) {
+    scrollThumbDown = false
+  }
+  document.body.style.userSelect = 'initial'
+}
+
+function updateScrollThumb(event) {
+  if (scrollThumbDown) {
+    document.body.style.userSelect = 'none'
+    console.log(event.pageY)
+  }
+}
+
+//should not have been this easy
+document.addEventListener('mousemove', updateScrollThumb)
 //#endregion
