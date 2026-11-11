@@ -21,8 +21,7 @@
     font-family: var(--bodyFont);
     color:var(--secondBaseColour);
 
-    /* Potential scrollbar design in the future? */
-    scrollbar-width: none;
+    scrollbar-width:none;
 
     overscroll-behavior: contain;
 }
@@ -2043,4 +2042,56 @@ sup:hover {
 input::placeholder {
     font-size:20px;
     color:var(--tertiaryColour);
+}
+
+.scrollBar {
+    position:fixed;
+    right:0;
+    height:calc(100% - 90px);
+    width:24px;
+    z-index:20;
+    bottom:0;
+    background-color:var(--quinaryColour);
+    border-width: 0 0 0 2px;
+    border-style:solid;
+    border-color:var(--tertiaryColour);
+
+    transition:.5s ease;
+}
+.scrollBar:hover {
+    border-color:var(--secondaryColour);
+}
+
+.scrollThumb {
+    width:24px;
+    height:64px;
+    position:relative;
+    top:40%;
+    background-color:var(--quinaryColour);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    gap:12px;
+    box-sizing:border-box;
+    border-width:2px 0 2px 0;
+    border-style:solid;
+    border-color:var(--tertiaryColour);
+    cursor:move;
+
+    transition:.25s ease;
+}
+.scrollBar:hover > .scrollThumb {
+    border-color:var(--secondaryColour)
+}
+
+.scrollThumbDot {
+    width: 4px;
+    height:4px;
+    background-color:var(--baseColour);
+}
+.scrollThumbBar {
+    width: 16px;
+    height:2px;
+    background-color:var(--baseColour);
 }

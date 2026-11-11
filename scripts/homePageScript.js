@@ -776,3 +776,18 @@ pages:
  - Much better image switching system that isn't trash
 
 */
+
+//#region | Custom scrollbar code
+
+const theMainBody = document.querySelector('.mainBody')
+const scrollThumb = document.querySelector('.scrollThumb')
+
+let computeScroll = () => {
+  console.log('existent')
+}
+
+scrollThumb.addEventListener('drag', function() {
+  console.log('even more existent')
+})
+
+//#endregion
