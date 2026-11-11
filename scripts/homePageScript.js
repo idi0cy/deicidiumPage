@@ -808,10 +808,20 @@ document.onpointerup = function(){
 function updateScrollThumb(event) {
   if (scrollThumbDown) {
     document.body.style.userSelect = 'none'
-    console.log(event.pageY)
+    let mousePos = event.pageY - 90
+    if (mousePos < 0) {
+      mousePos = 0
+    } else if (mousePos > theMainBody.offsetHeight) {
+      mousePos = theMainBody.offsetHeight
+    }
+
+    let ratio = Math.round(100 * (mousePos / theMainBody.offsetHeight))
+    scrollThumb.style.top = `calc(${ratio}%)`
   }
 }
 
+
+console.log(theMainBody.offsetHeight)
 //should not have been this easy
 document.addEventListener('mousemove', updateScrollThumb)
 //#endregion
