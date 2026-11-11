@@ -2066,7 +2066,6 @@ input::placeholder {
     width:24px;
     height:64px;
     position:relative;
-    top:40%;
     background-color:var(--quinaryColour);
     display:flex;
     flex-direction:column;

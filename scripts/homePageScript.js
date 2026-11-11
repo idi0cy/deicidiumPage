@@ -781,6 +781,7 @@ pages:
 
 const theMainBody = document.querySelector('.mainBody')
 const scrollThumb = document.querySelector('.scrollThumb')
+const theScrollBar = document.querySelector('.scrollBar')
 
 let computeScroll = () => {
   console.log('existent')
@@ -805,6 +806,8 @@ document.onpointerup = function(){
   document.body.style.userSelect = 'initial'
 }
 
+console.log(theScrollBar)
+
 function updateScrollThumb(event) {
   if (scrollThumbDown) {
     document.body.style.userSelect = 'none'
@@ -816,12 +819,12 @@ function updateScrollThumb(event) {
     }
 
     let ratio = Math.round(100 * (mousePos / theMainBody.offsetHeight))
-    scrollThumb.style.top = `calc(${ratio}%)`
+    /* scrollThumb.style.top = `calc(${ratio}% - ${scrollThumb.offsetHeight * ratio / 100})` */
+    scrollThumb.style.top = `${ratio}%`
   }
 }
 
 
 console.log(theMainBody.offsetHeight)
-//should not have been this easy
 document.addEventListener('mousemove', updateScrollThumb)
 //#endregion
