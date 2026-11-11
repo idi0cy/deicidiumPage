@@ -2056,7 +2056,7 @@ input::placeholder {
     border-style:solid;
     border-color:var(--tertiaryColour);
 
-    transition:.5s ease;
+    transition:.25s ease;
 }
 .scrollBar:hover {
     border-color:var(--secondaryColour);
@@ -2078,9 +2078,9 @@ input::placeholder {
     border-color:var(--tertiaryColour);
     cursor:move;
 
-    transition:.25s ease;
+    transition:.1s ease;
 }
-.scrollBar:hover > .scrollThumb {
+.scrollBar:hover > .scrollThumb:hover {
     border-color:var(--secondaryColour)
 }
 .scrollThumbDot {

@@ -819,8 +819,7 @@ function updateScrollThumb(event) {
     }
 
     let ratio = Math.round(100 * (mousePos / theMainBody.offsetHeight))
-    /* scrollThumb.style.top = `calc(${ratio}% - ${scrollThumb.offsetHeight * ratio / 100})` */
-    scrollThumb.style.top = `${ratio}%`
+    scrollThumb.style.top = `calc(${ratio}% - ${scrollThumb.offsetHeight * ratio / 100}px)`
   }
 }
 
