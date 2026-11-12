@@ -820,6 +820,12 @@ function updateScrollThumb(event) {
 
     let ratio = Math.round(100 * (mousePos / theMainBody.offsetHeight))
     scrollThumb.style.top = `calc(${ratio}% - ${scrollThumb.offsetHeight * ratio / 100}px)`
+
+    theMainBody.scrollTo({
+      left:0,
+      top: ((theMainBody.scrollHeight - ((ratio/100) * theMainBody.offsetHeight)) * (ratio/100)),
+      behavior:'smooth'
+    })
   }
 }
 
