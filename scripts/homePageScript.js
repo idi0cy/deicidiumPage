@@ -798,15 +798,17 @@ var scrollThumbDown = false
 
 scrollThumb.onpointerdown = function(){
   scrollThumbDown = true
+  scrollThumb.classList.add("held")
+  theScrollBar.classList.add('held')
 }
 document.onpointerup = function(){
   if (scrollThumbDown === true) {
     scrollThumbDown = false
+    scrollThumb.classList.remove('held')
+    theScrollBar.classList.remove("held")
   }
   document.body.style.userSelect = 'initial'
 }
-
-console.log(theScrollBar)
 
 function updateScrollThumb(event) {
   if (scrollThumbDown) {
@@ -829,7 +831,12 @@ function updateScrollThumb(event) {
   }
 }
 
-
-console.log(theMainBody.offsetHeight)
 document.addEventListener('mousemove', updateScrollThumb)
+
+function updateOnScroll() {
+  
+}
+
+theMainBody.addEventListener('scroll', updateOnScroll)
+
 //#endregion
