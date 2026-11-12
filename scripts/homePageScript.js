@@ -830,7 +830,6 @@ function updateScrollThumb(event) {
     })
   }
 }
-
 document.addEventListener('mousemove', updateScrollThumb)
 
 function updateOnScroll() {
@@ -840,7 +839,6 @@ function updateOnScroll() {
     scrollThumb.style.top = `calc(${ratio}% - ${scrollThumb.offsetHeight * ratio / 100}px)`
   }
 }
-
 theMainBody.addEventListener('scroll', updateOnScroll)
 window.onresize(updateOnScroll)
 
