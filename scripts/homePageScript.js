@@ -783,12 +783,7 @@ const theMainBody = document.querySelector('.mainBody')
 const scrollThumb = document.querySelector('.scrollThumb')
 const theScrollBar = document.querySelector('.scrollBar')
 
-/* scrollThumb.addEventListener('drag', function() {
-  console.log('even more existent')
-}) */
 var running = false
-
-//well a while loop wouldn't work here
 
 var scrollThumbDown = false
 
@@ -840,8 +835,19 @@ window.addEventListener('resize', updateOnScroll)
 theScrollBar.addEventListener('click', function(event) {
   let selection = window.getSelection()
   if (event.target === event.currentTarget && selection.type != 'Range') {
-    console.log('will it finally work')
+    let clickPos = event.pageY - 90
+    if (clickPos < 0) {
+      clickPos = 0
+    } else if (clickPos > theMainBody.offsetHeight) {
+      mousePos = theMainBody.offsetHeight
+    }
+
+    let ratio = (clickPos / theMainBody.offsetHeight)
+    theMainBody.scrollTo({
+      left:0,
+      top: ((theMainBody.scrollHeight - (ratio * theMainBody.offsetHeight)) * ratio),
+      behavior:'smooth'
+    })
   }
 })
-
 //#endregion
