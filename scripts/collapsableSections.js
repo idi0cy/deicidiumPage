@@ -1,4 +1,3 @@
-
 function foldSection_type2(selector) {
     let foldingContent = document.querySelector(`.foldingContent.${selector}`)
     let contentFoldWrapper = document.querySelector(`.foldingContent.${selector} > .contentFoldWrapper`)

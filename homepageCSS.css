@@ -2091,9 +2091,8 @@ input::placeholder {
     left:0px;
     transition:.1s ease, gap .25s ease;
     z-index:28;
+    clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
 }
-
-/* remember to add a clip path this time */
 
 .scrollBar:hover > .scrollThumb, .scrollThumb.held {
     border-color:var(--secondaryColour);
@@ -2109,4 +2108,32 @@ input::placeholder {
     width: 10px;
     height:2px;
     background-color:var(--quinaryColour);
+}
+
+.barelyVisible {
+    color:var(--sideNavColourTrans)
+}
+
+.docText {
+    transition:opacity 2.5s ease;
+}
+.docText.locked {
+    opacity:0;
+}
+
+.accessDenial {
+    margin-top:16px;
+    margin-bottom:16px;
+}
+.accessDeniedFoldContent {
+    display:grid;
+    grid-template-rows:0fr;
+    transition: grid-template-rows 1s ease;
+    overflow:hidden;
+}
+.accessDeniedFoldWrapper {
+    min-height:0;
+    visibility:hidden;
+    transition:1s ease;
+    opacity:0;
 }
