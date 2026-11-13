@@ -783,8 +783,6 @@ const theMainBody = document.querySelector('.mainBody')
 const scrollThumb = document.querySelector('.scrollThumb')
 const theScrollBar = document.querySelector('.scrollBar')
 
-var running = false
-
 var scrollThumbDown = false
 
 scrollThumb.onpointerdown = function(){
