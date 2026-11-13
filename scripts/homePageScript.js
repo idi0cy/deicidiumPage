@@ -783,10 +783,6 @@ const theMainBody = document.querySelector('.mainBody')
 const scrollThumb = document.querySelector('.scrollThumb')
 const theScrollBar = document.querySelector('.scrollBar')
 
-let computeScroll = () => {
-  console.log('existent')
-}
-
 /* scrollThumb.addEventListener('drag', function() {
   console.log('even more existent')
 }) */
@@ -835,11 +831,17 @@ document.addEventListener('mousemove', updateScrollThumb)
 function updateOnScroll() {
   if (scrollThumbDown === false) {
     let ratio = 100 * (theMainBody.scrollTop / (theMainBody.scrollHeight - theMainBody.offsetHeight))
-    console.log(ratio)
     scrollThumb.style.top = `calc(${ratio}% - ${scrollThumb.offsetHeight * ratio / 100}px)`
   }
 }
 theMainBody.addEventListener('scroll', updateOnScroll)
-window.onresize(updateOnScroll)
+window.addEventListener('resize', updateOnScroll)
+
+theScrollBar.addEventListener('click', function(event) {
+  let selection = window.getSelection()
+  if (event.target === event.currentTarget && selection.type != 'Range') {
+    console.log('will it finally work')
+  }
+})
 
 //#endregion
