@@ -1906,6 +1906,19 @@ sup:hover {
     transition:25s;
 }
 
+.returnHomeInnocent {
+    width:196px;
+    height:32px;
+    margin-top:32px;
+    margin-bottom:32px;
+    border-width: 2px;
+    border-color:var(--baseColour);
+    border-style:solid;
+    padding-left:8px;
+    line-height:32px;
+    cursor: pointer;
+}
+
 .header1 {
     font-size:clamp(20px, 5vw, 48px);
     align-items:end;
