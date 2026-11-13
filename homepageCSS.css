@@ -2092,6 +2092,9 @@ input::placeholder {
     transition:.1s ease, gap .25s ease;
     z-index:28;
 }
+
+/* remember to add a clip path this time */
+
 .scrollBar:hover > .scrollThumb, .scrollThumb.held {
     border-color:var(--secondaryColour);
     left:3px;
