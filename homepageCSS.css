@@ -2158,13 +2158,29 @@ input::placeholder {
 .securityAnswer:focus {
     background-color:var(--quaternaryColour);
 }
-
-
 .accessQuestionPrompt {
     margin-left:12px;
     font-size: 20px;
     font-weight:700;
     color:var(--baseColour);
-    margin-top:24px;
+    margin-top:8px;
     margin-bottom:8px;
+}
+.probablyJustSomeOneTimeUseTextOption {
+    margin-bottom:8px;
+    margin-top:24px;
+    margin-left:12px;
+    font-size:20px;
+}
+
+.enterCredentials {
+    font-size:20px;
+    line-height:24px;
+    margin-left:12px;
+    margin-top:24px;
+    height:24px;
+    width:128px;
+    padding-left:4px;
+    border: 2px solid var(--tertiaryColour);
+    cursor: pointer;
 }
