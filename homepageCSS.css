@@ -2202,6 +2202,8 @@ input::placeholder {
     margin-left:-128px;
     z-index:27;
     border: 2px solid var(--secondaryColour);
+
+    cursor:initial;
 }
 .errorBackground {
     position:fixed;
@@ -2211,7 +2213,26 @@ input::placeholder {
     height:100%;
     background-color: var(--sideNavColourTrans);
     z-index:25;
+    cursor: pointer;
+
+    
+    animation: errorAppear 1s cubic-bezier(.91,.36,.6,.88) both;
+    animation-delay:1s;
 }
+
+@keyframes errorAppear {
+    0% {
+        transform:scale(3);
+        filter:blur(8px);
+        opacity:0;
+    }
+    100% {
+        transform:scale(1);
+        filter:blur(0px);
+        opacity:1;
+    }
+}
+
 .errorTopBar {
     margin:0;
     width:100%;
@@ -2257,5 +2278,5 @@ input::placeholder {
     text-align:center;
 }
 .moreFontSize {
-    
+    font-size:24px;
 }
