@@ -2158,3 +2158,13 @@ input::placeholder {
 .securityAnswer:focus {
     background-color:var(--quaternaryColour);
 }
+
+
+.accessQuestionPrompt {
+    margin-left:12px;
+    font-size: 20px;
+    font-weight:700;
+    color:var(--baseColour);
+    margin-top:24px;
+    margin-bottom:8px;
+}

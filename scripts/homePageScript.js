@@ -725,7 +725,6 @@ function checkSearchQuery2() {
     }
   }
 }
-
 // #endregion code for font wheel
 
 //#region | Updating styles across tabs
