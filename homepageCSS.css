@@ -2137,3 +2137,11 @@ input::placeholder {
     transition:1s ease;
     opacity:0;
 }
+.accessDeniedFoldContent.open {
+    grid-template-rows:1fr;
+    pointer-events:none;
+}
+.accessDeniedFoldWrapper.open {
+    opacity:1;
+    visibility:visible;
+}

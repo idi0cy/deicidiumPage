@@ -255,7 +255,7 @@
             <div class="pageDocumentCenterer">
                 <div class="pageDocument">
 
-                    <div class="pageDocTitle">Investigation Logs</div>
+                    <div class="pageDocTitle" onclick="closePopup()">Investigation Logs</div>
                     <div class="horizontalLine1"></div>
 
 
@@ -267,16 +267,28 @@
                     
                     -->
                     <div class="accessDenial">
-                        <div class="accessDeniedFoldContent">
-                            <div class="accessDeniedFoldWrapper">
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
-                                <p>There is so much text right here</p>
+                        <div class="accessDeniedFoldContent open">
+                            <div class="accessDeniedFoldWrapper open">
+
+                                <div class="foldingSection zeroth">
+                                    <div class="foldingHeader">
+                                        <div class="foldHeader1">Error 423</div>
+                                        <div class="foldingArrow" onclick="foldSection_type2('zeroth')">
+                                            <div class="foldingArrowContainer zeroth">
+                                                <div class="foldArrow1"></div>
+                                                <div class="foldArrow2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="horizontalLine2"></div>
+
+                                    <div class="foldingContent zeroth">
+                                        <div class="contentFoldWrapper">
+                                            <p>The material (content) you are attempting to access has been locked.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -625,6 +637,7 @@
     <!--JAVASCRIPT LINK-->
     <script src="../../scripts/homePageScript.js"></script>
     <script src="../../scripts/collapsableSections.js"></script>
+    <script src="../../scripts/accessDenied.js"></script>
     <!--JAVASCRIPT LINK-->
 </body>
 </html>
