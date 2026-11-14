@@ -711,8 +711,8 @@ function checkSearchQuery2() {
     let chosenCandidate = "none"
 
     candidates.forEach((candidate) => {
-      if (candidate.toLowerCase().indexOf(searchBar1Query.toLowerCase()) < smallest) {
-        smallest = candidate.toLowerCase().indexOf(searchBar1Query.toLowerCase())
+      if (candidate.toLowerCase().indexOf(searchBar2Query.toLowerCase()) < smallest) {
+        smallest = candidate.toLowerCase().indexOf(searchBar2Query.toLowerCase())
         chosenCandidate = candidate
       }
     })

@@ -2145,3 +2145,16 @@ input::placeholder {
     opacity:1;
     visibility:visible;
 }
+
+.securityAnswer {
+    width:196px;
+    height:24px;
+    background-color: var(--dullColour);
+    border: 2px solid var(--tertiaryColour);
+    margin-left:12px;
+    transition:.25s;
+    line-height:24px;
+}
+.securityAnswer:focus {
+    background-color:var(--quaternaryColour);
+}
