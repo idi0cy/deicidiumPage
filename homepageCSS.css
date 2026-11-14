@@ -2183,4 +2183,28 @@ input::placeholder {
     padding-left:4px;
     border: 2px solid var(--tertiaryColour);
     cursor: pointer;
+
+    transition:.25s ease;
+}
+.enterCredentials:hover {
+    background-color:var(--quaternaryColour);
+}
+
+.firstErrorPopup {
+    position:fixed;
+    height:288px;
+    width:288px;
+    z-index:40;
+    background-color:var(--baseColour);
+    top:50%;
+    left:50%;
+    margin-top:-144px;
+    margin-left:-144px;
+}
+/* We're so back */
+.errorBackground {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color: var(--sideNavColourTrans);
 }
