@@ -40,11 +40,24 @@ function openCredentialPopup() {
     document.querySelector('.settingLabel.credentials').innerHTML = 'Credentials: <strong>configured</strong>'
 }
 
+const responsiveMessage = document.querySelector('.denyOrAccept')
+
 function attemptUnlock() {
     if (credentialsValid) {
         console.log('your credentials be validing')
     } else {
-        console.log('I do presume you will be barred from entering this fine establishment.')
+        responsiveMessage.classList.remove('hiding')
+        responsiveMessage.classList.remove('shown')
+
+        responsiveMessage.classList.add('shown')
+
+        setTimeout(() => {
+            responsiveMessage.classList.add('hiding')
+        }, 500)
+
+        setTimeout(()=>{
+            responsiveMessage.classList.remove('hiding')
+        }, 250)
     }
 }
 
