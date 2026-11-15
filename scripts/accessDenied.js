@@ -44,20 +44,23 @@ const responsiveMessage = document.querySelector('.denyOrAccept')
 
 function attemptUnlock() {
     if (credentialsValid) {
-        console.log('your credentials be validing')
+        if (!responsiveMessage.classList.contains('shown') && !responsiveMessage.classList.contains('hiding')) {
+            console.log('this is triggering')
+        }
     } else {
-        responsiveMessage.classList.remove('hiding')
-        responsiveMessage.classList.remove('shown')
+        if (!responsiveMessage.classList.contains('shown') && !responsiveMessage.classList.contains('hiding')) {
+            responsiveMessage.classList.add('shown')
 
-        responsiveMessage.classList.add('shown')
+            setTimeout(() => {
+                responsiveMessage.classList.add('hiding')
+            }, 500)
 
-        setTimeout(() => {
-            responsiveMessage.classList.add('hiding')
-        }, 500)
-
-        setTimeout(()=>{
-            responsiveMessage.classList.remove('hiding')
-        }, 250)
+            setTimeout(() => {
+                responsiveMessage.classList.remove('hiding')
+                responsiveMessage.classList.remove('shown')
+                console.log('good stuff')
+            }, 750)
+        }
     }
 }
 
