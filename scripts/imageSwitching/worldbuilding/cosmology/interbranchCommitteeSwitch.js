@@ -128,7 +128,6 @@ image2.onload = function () {
 */
 
 function initiate() {
-    console.log("oh we're initiating")
     for (let i = 0; i < allImages.length; i++) {
         allImages[i].src = allImageSets[i][0]
         allDescriptions[i].innerText = allTextSets[i][0]

@@ -8,6 +8,8 @@ const validQ1answers = ['subconscious complex a', "amentic inc's soul", 'God(?)'
 const errorPopupBackground = document.querySelector('.errorBackground')
 const padlockSVG = document.querySelector('#padlockSVG')
 
+const pageResponse = document.querySelector('.probablyJustSomeOneTimeUseTextOption')
+
 const docText = document.querySelector('.docText')
 
 var credentialsValid = false
@@ -19,10 +21,6 @@ function closePopup () {
 
 const firstAnswer = document.querySelector('.securityAnswer.first')
 
-function checkCredentials() {
-    console.log('debug strings are cool!1!!!1')
-}
-
 //function name is null and void
 function openCredentialPopup() {
     let tempCheck = false
@@ -32,13 +30,16 @@ function openCredentialPopup() {
         }
     }
 
+    //I also have to come up with a password
     if (passwordQuery.value === '' && tempCheck === true) {
         credentialsValid = true
+        pageResponse.innerHTML = 'Page Response: <strong>GRANTED</strong>'
     } else {
         credentialsValid = false
+        pageResponse.innerHTML = 'Page Response: <strong>DENIED</strong>'
     }
 
-    document.querySelector('.settingLabel.credentials').innerHTML = 'Credentials: <strong>configured</strong>'
+    document.querySelector('.settingLabel.credentials').innerHTML = 'Credentials: <strong>Configured</strong>'
 }
 
 const responsiveMessage = document.querySelector('.denyOrAccept')
@@ -48,7 +49,6 @@ function attemptUnlock() {
         responsiveMessage.innerText = 'GRANTED'
         if (!responsiveMessage.classList.contains('shown') && !responsiveMessage.classList.contains('hiding')) {
             responsiveMessage.classList.add('shown')
-
             setTimeout(() => {
                 responsiveMessage.classList.add('hiding')
             }, 500)

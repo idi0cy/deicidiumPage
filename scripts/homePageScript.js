@@ -409,12 +409,12 @@ generateSecondaryColour()
 
 //#region | Blank link warnings which will soon be rendered obsolete
 
-const blankLinks = document.querySelectorAll(".sideNavLink")
+/* const blankLinks = document.querySelectorAll(".sideNavLink")
 blankLinks.forEach((link) => {
   if (link.href === '' && !link.classList.contains('currentNavLink')) {
     link.onclick = function() {alert(`The page "${link.innerText}" has not been added to the site. It will be added in a future update.`)}
   }
-});
+}); */
 
 //#endregion
 
