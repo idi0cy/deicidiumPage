@@ -2282,7 +2282,7 @@ input::placeholder {
 .denyOrAccept {
     position:fixed;
     height:48px;
-    width:128px;
+    width:160px;
     font-size:36px;
     text-align: center;
     background-color:var(--quinaryColour);
@@ -2292,9 +2292,9 @@ input::placeholder {
     left:50%;
     top:50%;
     margin-top:-24px;
-    margin-left:-64px;
+    margin-left:-80px;
     z-index:28;
-    line-height:48px;
+    line-height:54px;
     
     opacity:0;
     transform:translateY(-96px);

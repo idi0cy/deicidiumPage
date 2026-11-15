@@ -8,6 +8,8 @@ const validQ1answers = ['subconscious complex a', "amentic inc's soul", 'God(?)'
 const errorPopupBackground = document.querySelector('.errorBackground')
 const padlockSVG = document.querySelector('#padlockSVG')
 
+const docText = document.querySelector('.docText')
+
 var credentialsValid = false
 
 function closePopup () {
@@ -23,9 +25,6 @@ function checkCredentials() {
 
 //function name is null and void
 function openCredentialPopup() {
-    console.log(question1Query)
-    console.log(passwordQuery)
-
     let tempCheck = false
     for (let i = 0; i < validQ1answers.length; i++) {
         if (validQ1answers[i].toLowerCase() === question1Query.value.toLowerCase()) {
@@ -34,7 +33,9 @@ function openCredentialPopup() {
     }
 
     if (passwordQuery.value === '' && tempCheck === true) {
-        console.log('this would mean a success')
+        credentialsValid = true
+    } else {
+        credentialsValid = false
     }
 
     document.querySelector('.settingLabel.credentials').innerHTML = 'Credentials: <strong>configured</strong>'
@@ -44,10 +45,35 @@ const responsiveMessage = document.querySelector('.denyOrAccept')
 
 function attemptUnlock() {
     if (credentialsValid) {
+        responsiveMessage.innerText = 'GRANTED'
         if (!responsiveMessage.classList.contains('shown') && !responsiveMessage.classList.contains('hiding')) {
-            console.log('this is triggering')
+            responsiveMessage.classList.add('shown')
+
+            setTimeout(() => {
+                responsiveMessage.classList.add('hiding')
+            }, 500)
+            setTimeout(() => {
+                responsiveMessage.classList.remove('hiding')
+                responsiveMessage.classList.remove('shown')
+            }, 1500)
+
+            errorPopupBackground.style.animation = 'none'
+            errorPopupBackground.offsetHeight
+            errorPopupBackground.style.animation = null
+            errorPopupBackground.style.animationDirection = 'reverse'
+
+            setTimeout(() => {
+                errorPopupBackground.remove()
+            }, 2500)
+
+            //code for removing the normal popup
+
+            closePopup()
+
+            docText.classList.remove('locked')
         }
     } else {
+        responsiveMessage.innerText = 'DENIED'
         if (!responsiveMessage.classList.contains('shown') && !responsiveMessage.classList.contains('hiding')) {
             responsiveMessage.classList.add('shown')
 
@@ -58,8 +84,7 @@ function attemptUnlock() {
             setTimeout(() => {
                 responsiveMessage.classList.remove('hiding')
                 responsiveMessage.classList.remove('shown')
-                console.log('good stuff')
-            }, 750)
+            }, 1500)
         }
     }
 }
