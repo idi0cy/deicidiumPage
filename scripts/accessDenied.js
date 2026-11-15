@@ -37,7 +37,7 @@ function openCredentialPopup() {
         console.log('this would mean a success')
     }
 
-
+    document.querySelector('.settingLabel.credentials').innerHTML = 'Credentials: <strong>configured</strong>'
 }
 
 function attemptUnlock() {

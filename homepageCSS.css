@@ -2279,3 +2279,37 @@ input::placeholder {
 .moreFontSize {
     font-size:24px;
 }
+.denyOrAccept {
+    position:fixed;
+    height:48px;
+    width:128px;
+    font-size:36px;
+    text-align: center;
+    background-color:var(--quinaryColour);
+    border-width: 2px;
+    border-style: solid;
+    border-color:var(--baseColour);
+    left:50%;
+    top:50%;
+    margin-top:-24px;
+    margin-left:-64px;
+    z-index:28;
+    line-height:48px;
+    
+    opacity:0;
+    transform:scaleY(0) translateY(-48px);
+    transform-origin:top;
+    transition:.25s;
+}
+.denyOrAccept.shown {
+    opacity:1;
+    transform:scaleY(1) translateY(0px);
+    transform-origin:top;
+    transition:.25s;
+}
+.denyOrAccept.hiding {
+    opacity:0;
+    transform:scaleY(0) translateY(48px);
+    transform-origin:bottom;
+    transition:0s;
+}
