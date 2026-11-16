@@ -30,8 +30,7 @@ function openCredentialPopup() {
         }
     }
 
-    //I also have to come up with a password
-    if (passwordQuery.value === '' && tempCheck === true) {
+    if (passwordQuery.value === 'goodPassword' && tempCheck === true) {
         credentialsValid = true
         pageResponse.innerHTML = 'Page Response: <strong>GRANTED</strong>'
     } else {
