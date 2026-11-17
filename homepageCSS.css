@@ -148,7 +148,7 @@ a:hover {
     }
     100% {
         -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
 }
 @-webkit-keyframes logo {
@@ -2309,3 +2309,19 @@ input::placeholder {
     opacity:0;
     transform:translateY(96px);
 }
+
+
+/* #region | Credits section, which I want to make very fancy :D */
+
+.creditsBody {
+    width:100%;
+    max-width:768px;
+    min-width:0;
+    padding:clamp(36px, 4vw, 64px);
+
+    /* This actually looks really cool */
+    backdrop-filter: blur(2px);
+    background-color:var(--sideNavColourTrans)
+}
+
+/* #endregion */
