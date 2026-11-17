@@ -2317,11 +2317,78 @@ input::placeholder {
     width:100%;
     max-width:768px;
     min-width:0;
-    padding:clamp(36px, 4vw, 64px);
-
-    /* This actually looks really cool */
+    padding:clamp(32px, 4vw, 48px);
     backdrop-filter: blur(2px);
-    background-color:var(--sideNavColourTrans)
+    background-color:var(--sideNavColourTrans);
+    min-height:100vh;
+}
+
+.theCreditsHeader {
+    font-size:clamp(24px, 5vw, 64px);
+    text-align:center;
+    font-family:var(--titleFont);
+}
+
+.rollCreditsSection {
+    width: 100%;
+    height:32px;
+    display:flex;
+    justify-content: center;
+    gap:8px;
+    align-items: center;
+    margin-bottom:24px;
+}
+.rollCreditsBar {
+    height:4px;
+    width:calc(50% - 20px);
+    background: var(--secondBaseColour);
+}
+.rollCreditsTrigger {
+    width:32px;
+    height:32px;
+    border-radius:2400px;
+    border-color:var(--secondBaseColour);
+    border-width:2px;
+    border-style:solid;
+    box-sizing:border-box;
+    cursor:pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.smallTriggerCircle {
+    width:20px;
+    height:20px;
+    background-color:var(--baseColour);
+    border-radius: 64px;
+
+}
+
+.rollCredBottomSec {
+    height:32px;
+    width:100%;
+
+    display:flex;
+    align-items: center;
+    gap:8px;
+
+    margin-top:24px;
+}
+.rollCreditsSquare {
+    width:28px;
+    height:28px;
+    border: 2px solid var(--secondBaseColour);
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+.miniCreditsSquare {
+    width: 20px;
+    height:20px;
+    background-color: var(--baseColour);
 }
 
 /* #endregion */
