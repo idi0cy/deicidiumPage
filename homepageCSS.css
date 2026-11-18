@@ -2433,7 +2433,7 @@ input::placeholder {
     display:grid;
     grid-template-rows:0fr;
     transition: grid-template-rows 2.5s ease;
-    overflow:hidden;
+    overflow-y:clip;
 }
 .creditContentWrapper {
     min-height:0;
@@ -2454,23 +2454,41 @@ input::placeholder {
     width:100%;
     min-height:64px;
     background: var(--sideNavColourTrans);
-    margin:8px;
-
-    animation:flyInAnimation 1s ease;
-    animation-trigger: view() play-forwards play-backwards;
-    animation-timeline:view();
-    animation-range: entry 0% cover 50%;
+    margin-top:16px;
+    margin-bottom:16px;
+    padding:16px;
 }
-
+.scrollInCredit.left {
+    animation:flyInAnimation 1s ease;
+    animation-trigger: view();
+    animation-timeline:view();
+    animation-range: entry 0% cover 60%;
+}
+.scrollInCredit.right {
+    animation:flyInAnimation2 1s ease;
+    animation-trigger: view();
+    animation-timeline:view();
+    animation-range: entry 0% cover 60%;
+}
 
 @keyframes flyInAnimation {
     0% {
         opacity:0;
-        margin-left: -100%;
+        transform: translateX(-50%);
     }
     100% {
         opacity:1;
-        margin-left:0;
+        transform: translateX(0);
+    }
+}
+@keyframes flyInAnimation2 {
+    0% {
+        opacity:0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity:1;
+        transform: translateX(0);
     }
 }
 
