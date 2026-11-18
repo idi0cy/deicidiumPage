@@ -2394,7 +2394,7 @@ input::placeholder {
     height:20px;
     background-color:var(--baseColour);
     border-radius: 64px;
-
+    transition:.5s ease;
 }
 
 .rollCredBottomSec {
@@ -2426,6 +2426,52 @@ input::placeholder {
 
 .creditsPreview {
     text-align:center;
+    margin-bottom:24px;
+}
+
+.creditsContent {
+    display:grid;
+    grid-template-rows:0fr;
+    transition: grid-template-rows 2.5s ease;
+    overflow:hidden;
+}
+.creditContentWrapper {
+    min-height:0;
+    visibility:hidden;
+    transition:2.5s ease;
+    opacity:0;
+}
+.creditsContent.open {
+    grid-template-rows:1fr;
+    pointer-events:none;
+}
+.creditContentWrapper.open {
+    opacity:1;
+    visibility: visible;
+}
+
+.scrollInCredit {
+    width:100%;
+    min-height:64px;
+    background: var(--sideNavColourTrans);
+    margin:8px;
+
+    animation:flyInAnimation 1s ease;
+    animation-trigger: view() play-forwards play-backwards;
+    animation-timeline:view();
+    animation-range: entry 0% cover 50%;
+}
+
+
+@keyframes flyInAnimation {
+    0% {
+        opacity:0;
+        margin-left: -100%;
+    }
+    100% {
+        opacity:1;
+        margin-left:0;
+    }
 }
 
 /* #endregion */
