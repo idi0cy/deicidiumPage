@@ -2346,8 +2346,7 @@ input::placeholder {
     transition:.5s;
 }
 .theCreditsHeaderFlex:hover > .creditsHeaderDeco {
-    width:12px;
-    height:12px;
+    background-color: var(--secondaryColour);
 }
 .creditsHeaderDeco.reverse {
     animation: creditsDeco 10s linear infinite reverse;
@@ -2405,7 +2404,7 @@ input::placeholder {
     align-items: center;
     gap:8px;
 
-    margin-top:24px;
+    margin-bottom:48px;
 }
 .rollCreditsSquare {
     width:28px;
@@ -2452,7 +2451,7 @@ input::placeholder {
 
 .scrollInCredit {
     width:100%;
-    min-height:64px;
+    min-height:128px;
     background: var(--sideNavColourTrans);
     margin-top:16px;
     margin-bottom:16px;
@@ -2462,19 +2461,19 @@ input::placeholder {
     animation:flyInAnimation 1s ease;
     animation-trigger: view();
     animation-timeline:view();
-    animation-range: entry 0% cover 60%;
+    animation-range: entry 0% cover 50%;
 }
 .scrollInCredit.right {
     animation:flyInAnimation2 1s ease;
     animation-trigger: view();
     animation-timeline:view();
-    animation-range: entry 0% cover 60%;
+    animation-range: entry 0% cover 50%;
 }
 
 @keyframes flyInAnimation {
     0% {
         opacity:0;
-        transform: translateX(-50%);
+        transform: translateX(-35%);
     }
     100% {
         opacity:1;
@@ -2484,12 +2483,21 @@ input::placeholder {
 @keyframes flyInAnimation2 {
     0% {
         opacity:0;
-        transform: translateX(50%);
+        transform: translateX(35%);
     }
     100% {
         opacity:1;
         transform: translateX(0);
     }
+}
+
+.imageHolder > img {
+    width:128px;
+    height:128px;
+    border:2px solid var(--secondaryColour);
+    float:left;
+    margin-right:16px;
+    pointer-events:all;
 }
 
 /* #endregion */

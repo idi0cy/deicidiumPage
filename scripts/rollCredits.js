@@ -13,3 +13,7 @@ function rollCredits(index) {
     }
 }
 
+function autoRollCredits() {
+    console.log("yeah this function hasn't actually been programmed yet")
+}
+
