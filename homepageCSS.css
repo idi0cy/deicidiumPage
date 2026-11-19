@@ -2404,7 +2404,7 @@ input::placeholder {
     align-items: center;
     gap:8px;
 
-    margin-bottom:48px;
+    margin-bottom:96px;
 }
 .rollCreditsSquare {
     width:28px;
@@ -2532,7 +2532,6 @@ input::placeholder {
 .creditDescWrap {
     flex-shrink:1;
 }
-
 .creditBoxHeader {
     font-size:32px;
     font-family:var(--titleFont);
@@ -2540,11 +2539,7 @@ input::placeholder {
     cursor: pointer;
     pointer-events: all;
 }
-
-.creditBoxHeader.right {
-    text-align:right;
-}
-.creditText.right {
+.creditBoxHeader.right, .creditText.right {
     text-align:right;
 }
 .creditBoxHeader.centered, .creditText.centered {
