@@ -2462,13 +2462,19 @@ input::placeholder {
     animation:flyInAnimation 1s ease;
     animation-trigger: view();
     animation-timeline:view();
-    animation-range: entry 0% cover 35%;
+    animation-range: entry 0% cover 40%;
 }
 .scrollInCredit.right {
     animation:flyInAnimation2 1s ease;
     animation-trigger: view();
     animation-timeline:view();
-    animation-range: entry 0% cover 35%;
+    animation-range: entry 0% cover 40%;
+}
+.scrollInCredit.center {
+    animation:flyInAnimation3 1s ease;
+    animation-trigger: view();
+    animation-timeline:view();
+    animation-range: entry 0% cover 40%;
 }
 
 @keyframes flyInAnimation {
@@ -2491,12 +2497,15 @@ input::placeholder {
         transform: translateX(0);
     }
 }
-
-@keyframes flyInAnimationPart2 {
-
-}
-@keyframes flyInAnimation2Part2s {
-
+@keyframes flyInAnimation3 {
+    0% {
+        opacity:0;
+        transform:translateY(-100%);
+    }
+    100% {
+        opacity:1;
+        transform: translateY(0);
+    }
 }
 
 .imageHolder {
@@ -2513,6 +2522,7 @@ input::placeholder {
     margin-right:16px;
     pointer-events:all;
     flex-shrink:0;
+    cursor: pointer;
 }
 .imageHolder.right > img {
     margin-right:0;
@@ -2527,9 +2537,18 @@ input::placeholder {
     font-size:32px;
     font-family:var(--titleFont);
     color: var(--baseColour);
+    cursor: pointer;
+    pointer-events: all;
 }
+
 .creditBoxHeader.right {
     text-align:right;
+}
+.creditText.right {
+    text-align:right;
+}
+.creditBoxHeader.centered, .creditText.centered {
+    text-align:center;
 }
 
 .horizontalLine4 {
