@@ -2452,13 +2452,11 @@ input::placeholder {
 .scrollInCredit {
     width:calc(100%);
     min-height:192px;
-    max-height:192px;
     background: var(--sideNavColourTrans);
     margin-top:16px;
     margin-bottom:16px;
     padding:16px;
     box-sizing:border-box;
-    overflow:hidden;
 }
 .scrollInCredit.left {
     animation:flyInAnimation 1s ease;
@@ -2503,6 +2501,10 @@ input::placeholder {
 
 .imageHolder {
     display:flex;
+    align-items: center;
+}
+.imageHolder.right {
+    justify-content: flex-end;
 }
 .imageHolder > img {
     width:160px;
@@ -2510,20 +2512,30 @@ input::placeholder {
     border:2px solid var(--secondaryColour);
     margin-right:16px;
     pointer-events:all;
+    flex-shrink:0;
 }
+.imageHolder.right > img {
+    margin-right:0;
+    margin-left:16px;
+}
+
+.creditDescWrap {
+    flex-shrink:1;
+}
+
 .creditBoxHeader {
     font-size:32px;
     font-family:var(--titleFont);
-    white-space: nowrap;
+    color: var(--baseColour);
 }
+.creditBoxHeader.right {
+    text-align:right;
+}
+
 .horizontalLine4 {
     height:2px;
     background-color: var(--tertiaryColour);
-    flex-shrink:1;
-}
-.creditText {
-    overflow:hidden;
-    text-overflow:ellipsis;
+    margin-bottom:8px;
 }
 
 /* #endregion */
