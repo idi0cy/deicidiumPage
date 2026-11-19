@@ -2511,6 +2511,7 @@ input::placeholder {
 .imageHolder {
     display:flex;
     align-items: center;
+    min-width:0;
 }
 .imageHolder.right {
     justify-content: flex-end;
@@ -2531,6 +2532,7 @@ input::placeholder {
 
 .creditDescWrap {
     flex-shrink:1;
+    min-width:0;
 }
 .creditBoxHeader {
     font-size:32px;
