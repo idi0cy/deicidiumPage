@@ -13,7 +13,15 @@ function rollCredits(index) {
     }
 }
 
+const allSections = document.querySelectorAll('.creditsSection')
+
+var autoIndex = 0
+
+/* No clue how these things work */
+// const allSeeingEye1 = new IntersectionObserver(callback, allSections[0])
+
+/* Try to make this scalable so I don't have to rewrite it like eight times */
 function autoRollCredits() {
-    console.log("yeah this function hasn't actually been programmed yet")
+    console.log(allSections)
 }
 
