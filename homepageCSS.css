@@ -2511,28 +2511,16 @@ input::placeholder {
     }
 }
 
-.imageHolder {
+/* .imageHolder {
     display:flex;
     align-items: center;
     min-width:0;
 }
-.imageHolder2 {
-    
-}
 .imageHolder.right {
     justify-content: flex-end;
-}
+} */
 
 .imageHolder > img {
-    width:160px;
-    height:160px;
-    border:2px solid var(--secondaryColour);
-    margin-right:16px;
-    pointer-events:all;
-    flex-shrink:0;
-    cursor: pointer;
-}
-.imageHolder2 > img {
     width:160px;
     height:160px;
     border:2px solid var(--secondaryColour);
@@ -2543,6 +2531,9 @@ input::placeholder {
 
     float:left;
     box-sizing:border-box;
+}
+.imageHolder.right > img {
+    float:right;
 }
 
 /* Media query here so that it looks slightly better on mobile devices */
@@ -2560,14 +2551,10 @@ input::placeholder {
 }
 
 .creditDescWrap {
-    flex-shrink:1;
-    min-width:0;
-}
-.creditDescWrap2 {
     min-width:0;
 }
 
-.creditBoxHeader, .creditBoxHeader2 {
+.creditBoxHeader {
     font-size:32px;
     font-family:var(--titleFont);
     color: var(--baseColour);
@@ -2582,23 +2569,7 @@ input::placeholder {
     text-align:center;
 }
 
-.horizontalLine4 {
-    height:2px;
-    background-color: var(--tertiaryColour);
-    margin-bottom:8px;
-}
-
-.horizontalLine4_2 {
-    height:2px;
-    background-color: var(--tertiaryColour);
-    width:calc(100% - 176px);
-
-    min-width:0;
-    position:relative;
-    left:180px
-}
-
-.creditText2 {
+.creditText {
     margin-top:8px;
     min-width:0;
 }
