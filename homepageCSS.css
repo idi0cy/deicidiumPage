@@ -2538,7 +2538,7 @@ input::placeholder {
 
 /* Media query here so that it looks slightly better on mobile devices */
 @media only screen and (max-width: 500px) {
-    .imageHolder2 > img {
+    .imageHolder > img {
         width:calc(100%);
         height: fit-content;
     }
