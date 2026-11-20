@@ -2428,17 +2428,20 @@ input::placeholder {
     margin-bottom:24px;
 }
 
+/* Well well well, if it isn't the gods damned culprit */
 .creditsContent {
     display:grid;
     grid-template-rows:0fr;
     transition: grid-template-rows 2.5s ease;
     overflow-y:clip;
+    min-width:0;
 }
 .creditContentWrapper {
     min-height:0;
     visibility:hidden;
     transition:2.5s ease;
     opacity:0;
+    min-width:0;
 }
 .creditsContent.open {
     grid-template-rows:1fr;
@@ -2574,6 +2577,7 @@ input::placeholder {
     background-color: var(--tertiaryColour);
     margin-bottom:8px;
 }
+
 .horizontalLine4_2 {
     height:2px;
     background-color: var(--tertiaryColour);
