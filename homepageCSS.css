@@ -2542,7 +2542,17 @@ input::placeholder {
     cursor: pointer;
 
     float:left;
+    box-sizing:border-box;
 }
+
+/* Media query here so that it looks slightly better on mobile devices */
+@media only screen and (max-width: 500px) {
+    .imageHolder2 > img {
+        width:calc(100%);
+        height: fit-content;
+    }
+}
+
 
 .imageHolder.right > img {
     margin-right:0;
@@ -2582,6 +2592,7 @@ input::placeholder {
     height:2px;
     background-color: var(--tertiaryColour);
     width:calc(100% - 176px);
+
     min-width:0;
     position:relative;
     left:180px
