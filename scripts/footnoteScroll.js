@@ -1,7 +1,9 @@
 const allFootnotes = document.querySelectorAll('.footerListPoint')
 const allRelArticles = document.querySelectorAll(".relArticlePoint")
 
-function scrollToFootnote(footnote) {
+var lastClicked = 'nothing'
+
+function scrollToFootnote(footnote, source) {
     let targetFootnote = document.querySelector(`.${footnote}`)
     targetFootnote.scrollIntoView({
         inline:'center',
@@ -12,6 +14,7 @@ function scrollToFootnote(footnote) {
         note.classList.remove("selectedFootnote")
     })
     targetFootnote.classList.add('selectedFootnote')
+    lastClicked = source
 }
 
 function focusFootnote (footnote) {
@@ -38,4 +41,15 @@ function referToArticle(article) {
         point.classList.remove("selectedArticle")
     })
     targetArticle.classList.add('selectedArticle')
+}
+
+/* You know what I thought this would be a bit harder to implement */
+function scrollBack() {
+    if (lastClicked != 'nothing') {
+        lastClicked.scrollIntoView( {
+            inline:'center',
+            block:'center',
+            behavior:'smooth'
+        })
+    }
 }
