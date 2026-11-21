@@ -2232,7 +2232,7 @@ input::placeholder {
     }
 }
 
-.errorTopBar {
+.errorTopBar, .spoilerTopBar {
     margin:0;
     width:100%;
     height:24px;
@@ -2269,7 +2269,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-.errorInstruct {
+.errorInstruct, .spoilerDesc {
     height:124px;
     width:calc(100% - 16px);
     background-color:var(--sideNavColourTrans);
@@ -2511,15 +2511,6 @@ input::placeholder {
     }
 }
 
-/* .imageHolder {
-    display:flex;
-    align-items: center;
-    min-width:0;
-}
-.imageHolder.right {
-    justify-content: flex-end;
-} */
-
 .imageHolder > img {
     width:160px;
     height:160px;
@@ -2574,3 +2565,63 @@ input::placeholder {
 }
 
 /* #endregion */
+
+.spoilerAlertBackground {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:var(--sideNavColourTrans);
+    z-index:25;
+    pointer-events:none;
+    opacity:0;
+}
+
+.spoilerAlertBackground2 {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:var(--sideNavColourTrans);
+    z-index:25;
+    pointer-events:none;
+}
+
+.spoilerAlertBackground.open {
+    opacity:1;
+    animation: errorAppear 1s cubic-bezier(.91,.36,.6,.88) both;
+    pointer-events:all;
+}
+
+.spoilerAlertPopup {
+    position:fixed;
+    height:320px;
+    width:256px;
+    background-color:var(--quinaryColour);
+    top:50%;
+    left:50%;
+    margin-top:-250px;
+    margin-left:-128px;
+    z-index:27;
+    border: 2px solid var(--secondaryColour);
+    pointer-events:all;
+
+    cursor:initial;
+}
+
+.padLockNumberWrap {
+    margin-top:-120px;
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    z-index:28;
+    animation: errorAppear 1s cubic-bezier(.91,.36,.6,.88) both;
+}
+.padLockNumber {
+    font-size:48px;
+    color:var(--quinaryColour);
+}
+
+/* #region | Spoiler alerts on pages */
