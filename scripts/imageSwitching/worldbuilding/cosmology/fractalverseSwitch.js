@@ -10,7 +10,7 @@ const firstImageSet = [
 const firstTextSet = [
     'Anatomy and composition of the fractalverse membrane',
     'Sample of the subconscious complex F membrane motif in the fractal membrane',
-    'View (angled) of the approximate fractalverse',
+    'View (angled) of the approximate fractalverse. Branchoffs not included.',
     'XY plane view of the approximate fractalverse'
 ]
 

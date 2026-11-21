@@ -43,7 +43,6 @@ function referToArticle(article) {
     targetArticle.classList.add('selectedArticle')
 }
 
-/* You know what I thought this would be a bit harder to implement */
 function scrollBack() {
     if (lastClicked != 'nothing') {
         lastClicked.scrollIntoView( {
@@ -51,5 +50,6 @@ function scrollBack() {
             block:'center',
             behavior:'smooth'
         })
+        lastClicked = 'nothing'
     }
 }
