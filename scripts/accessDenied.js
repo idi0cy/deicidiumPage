@@ -95,7 +95,3 @@ errorPopupBackground.addEventListener('click', function (event) {
     }
 })
 padlockSVG.addEventListener('click', attemptUnlock)
-
-//Okay so I may or may not have decided to completely forget to upload all the screenshots I took onto my devlog
-//moral of the story: don't be a waffle when it comes to doing things that you should definitely be doing
-//you don't want to end up typing omments until you get some hackatime so you can write like a 1 minute devlog.

@@ -19,7 +19,6 @@ function checkPermissions() {
 }
 
 const spoilerBackgroundReal = document.querySelector('.spoilerAlertBackground')
-const padLockNumber = document.querySelector('.padLockNumberWrap')
 
 function closeSpoilerPopup() {
     if (timePassed) {
@@ -28,17 +27,10 @@ function closeSpoilerPopup() {
         spoilerBackgroundReal.style.animation = null
         spoilerBackgroundReal.style.animationDirection = 'reverse'
 
-        padLockNumber.style.animation = 'none'
-        padLockNumber.offsetHeight
-        padLockNumber.style.animation = null
-        padLockNumber.style.animationDirection = 'reverse'
-
         spoilerBackgroundReal.classList.remove('open')
 
         setTimeout(() => {
             spoilerBackground.remove()
-            padLockNumber.remove()
-            console.log('removed')
         }, 1000)
     }
 }
