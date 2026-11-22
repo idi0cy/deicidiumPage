@@ -2572,8 +2572,9 @@ input::placeholder {
     height:100%;
     background-color:var(--sideNavColourTrans);
     z-index:25;
+    cursor: pointer;
+    animation: errorAppear 1s cubic-bezier(.91,.36,.6,.88) both;
     pointer-events:none;
-    opacity:0;
 }
 
 .spoilerAlertBackground2 {
@@ -2582,12 +2583,10 @@ input::placeholder {
     height:100%;
     background-color:var(--sideNavColourTrans);
     z-index:25;
-    pointer-events:none;
 }
 
 .spoilerAlertBackground.open {
     opacity:1;
-    animation: errorAppear 1s cubic-bezier(.91,.36,.6,.88) both;
     pointer-events:all;
 }
 
@@ -2602,7 +2601,7 @@ input::placeholder {
     margin-left:-128px;
     z-index:27;
     border: 2px solid var(--secondaryColour);
-    pointer-events:all;
+    pointer-events:none;
 
     cursor:initial;
 }
@@ -2615,6 +2614,7 @@ input::placeholder {
     display:flex;
     align-items:center;
     justify-content:center;
+    pointer-events:none;
 
     z-index:28;
     animation: errorAppear 1s cubic-bezier(.91,.36,.6,.88) both;
